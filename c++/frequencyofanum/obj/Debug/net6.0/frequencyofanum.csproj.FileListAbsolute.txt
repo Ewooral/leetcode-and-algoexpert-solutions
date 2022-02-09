@@ -1,0 +1,15 @@
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\bin\Debug\net6.0\frequencyofanum.exe
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\bin\Debug\net6.0\frequencyofanum.deps.json
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\bin\Debug\net6.0\frequencyofanum.runtimeconfig.json
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\bin\Debug\net6.0\frequencyofanum.dll
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\bin\Debug\net6.0\ref\frequencyofanum.dll
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\bin\Debug\net6.0\frequencyofanum.pdb
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\obj\Debug\net6.0\frequencyofanum.csproj.AssemblyReference.cache
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\obj\Debug\net6.0\frequencyofanum.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\obj\Debug\net6.0\frequencyofanum.AssemblyInfoInputs.cache
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\obj\Debug\net6.0\frequencyofanum.AssemblyInfo.cs
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\obj\Debug\net6.0\frequencyofanum.csproj.CoreCompileInputs.cache
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\obj\Debug\net6.0\frequencyofanum.dll
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\obj\Debug\net6.0\ref\frequencyofanum.dll
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\obj\Debug\net6.0\frequencyofanum.pdb
+C:\Users\fspoo\Desktop\Ewooral, Soft\Ewooral-Tutorials\ALGORITHMS\frequencyofanum\obj\Debug\net6.0\frequencyofanum.genruntimeconfig.cache

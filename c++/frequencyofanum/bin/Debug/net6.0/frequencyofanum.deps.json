@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "frequencyofanum/1.0.0": {
+        "runtime": {
+          "frequencyofanum.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "frequencyofanum/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
