@@ -1,3 +1,14 @@
+
+/**
+ * Complexity Analysis
+
+If N is the number of characters in the input string.
+
+Time complexity: O(N)
+ each character in the input at most once and for each character we spend a constant amount of time.
+We have used only constant space to store the sign and the result
+*/
+      
 public class StringToInteger{
     public int myAtoi(String input) {
         int sign = 1; 
