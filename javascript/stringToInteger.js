@@ -12,6 +12,19 @@ Iterate over the characters in the string as long as the current character repre
 Before appending the currently selected digit, check if the 32-bit signed integer range is violated. If it is violated, then return INT_MAX or INT_MIN as appropriate.
 Otherwise, if appending the digit does not result in overflow/underflow, append the current digit to the result.
 Return the final result with its respective sign, sign * result.
+
+
+Complexity Analysis
+
+If NN is the number of characters in the input string.
+
+Time complexity: O(N)O(N)
+
+We visit each character in the input at most once and for each character we spend a constant amount of time.
+
+Space complexity: O(1)O(1)
+
+We have used only constant space to store the sign and the result.
  */
 
 var myAtoi = function(input) {
@@ -81,6 +94,19 @@ If the current state is q2:
 If a digit occurs, append the current digit to the resulting number (clamp result if needed) and stay in the current state.
 Anything else after a digit character will not be valid; hence, stop building the number and transition to state qd.
 Return the final result with the respective sign, result * sign.
+
+
+Complexity Analysis
+
+If NN is the number of characters in the input string.
+
+Time complexity: O(N)O(N)
+
+We iterate over the input string exactly once, and each state transition only requires constant time.
+
+Space complexity: O(1)O(1)
+
+We have used only constant space to store the state, sign, and result.
  */
 
 class StateMachine {
