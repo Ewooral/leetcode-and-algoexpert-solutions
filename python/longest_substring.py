@@ -121,3 +121,60 @@ class Solution:
 
             right += 1
         return res
+
+
+""" 
+Approach 3: Sliding Window Optimized
+The above solution requires at most 2n steps. In fact, it could be optimized to require only n steps. Instead of using a set to tell if a character exists or not, we could define a mapping of the characters to its index. Then we can skip the characters immediately when we found a repeated character.
+
+The reason is that if s[j]s[j] have a duplicate in the range [i, j)[i,j) with index j'j 
+′
+ , we don't need to increase ii little by little. We can skip all the elements in the range [i, j'][i,j 
+′
+ ] and let ii to be j' + 1j 
+′
+ +1 directly.
+"""
+
+
+class Solution:
+    def length_of_longest_substring_iii(self, s: str) -> int:
+        n = len(s)
+        ans = 0
+        # mp stores the current index of a character
+        mp = {}
+
+        i = 0
+        # try to extend the range [i, j]
+        for j in range(n):
+            if s[j] in mp:
+                i = max(mp[s[j]], i)
+
+            ans = max(ans, j - i + 1)
+            mp[s[j]] = j + 1
+
+        return ans
+
+
+
+
+# FINAL APPROACH
+class Solution:
+    def length_of_longest_substring_iv(self, s: str) -> int:
+        chars = [None] * 128
+
+        left = right = 0
+
+        res = 0
+        while right < len(s):
+            r = s[right]
+
+            index = chars[ord(r)]
+            if index != None and index >= left and index < right:
+                left = index + 1
+
+            res = max(res, right - left + 1)
+
+            chars[ord(r)] = right
+            right += 1
+        return res
