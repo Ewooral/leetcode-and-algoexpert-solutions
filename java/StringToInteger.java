@@ -225,9 +225,9 @@ class StateMachine {
     public State getState() {
         return currentState;
     }
-};
+}
 
-class Solution {
+class StringToInteger {
     public int myAtoi(String s) {
         StateMachine Q = new StateMachine();
         
