@@ -7,7 +7,7 @@ If N is the number of characters in the input string.
 Time complexity: O(N)
  each character in the input at most once and for each character we spend a constant amount of time.
 We have used only constant space to store the sign and the result
-*/
+
       
 public class StringToInteger{
     public int myAtoi(String input) {
@@ -30,7 +30,7 @@ public class StringToInteger{
             index++;
         }
         
-        // Traverse next digits of input and stop if it is not a digit
+        // Traverse next digits of input and stop if it is not a digit@
         while (index < n && Character.isDigit(input.charAt(index))) {
             int digit = input.charAt(index) - '0';
 
@@ -53,7 +53,7 @@ public class StringToInteger{
 }
 
 
-/**
+
  * APPROACH TWO
  * 
  * Approach 2: Deterministic Finite Automaton (DFA)
@@ -130,7 +130,7 @@ If a digit occurs, append the current digit to the resulting number (clamp resul
 Anything else after a digit character will not be valid; hence, stop building the number and transition to state qd.
 Return the final result with the respective sign, result * sign.
 
-
+*/
 
 enum State { q0, q1, q2, qd }
 
@@ -238,4 +238,3 @@ class Solution {
         return Q.getInteger();
     }
 }
- */
