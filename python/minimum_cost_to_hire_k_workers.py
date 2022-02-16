@@ -34,4 +34,29 @@ Constraints:
 n == quality.length == wage.length
 1 <= k <= n <= 104
 1 <= quality[i], wage[i] <= 104
+
+
+=============================================================
+
+Solution
+Approach 1: Greedy
+Intuition
+
+At least one worker will be paid their minimum wage expectation. 
+If not, we could scale all payments down by some factor and still 
+keep everyone earning more than their wage expectation.
+
+Algorithm
+
+For each captain worker that will be paid their minimum wage 
+expectation, let's calculate the cost of hiring K workers where 
+each point of quality is worth wage[captain] / quality[captain] dollars.
+With this approach, the remaining implementation is straightforward.
+
+Note that this algorithm would not be efficient enough to pass 
+larger test cases.
 """
+
+
+class Solution(object):
+    def mincostToHireWorkers(self, quality, wage, K):
