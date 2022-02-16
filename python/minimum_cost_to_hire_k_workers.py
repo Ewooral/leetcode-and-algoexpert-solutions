@@ -73,3 +73,6 @@ class Solution(object):
                 if price < wage[worker]:
                     continue
                 prices.append(price)
+            if len(prices) < K:
+                continue
+            prices.sort()
