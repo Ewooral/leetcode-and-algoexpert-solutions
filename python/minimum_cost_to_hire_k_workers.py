@@ -130,3 +130,8 @@ class Solution(object):
         for ratio, q, w in workers:
             heapq.heappush(pool, -q)
             sumq += q
+
+            if len(pool) > K:
+                sumq += heapq.heappop(pool)
+
+        
