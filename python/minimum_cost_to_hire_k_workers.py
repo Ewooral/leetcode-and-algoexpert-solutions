@@ -127,3 +127,6 @@ class Solution(object):
         ans = float('inf')
         pool = []
         sumq = 0
+        for ratio, q, w in workers:
+            heapq.heappush(pool, -q)
+            sumq += q
