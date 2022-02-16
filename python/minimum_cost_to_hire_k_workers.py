@@ -133,5 +133,8 @@ class Solution(object):
 
             if len(pool) > K:
                 sumq += heapq.heappop(pool)
+            
+            if len(pool) == K:
+            
 
         
