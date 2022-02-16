@@ -60,3 +60,5 @@ larger test cases.
 
 class Solution(object):
     def mincostToHireWorkers(self, quality, wage, K):
+        from fractions import Fraction
+        ans = float('inf')
