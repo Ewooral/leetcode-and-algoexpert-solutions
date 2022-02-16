@@ -77,3 +77,13 @@ class Solution(object):
                 continue
             prices.sort()
             ans = min(ans, sum(prices[:K]))
+
+        return float(ans)
+
+""" 
+Complexity Analysis
+
+Time Complexity: O(N^2log N) where N is the number of workers.
+
+Space Complexity: O(N).
+"""
