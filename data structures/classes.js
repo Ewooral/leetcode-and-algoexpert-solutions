@@ -28,7 +28,7 @@ console.log(myBuilding.getFloors());
 
 function GetNames(firstname, lastname, age) {
     this.firstname = firstname;
-    this.lastname = lastname;
+    this.lastname = lastname ;
     this.age = age;
 }
 var myNames = new GetNames('John', 'Doe', 30);
@@ -56,23 +56,47 @@ console.log(myNames.getAge());
 
 class Food {
     constructor(rice, beans, gari) {
-        this.rice = rice;
-        this.beans = beans;
-        this.gari = gari;
+        this.Rice = rice;
+        this.Beans = beans;
+        this.Gari = gari;
+        console.log("My food is: ", this.getRice());
+        console.log(this)
     }
     getRice() {
-        return this.rice;
+        return this.Rice;
     }
 
     getBeans() {
-        return Food.beans;
+        return Food.Beans;
     }
   
     getGari() {
-        return this.gari;
+        return this.Gari;
+        
     }
+    
 }
-console.log("............................")
+console.log("............................");
 
 var favoriteFood = new Food('rice', 'beans', 'gari');
-console.log(favoriteFood.getRice());
+console.log("Fav 1: ", favoriteFood.getRice());
+console.log("Fav 2: ", favoriteFood.getBeans());
+console.log("Fav 3: ", favoriteFood.getGari());
+
+
+
+
+// reference type
+
+var obj1 = {value: 10};
+var obj2 = obj1;
+var obj3 = {value: 10};
+obj1 = {value:35};
+
+console.log(obj1)
+console.log(obj2)
+console.log(obj1 === obj2)
+console.log(obj1 === obj3)
+console.log(obj1)
+console.log(obj3)
+
