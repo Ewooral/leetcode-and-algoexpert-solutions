@@ -70,3 +70,6 @@ class Solution(object):
             prices = []
             for worker in xrange(N):
                 price = factor * quality[worker]
+                if price < wage[worker]:
+                    continue
+                prices.append(price)
