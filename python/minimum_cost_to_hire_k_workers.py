@@ -62,3 +62,8 @@ class Solution(object):
     def mincostToHireWorkers(self, quality, wage, K):
         from fractions import Fraction
         ans = float('inf')
+
+        N = len(quality)
+        for captain in xrange(N):
+            # Must pay at least wage[captain] / quality[captain] per qual
+            factor = Fraction(wage[captain], quality[captain])
