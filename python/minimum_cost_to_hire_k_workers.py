@@ -125,3 +125,5 @@ class Solution(object):
                          for q, w in zip(quality, wage))
         
         ans = float('inf')
+        pool = []
+        sumq = 0
