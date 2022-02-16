@@ -128,13 +128,18 @@ class Solution(object):
         pool = []
         sumq = 0
         for ratio, q, w in workers:
-            heapq.heappush(pool, -q)
+            heap_q.heappush(pool, -q)
             sumq += q
 
             if len(pool) > K:
                 sumq += heapq.heappop(pool)
             
             if len(pool) == K:
+                ans = min(ans, ratio * sumq)
+
+        
+
+        return float(ans)
             
 
         
