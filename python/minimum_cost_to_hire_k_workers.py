@@ -116,3 +116,10 @@ workers have lower ratio. (This worker will be the 'captain', as
 described in Approach #1.) We calculate the candidate answer as this 
 ratio times the sum of the smallest K workers in quality.
 """
+
+
+class Solution(object):
+    def mincost_to_hire_workers(self, quality, wage, K):
+        from fractions import Fraction
+        workers = sorted((Fraction(w, q), q, w)
+                         for q, w in zip(quality, wage))
