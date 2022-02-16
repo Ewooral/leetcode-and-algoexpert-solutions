@@ -67,3 +67,6 @@ class Solution(object):
         for captain in xrange(N):
             # Must pay at least wage[captain] / quality[captain] per qual
             factor = Fraction(wage[captain], quality[captain])
+            prices = []
+            for worker in xrange(N):
+                price = factor * quality[worker]
