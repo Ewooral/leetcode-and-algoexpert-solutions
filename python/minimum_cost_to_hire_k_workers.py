@@ -123,3 +123,5 @@ class Solution(object):
         from fractions import Fraction
         workers = sorted((Fraction(w, q), q, w)
                          for q, w in zip(quality, wage))
+        
+        ans = float('inf')
