@@ -56,6 +56,12 @@ class SolutionII {
     }
 }
 
+/**
+ * Time Complexity: O(N \log N)O(NlogN), where NN is the number of workers.
+
+Space Complexity: O(N)O(N).
+ */
+
 class Worker implements Comparable<Worker> {
     public int quality, wage;
     public Worker(int q, int w) {
