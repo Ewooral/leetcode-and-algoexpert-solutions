@@ -76,3 +76,4 @@ class Solution(object):
             if len(prices) < K:
                 continue
             prices.sort()
+            ans = min(ans, sum(prices[:K]))
