@@ -58,7 +58,7 @@ larger test cases.
 """
 
 
-class Solution(object):
+class SolutionII(object):
     def mincostToHireWorkers(self, quality, wage, K):
         from fractions import Fraction
         ans = float('inf')
@@ -140,6 +140,8 @@ class Solution(object):
         
 
         return float(ans)
+
+
             
 
         
