@@ -190,6 +190,6 @@ class Solution(object):
 """ 
 Complexity Analysis
 
-Time Complexity: O(N)O(N) since we process each element exactly once.
-Space Complexity: O(1)O(1).
+Time Complexity: O(N) since we process each element exactly once.
+Space Complexity: O(1).
 """
