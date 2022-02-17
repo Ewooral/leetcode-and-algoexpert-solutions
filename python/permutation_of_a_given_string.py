@@ -1,6 +1,6 @@
 import itertools
 
-
+# T = O(n), S = O(n)
 class Solution:
     def find_permutation(self, s):
 
@@ -15,3 +15,5 @@ class Solution:
 
 Find_Permutation = Solution()
 print(Find_Permutation.find_permutation("ABSG"))
+print(len(Find_Permutation.find_permutation("ABSG")))
+
