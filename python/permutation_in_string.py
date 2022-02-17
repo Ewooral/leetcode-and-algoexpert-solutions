@@ -56,3 +56,4 @@ class Solution:
 
 solution = Solution()
 print(solution.checkInclusion("ab", "eidbaooo"))
+print(solution.checkInclusion("db", "eidboaoo"))
