@@ -42,19 +42,29 @@ import itertools
 
 # T = O(n), S = O(n)
 class Solution:
-    def find_permutation(self, s):
+    def find_permutation(self, s, p):
 
         # Code here
         lst = []
-
+        P = " ".join(p)
         for i in itertools.permutations(s, len(s)):
+            print(itertools.permutations(s, len(s)))
             lst.append("".join(map(str, i)))
             lst.sort()
+        if s not in lst:
+            print(False, "") 
+        else:
+            print(True, "", s)
+     
 
         return lst
 
 Find_Permutation = Solution()
-print(Find_Permutation.find_permutation("ABSG"))
-print(len(Find_Permutation.find_permutation("ABSG")))
-print(len(Find_Permutation.find_permutation("STACK")))
+print(Find_Permutation.find_permutation("ab", "eidboaoo"))
+# print(len(Find_Permutation.find_permutation("ABSG")))
+# print(len(Find_Permutation.find_permutation("STACK")))
+# print(Find_Permutation.find_permutation("ab"))
+# print(len(Find_Permutation.find_permutation("ab")))
+
+
 
