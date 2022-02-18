@@ -33,7 +33,7 @@ long long int countPossibleSegments(vector<int> weights, int k)
             {
                 left = minpos;
                 while (abs(currWeight - weights[left]) > k)
-//                     left++;
+                    left++;
 //                 minpos = left;
 //             }
 //         }
