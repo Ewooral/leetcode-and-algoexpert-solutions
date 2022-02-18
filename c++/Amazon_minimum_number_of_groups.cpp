@@ -43,7 +43,7 @@ function minGroupDifferK(arr, k)
         if (arr[i] - arr[start] > k)
         {
             count++;
-    //         start = i;
+            start = i;
     //     }
     // }
     // return count;
