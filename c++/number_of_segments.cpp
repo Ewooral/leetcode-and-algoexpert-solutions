@@ -52,5 +52,5 @@ long long int countPossibleSegments(vector<int> weights, int k)
 //         // we can freely expand the window
         ans += (right - left) + 1;
     }
-//     return ans;
+    return ans;
 }
