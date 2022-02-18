@@ -37,7 +37,7 @@ long long int countPossibleSegments(vector<int> weights, int k)
                 minpos = left;
             }
         }
-//         else if (currWeight < segmentMin)
+        else if (currWeight < segmentMin)
 //         {
 //             // assign new max
 //             minpos = right;
