@@ -44,7 +44,7 @@ function minGroupDifferK(arr, k)
         {
             count++;
             start = i;
-    //     }
-    // }
+        }
+    }
     // return count;
 };
