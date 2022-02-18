@@ -32,8 +32,8 @@ int k: the maximum difference in awards counts
 
 function minGroupDifferK(arr, k)
 {
-    // arr.sort();
-    // let start = 0;
+    arr.sort();
+    let start = 0;
     // if (arr.length == 0)
     //     return 0;
     // // If arr has some value then at least can form 1 group
