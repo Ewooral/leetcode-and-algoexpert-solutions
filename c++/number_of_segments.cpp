@@ -47,8 +47,8 @@ long long int countPossibleSegments(vector<int> weights, int k)
                 while (abs(currWeight - weights[left]) > k)
                     left++;
                 maxpos = left;
-//             }
-//         }
+            }
+        }
 //         // we can freely expand the window
 //         ans += (right - left) + 1;
 //     }
