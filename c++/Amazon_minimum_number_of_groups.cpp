@@ -40,7 +40,7 @@ function minGroupDifferK(arr, k)
     let count = 1;
     for (let i = 0; i < arr.length; i++)
     {
-    //     if (arr[i] - arr[start] > k)
+        if (arr[i] - arr[start] > k)
     //     {
     //         count++;
     //         start = i;
