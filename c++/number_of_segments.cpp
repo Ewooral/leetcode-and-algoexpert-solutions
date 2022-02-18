@@ -16,7 +16,7 @@ I < or = r
 
 long long int countPossibleSegments(vector<int> weights, int k)
 {
-//     int left, right, minpos, maxpos;
+    int left, right, minpos, maxpos;
 //     minpos = 0, maxpos = 0;
 //     long long int ans = 0;
 //     int wlen = weights.size();
