@@ -22,7 +22,7 @@ long long int countPossibleSegments(vector<int> weights, int k)
     int wlen = weights.size();
     for (left = 0, right = 0; right < wlen; right++)
     {
-//         auto segmentMin = weights[minpos];
+        auto segmentMin = weights[minpos];
 //         auto segmentMax = weights[maxpos];
 //         auto currWeight = weights[right];
 //         if (currWeight > segmentMax)
