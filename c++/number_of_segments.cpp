@@ -24,7 +24,7 @@ long long int countPossibleSegments(vector<int> weights, int k)
     {
         auto segmentMin = weights[minpos];
         auto segmentMax = weights[maxpos];
-//         auto currWeight = weights[right];
+        auto currWeight = weights[right];
 //         if (currWeight > segmentMax)
 //         {
 //             // assign new min
