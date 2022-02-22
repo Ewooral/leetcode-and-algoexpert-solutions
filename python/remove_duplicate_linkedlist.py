@@ -30,4 +30,4 @@ def remove_duplicates_from_linked_list(linkedlist):
     while current_node is not None:
         next_distinct_node = current_node.next
         while next_distinct_node is not None and next_distinct_node.value == current_node.value
-        # next_distinct_node = next_distinct_node.next
+        next_distinct_node = next_distinct_node.next
