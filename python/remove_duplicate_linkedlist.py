@@ -24,3 +24,6 @@ class LinkeList:
     def __init__(self, value):
         self.value = value
         self.next = None
+    
+def remove_duplicates_from_linked_list(linkedlist):
+    
