@@ -18,6 +18,7 @@ currentNode = head
 temp = currentNode.next.next
 currentNode.next = temp
 
+# 0(n) time | O(1) space
  
 """
 class LinkeList:
@@ -33,6 +34,7 @@ def remove_duplicates_from_linked_list(linkedlist):
             next_distinct_node = next_distinct_node.next
         current_node.next = next_distinct_node
         current_node = next_distinct_node
+    return linkedlist
     
 
 
