@@ -11,5 +11,13 @@ their values.
 Each Linked list node has an interger VALUE as well as a NODE pointer NEXT 
 pointing to the next node in the linked list or NULL/None if there are no more nodes.
 
+Sample Input:
+1 -> 1 -> 2 -> 3 -> 3 -> 4 -> 4 -> 5
 
+currentNode = head 
+temp = currentNode.next.next
+currentNode.next = temp
+
+ 
 """
+class LinkeList:
