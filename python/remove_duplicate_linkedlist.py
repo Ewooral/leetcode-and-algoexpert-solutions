@@ -21,3 +21,4 @@ currentNode.next = temp
  
 """
 class LinkeList:
+    def __init__(self, value):
