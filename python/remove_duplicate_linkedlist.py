@@ -25,7 +25,7 @@ class LinkeList:
     def __init__(self, value):
         self.value = value
         self.next = None
-    
+
 def remove_duplicates_from_linked_list(linkedlist):
     current_node = linkedlist
     while current_node is not None:
@@ -35,6 +35,9 @@ def remove_duplicates_from_linked_list(linkedlist):
         current_node.next = next_distinct_node
         current_node = next_distinct_node
     return linkedlist
-    
 
 
+# Sample Input:
+# 1 -> 1 -> 2 -> 3 -> 3 -> 4 -> 4 -> 5
+# Sample Output:
+# 1 -> 2 -> 3 -> 4 -> 5
