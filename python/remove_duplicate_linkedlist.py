@@ -26,4 +26,4 @@ class LinkeList:
         self.next = None
     
 def remove_duplicates_from_linked_list(linkedlist):
-    
+    current_node = linkedlist
