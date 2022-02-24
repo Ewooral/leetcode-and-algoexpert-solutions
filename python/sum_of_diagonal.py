@@ -33,3 +33,32 @@ printDiagonalSums(a, 4)
 
 # This code is contributed
 # by ihritik
+
+# SECOND APPROACH 
+# This code takes O(n) time and O(1) auxiliary space
+# A simple Python3 program to find
+# sum of diagonals
+MAX = 100
+
+
+def printDiagonalSums2(mat, n):
+
+	principal = 0
+	secondary = 0
+	for i in range(0, n):
+		principal += mat[i][i]
+		secondary += mat[i][n - i - 1]
+
+	print("Principal Diagonal:", principal)
+	print("Secondary Diagonal:", secondary)
+
+
+# Driver code
+a = [[1, 2, 3, 4],
+     [5, 6, 7, 8],
+     [1, 2, 3, 4],
+     [5, 6, 7, 8]]
+printDiagonalSums2(a, 4)
+
+# This code is contributed
+# by ihritik
