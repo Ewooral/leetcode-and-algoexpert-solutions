@@ -17,7 +17,7 @@ print(three_sum.three_sums([4, 1, 2, 3, 4, 5, -5, 6, -1], 6))
 # target_sum = 6
 # T = 0(n^3)
 # S = 0(1)
-
+ 
 
 def threeNumberSum(array, targetSum):
     # targetSum = current + left + right
@@ -30,17 +30,17 @@ def threeNumberSum(array, targetSum):
          while left < right:
             current_sum = current + array[left] + array[right]
             if current_sum == targetSum:
-                trip.append(current, array[left], array[right])
+                trip.append([current, array[left], array[right]])
                 left += 1
                 right -= 1
             elif current_sum < targetSum:
                         left += 1
             elif current_sum > targetSum:
                         right -= 1
-         return []
+         return trip
 
 
-print(threeNumberSum(12, 3, 1, 2, -6, 5, -8, 6), 0)
+print(threeNumberSum([12, 3, 1, 2, -6, 5, -8, 6], 0))
 
 # array [12, 3, 1, 2, -6, 5, -8,  6]
 # sorted array [-8, -6, 1, 2, 3, 5, 6, 12] 2
@@ -101,7 +101,8 @@ class Solution:
                 while lo < hi and nums[lo] == nums[lo - 1]:
                     lo += 1
 
-
+myThree = Solution()
+print(myThree.threeSum([12, 3, 1, 2, -6, 5, -8, 6]))
 """ 
 Complexity Analysis
 
@@ -123,7 +124,7 @@ class Solution1:
             if nums[i] > 0:
                 break
             if i == 0 or nums[i - 1] != nums[i]:
-                self.twoSumII(nums, i, res)
+                self.two_sum(nums, i, res)
         return res
 
     def two_sum(self, nums, i, res):
@@ -140,3 +141,7 @@ class Solution1:
                 hi -= 1
                 while lo < hi and nums[lo] == nums[lo - 1]:
                     lo += 1
+
+
+myThreeI = Solution1()
+print(myThreeI.three_sum([12, 3, 1, 2, -6, 5, -8, 6]))

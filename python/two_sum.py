@@ -59,26 +59,30 @@ print(two_sum.two_number_sum_hash([3, -2, 1, 9, -1], 0))
 
 
 # pointer method
-class two_sum_pointer():
+# O(nlogn)T, O(1)S
+class two_sum_pointer(): 
     def two_sums(self, array, target_sum):
         left = 0;
         right = len(array) - 1
+        sum = []
         while left < right: # while both variables haven't overlapped
             current_sum = array[left] + array[right]
             if current_sum == target_sum:
-                return [array[left], array[right]]
+                sum.append([array[left], array[right]])
+                right+=1
+                left +=1
             elif current_sum > target_sum:
                 right -= 1 
             elif current_sum < target_sum:
                 left += 1
-        return []
+        return sum
 
 
 
 
 pointer = two_sum_pointer() # instance of the class 
+print(pointer.two_sums([1, -1, 2, 4, -2, 8, 3, -3, -8], 0))
 # print(pointer.two_sums([1, 4, 3, -1, 11, 8], 0))
-print(pointer.two_sums([1, 4, 3, -1, 11, 8], 0))
 
 
 
