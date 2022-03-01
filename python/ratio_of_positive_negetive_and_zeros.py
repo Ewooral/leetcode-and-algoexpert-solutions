@@ -27,6 +27,8 @@ The first line contains an integer, , the size of the array.
 The second line contains  space-separated integers that describe .
 
 Constraints
+0 < n < n <= 100
+-100 <= arr[i] <= 100
 
 
 
@@ -50,8 +52,9 @@ Sample Output
 0.166667
 Explanation
 
-There are  positive numbers,  negative numbers, and  zero in the array.
-The proportions of occurrence are positive: , negative:  and zeros: .
+There are 3 positive numbers, 2 negative numbers, and 1 zero in the array.
+The proportions of occurrence are positive: 3/6 = 0.500000 , 
+negative: 2/6 = 0.333333, and zeros: 1/6 = 1.66667  .
 """
 
 # O(n) T complexity
