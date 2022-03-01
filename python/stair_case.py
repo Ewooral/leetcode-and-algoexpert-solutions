@@ -52,3 +52,22 @@ Explanation
 The staircase is right-aligned, composed 
 of # symbols and spaces, and has a height and width of n = 6 .
 """
+
+def staircase(n):
+    for i in range(1, n+1):
+        s = "#" * i  
+        print(s.rjust(n))
+    # print(s.ljust(n))
+
+staircase(6)
+
+
+def staircases():
+    print("     #")
+    print("    ##")
+    print("   ###")
+    print("  ####")
+    print(" #####")
+    print("######")
+staircases()
+    
