@@ -67,7 +67,8 @@ def miniMaxSum(arr):
 
 miniMaxSum([1,5,3,4,2])
 
-
+# This code outputs the min and max values in an array without
+#  calculations
 def miniMax(array):
     min = array[0]
     for i in array:
