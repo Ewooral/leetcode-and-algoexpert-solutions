@@ -61,8 +61,8 @@ def staircase(n):
 
 staircase(6)
 
-
-def staircases():
+# This approach is not recommended
+def staircases(): 
     print("     #")
     print("    ##")
     print("   ###")

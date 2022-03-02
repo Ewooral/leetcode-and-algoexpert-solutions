@@ -13,4 +13,3 @@ def squarePattern(size):
 squarePattern(7)
 
 
-def star_heart_shape(size):
