@@ -7,7 +7,7 @@ def squarePattern(size):
         for j in range(0, size ):
             # this loop will print 7 horizontal columns
             print("#", end=" ")
-        print(".")
+        print("")
 
 
 squarePattern(7)

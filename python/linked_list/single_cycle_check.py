@@ -6,7 +6,9 @@ nextIdx = (currentIdx + jump) % len(array)
 return nextIdx if nextIdx >= 0 else nextIdx + len(array)
 In most programming languages, this is necessary because, if currentIdx + jump is negative, then (currentIdx + jump) % len(array) will also be negative.
 
-In Python, however, "the modulo operator always yields a result with the same sign as its second operand (or zero)" [Python Docs]. In other words, in Python, the modulo operation to compute the nextIdx will always return a number with the sign of len(array), which is naturally positive.
+In Python, however, "the modulo operator always yields a 
+result with the same sign as its second operand (or zero)" [Python Docs].
+In other words, in Python, the modulo operation to compute the nextIdx will always return a number with the sign of len(array), which is naturally positive.
 
 More specifically, the modulo operator in Python behaves as follows when used with a negative first operand:
 
