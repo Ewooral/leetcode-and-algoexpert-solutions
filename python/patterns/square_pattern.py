@@ -4,7 +4,7 @@ def squarePattern(size):
     for i in range(size):
         # this loop will print 7 vertical rows
 
-        for j in range(0, size ):
+        for j in range(0, i+1 ):
             # this loop will print 7 horizontal columns
             print("#", end=" ")
         print("")
@@ -23,3 +23,15 @@ def star():
         print()
 
 star()
+
+
+def anoth():
+    for row in range(5):
+        for col in range(5):
+            if(row + col == 4) or (row+col == 5) or (row+col == 6) or (row+col == 7) or (row+col == 8):
+                print("#",end="")
+            else:
+                print("", end=" ")
+        print()
+
+anoth()
