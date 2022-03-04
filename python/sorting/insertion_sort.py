@@ -4,7 +4,7 @@ def insertion_sort(arr):
         while j > 0 and arr[j] < arr[j-1]: # while we are at the 2nd element of the array and the 
 #             # element is  out of position or the element is greater than the previous element
             arr[j-1], arr[j] = arr[j], arr[j-1]
-#             j -= 1
+            j -= 1
 #     return arr
     
 
