@@ -11,4 +11,4 @@ def insertion_sort(arr):
 
    
 
-# print(insertion_sort([5, 2, 4, 6, 1, 3]))
+print(insertion_sort([5, 2, 4, 6, 1, 3]))
