@@ -5,7 +5,7 @@ def insertion_sort(arr):
 #             # element is  out of position or the element is greater than the previous element
             arr[j-1], arr[j] = arr[j], arr[j-1]
             j -= 1
-#     return arr
+    return arr
     
 
 
