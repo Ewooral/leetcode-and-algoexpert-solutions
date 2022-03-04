@@ -12,6 +12,3 @@ def solve(A, result=0):
 print(solve([4, 6, 2, 2, 6, 6, 1]))
 
 
-
-
-

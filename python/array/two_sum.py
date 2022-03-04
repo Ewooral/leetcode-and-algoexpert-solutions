@@ -49,7 +49,7 @@ class two_number_sum:
                 return [current, target_sum - current]
             else:
                 hash_table[current] = True
-        return []
+        return []   
 # instance of the class 
 two_sum = two_number_sum()
 print(two_sum.two_number_sum_hash([3, 5, -4, 8, 11, 1, -1, 6], 10))
