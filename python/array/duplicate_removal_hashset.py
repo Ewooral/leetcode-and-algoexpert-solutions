@@ -4,7 +4,7 @@ def duplicate_removal(array):
         if array[element] in hashset:
             return True, hashset
         hashset.add(array[element])
-#     return False
+    return False
 
 
 # print(duplicate_removal([1, 2, 3, 6, 3, 6, 2, 1, 4, 5,  6, 0]))
