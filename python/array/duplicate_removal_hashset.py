@@ -8,4 +8,4 @@ def duplicate_removal(array):
 
 
 print(duplicate_removal([1, 2, 3, 6, 3, 6, 2, 1, 4, 5,  6, 0]))
-# print(duplicate_removal([1, 2, 3, 6, 0]))
+print(duplicate_removal([1, 2, 3, 6, 0]))
