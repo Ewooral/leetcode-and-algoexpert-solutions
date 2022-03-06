@@ -3,7 +3,7 @@ def duplicate_removal(array):
     for element in range(len(array)):
         if array[element] in hashset:
             return True, hashset
-#         hashset.add(array[element])
+        hashset.add(array[element])
 #     return False
 
 
