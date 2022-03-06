@@ -33,7 +33,7 @@ text1 and text2 consist of only lowercase English characters.
 
 
 def longestCommonSubsequence(self, text1: str, text2: str) -> int:
-#     text1 = "0" + text1
+    text1 = "0" + text1
 #     text2 = "0" + text2
 
 #     dp = [[0] * len(text2) for i in range(0, len(text1))]
