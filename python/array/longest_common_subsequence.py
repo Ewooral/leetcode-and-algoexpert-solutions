@@ -67,7 +67,7 @@ class Solution:
         return lookup[s1][s2]
 
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
-#         return self.dp(text1, text2, 0, 0, [[-1 for _ in range(len(text2))] for _ in range(len(text1))])
+        return self.dp(text1, text2, 0, 0, [[-1 for _ in range(len(text2))] for _ in range(len(text1))])
 
 
 # # Solution 2 (Iterative - Bottom Up - Tabulation)
