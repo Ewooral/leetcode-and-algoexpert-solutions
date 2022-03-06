@@ -48,7 +48,7 @@ def longestCommonSubsequence(self, text1: str, text2: str) -> int:
 
             max_value = max(max_value, dp[i][j])
 
-#     return max_value
+    return max_value
 
 
 # # Solution 1 (Recursive - Top Down - Memoization)
