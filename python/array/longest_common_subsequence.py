@@ -63,7 +63,7 @@ class Solution:
                 lookup[s1][s2] = 1 + self.dp(text1, text2, s1+1, s2+1, lookup)
             else:
                 lookup[s1][s2] = max(self.dp(
-#                     text1, text2, s1+1, s2, lookup), self.dp(text1, text2, s1, s2+1, lookup))
+                    text1, text2, s1+1, s2, lookup), self.dp(text1, text2, s1, s2+1, lookup))
 #         return lookup[s1][s2]
 
 #     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
