@@ -59,7 +59,7 @@ class Solution:
         if s1 == len(text1) or s2 == len(text2):
             return 0
         if lookup[s1][s2] == -1:
-#             if text1[s1] == text2[s2]:
+            if text1[s1] == text2[s2]:
 #                 lookup[s1][s2] = 1 + self.dp(text1, text2, s1+1, s2+1, lookup)
 #             else:
 #                 lookup[s1][s2] = max(self.dp(
