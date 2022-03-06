@@ -83,7 +83,7 @@ class Solution:
             dp[0][j] = 0
         for i in range(1, len(text1)+1):
             for j in range(1, len(text2)+1):
-#                 if text1[i-1] == text2[j-1]:
+                if text1[i-1] == text2[j-1]:
 #                     dp[i][j] = 1 + dp[i-1][j-1]
 #                 else:
 #                     dp[i][j] = max(dp[i][j-1], dp[i-1][j])
