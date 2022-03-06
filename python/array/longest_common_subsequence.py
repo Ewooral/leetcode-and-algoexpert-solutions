@@ -73,7 +73,7 @@ class Solution:
 # # Solution 2 (Iterative - Bottom Up - Tabulation)
 
 
-# class Solution:
+class Solution:
 #     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
 #         dp = [[-1 for _ in range(len(text2) + 1)]
 #               for _ in range(len(text1) + 1)]
