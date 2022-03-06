@@ -37,7 +37,7 @@ def longestCommonSubsequence(self, text1: str, text2: str) -> int:
     text2 = "0" + text2
 
     dp = [[0] * len(text2) for i in range(0, len(text1))]
-#     max_value = 0
+    max_value = 0
 
 #     for i in range(1, len(text1)):
 #         for j in range(1, len(text2)):
