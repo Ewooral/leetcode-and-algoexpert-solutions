@@ -60,7 +60,7 @@ class Solution:
             return 0
         if lookup[s1][s2] == -1:
             if text1[s1] == text2[s2]:
-#                 lookup[s1][s2] = 1 + self.dp(text1, text2, s1+1, s2+1, lookup)
+                lookup[s1][s2] = 1 + self.dp(text1, text2, s1+1, s2+1, lookup)
 #             else:
 #                 lookup[s1][s2] = max(self.dp(
 #                     text1, text2, s1+1, s2, lookup), self.dp(text1, text2, s1, s2+1, lookup))
