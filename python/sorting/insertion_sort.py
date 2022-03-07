@@ -8,7 +8,7 @@ def insertion_sort(arr):
     return arr
 
 def swap(i, j, arr):
-#     arr[i], arr[j] = arr[j], arr[i]
+    arr[i], arr[j] = arr[j], arr[i]
 
     
 
