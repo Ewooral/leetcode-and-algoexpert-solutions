@@ -5,7 +5,7 @@ def insertion_sort(arr):
 # #             # element is  out of position or the element is greater than the previous element
             swap(j, j-1, arr)
             j -= 1
-#     return arr
+    return arr
 
 # def swap(i, j, arr):
 #     arr[i], arr[j] = arr[j], arr[i]
