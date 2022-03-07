@@ -13,4 +13,4 @@ def swap(i, j, arr):
     
 
 if __name__ == '__main__':
-#     print(insertion_sort([200, -234, 0, 2, 99, 1000, -18, 22, 1]))
+    print(insertion_sort([200, -234, 0, 2, 99, 1000, -18, 22, 1]))
