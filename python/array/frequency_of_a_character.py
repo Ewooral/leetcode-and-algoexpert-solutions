@@ -51,6 +51,6 @@ def frequencySort(s):
     for i in out:
         re += i*(dic[i])
 
-#     return re
+    return re
 
 # print(frequencySort("tree"))
