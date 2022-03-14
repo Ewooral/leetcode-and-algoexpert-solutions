@@ -38,7 +38,7 @@ def frequencySort(s):
 #         :type s: str
 #         :rtype: str
 #         """
-#     dic = {}
+    dic = {}
 #     re = ""
 #     for i in s:
 #         if i in dic:
