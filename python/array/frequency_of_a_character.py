@@ -33,7 +33,7 @@ s consists of uppercase and lowercase English letters and digits.
 """
 
 
-# def frequencySort(s):
+def frequencySort(s):
 #     """
 #         :type s: str
 #         :rtype: str
