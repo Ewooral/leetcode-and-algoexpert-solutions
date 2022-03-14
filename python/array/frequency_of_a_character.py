@@ -53,4 +53,4 @@ def frequencySort(s):
 
     return re
 
-# print(frequencySort("tree"))
+print(frequencySort("tree"))
