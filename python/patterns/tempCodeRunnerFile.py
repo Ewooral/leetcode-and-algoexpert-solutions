@@ -1,2 +1,2 @@
 
-def star():
+staircase(6)

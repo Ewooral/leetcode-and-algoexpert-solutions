@@ -18,7 +18,7 @@ def two_number_sum(array, target_sum):
     # Write your code here. 
     # O(n^2) time complexity
     # O(1) space complexity
-    for i in range(len(array)):
+    for i in range(len(array) - 1 ):
         current = array[i]
         for j in range(i+1, len(array)):
             next_value = array[j]
@@ -31,6 +31,7 @@ print(two_number_sum([3, 5, -4, 8, 11, 1, -1, 6], 10))
 print(two_number_sum([4,6,1,-3], 3))
 print(two_number_sum([0,2,4,6,8,10], 12))
 print(two_number_sum([3, 5, -4, 8, 11, 1, -1, 6], 15))
+print(two_number_sum([8, -1, 1, 3, 5, 6, -4, 11], 13))
 
 # APPROACH TWO - Two sum using hash table
 # x + y = target_sum
@@ -48,7 +49,7 @@ class two_number_sum:
             if target_sum - current in hash_table:
                 return [current, target_sum - current]
             else:
-                hash_table[current] = True
+                hash_table[current] = True 
         return []   
 # instance of the class 
 two_sum = two_number_sum()
@@ -69,8 +70,6 @@ class two_sum_pointer():
             current_sum = array[left] + array[right]
             if current_sum == target_sum:
                 sum.append([array[left], array[right]])
-                right+=1
-                left +=1
             elif current_sum > target_sum:
                 right -= 1 
             elif current_sum < target_sum:

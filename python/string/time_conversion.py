@@ -35,9 +35,9 @@ def convert24(str1):
 
     else:
 
-        # add 12 to hours and remove PM
+        # add 12 to hours and  remove PM
         return str(int(str1[:2]) + 12) + str1[2:8]
 
 
 # Driver Code
-print(convert24("08:05:45 PM"))
+print(convert24("11:05:45 PM"))

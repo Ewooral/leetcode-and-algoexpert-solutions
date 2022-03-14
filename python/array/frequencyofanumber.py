@@ -1,6 +1,6 @@
 arr = [1, 2, 8, 2, 2, 2, 5, 1]
 fr = [None] * len(arr)
-# print(fr)
+print(fr)
 visited = -1
 for i in range(0, len(arr)):
     # print(i)

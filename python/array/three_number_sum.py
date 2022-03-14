@@ -41,6 +41,7 @@ def threeNumberSum(array, targetSum):
 
 
 print(threeNumberSum([12, 3, 1, 2, -6, 5, -8, 6], 0))
+print("Result: " ,three_sum.three_sums([4, 1, 2, 3, 4, 5, -5, 6, -1], 6))
 
 # array [12, 3, 1, 2, -6, 5, -8,  6]
 # sorted array [-8, -6, 1, 2, 3, 5, 6, 12] 2
