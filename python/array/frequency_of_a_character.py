@@ -40,7 +40,7 @@ def frequencySort(s):
 #         """
     dic = {}
     re = ""
-#     for i in s:
+    for i in s:
 #         if i in dic:
 #             dic[i] += 1
 #         else:
