@@ -44,7 +44,7 @@ def frequencySort(s):
         if i in dic:
             dic[i] += 1
         else:
-#             dic[i] = 1
+            dic[i] = 1
 
 #     out = sorted(dic, key=dic.get, reverse=True)
 
