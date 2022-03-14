@@ -48,7 +48,7 @@ def frequencySort(s):
 
     out = sorted(dic, key=dic.get, reverse=True)
 
-#     for i in out:
+    for i in out:
 #         re += i*(dic[i])
 
 #     return re
