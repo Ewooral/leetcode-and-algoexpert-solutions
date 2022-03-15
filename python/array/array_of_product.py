@@ -1,20 +1,20 @@
 def array_of_product(array):
     # products = [1 for _ in range(len(array))];
-    products = [1] * len(array);
+    final_products = [None] * len(array);
 
     for i in range(len(array)):
-        runningProduct = 1;
+        currentProduct = 1;
         for j in range(len(array)):
             if i != j :
-                runningProduct *= array[j];
-        print(runningProduct)
-        products[i] = runningProduct;
+                currentProduct *= array[j]
+        final_products[i] = currentProduct
+    return final_products
+
+print(array_of_product([5, 1, 4, 2]))  # [8, 40, 10, 20] 
 
 
-    return products
- 
+def array_of_product2(arr):
+    left, right, product = [1] * len(arr), [1] * len(arr), [1] * len(arr)
+    print(left, right, product)
 
-print(array_of_product([5, 1, 4, 2]))
-
-
-
+array_of_product2([1,5,3,4,2])
