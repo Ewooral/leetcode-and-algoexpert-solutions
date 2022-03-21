@@ -1,5 +1,5 @@
 # Recursion 
-  It is a method of solving a problem whre the solution depends on the solution to the similar instance of the same problem.
+  It is a method of solving a problem where the solution depends on the solution to the similar instance of the same problem.
 
 
 # When to use Recursion
