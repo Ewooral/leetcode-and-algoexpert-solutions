@@ -9,4 +9,4 @@ def fibonacci(n):
 
 print(fibonacci(12))
 print(fibonacci(0))
-# print(fibonacci(1))
+print(fibonacci(1))
