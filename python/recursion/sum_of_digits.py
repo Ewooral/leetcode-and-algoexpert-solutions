@@ -3,6 +3,6 @@ def Sum_of_digits(n):
     if n == 0:
         return 0
     else:
-#         return int(n % 10) + Sum_of_digits(int(n/10));
+        return int(n % 10) + Sum_of_digits(int(n/10));
 
 # print(Sum_of_digits(-1));
