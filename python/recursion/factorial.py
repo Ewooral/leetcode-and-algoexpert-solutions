@@ -1,5 +1,5 @@
 def factorial(n):
-#     assert n >= 0 and int(n) == n, 'Only positive integers are accepted'
+    assert n >= 0 and int(n) == n, 'Only positive integers are accepted'
 #     if n in [0, 1]:
 #         return 1
 #     else:
