@@ -5,4 +5,4 @@ def Sum_of_digits(n):
     else:
         return int(n % 10) + Sum_of_digits(int(n/10));
 
-# print(Sum_of_digits(-1));
+print(Sum_of_digits(-1));
