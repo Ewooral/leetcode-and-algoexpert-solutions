@@ -3,7 +3,7 @@ def powerOfTwo(n):
         return 1
     else:
         print(powerOfTwo(n-1) * 2);
-#         return powerOfTwo(n-1) * 2
+        return powerOfTwo(n-1) * 2
 
 
 # print(powerOfTwo(4))
