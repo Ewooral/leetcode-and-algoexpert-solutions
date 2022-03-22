@@ -1,4 +1,5 @@
 from array import *
+from re import I
 
 arr1 = array('i', [1, 2, 3, 4, 5])
 arr2 = array('d', [4.2, 8.3, 0.2])
@@ -66,3 +67,12 @@ def search_by_index(array, index):
 
 
 print(search_by_index([5, 1, 4, 2], 3)) 
+
+
+# DELETE AN ELEMENT FROM THE ARRAY
+def delete_element(array, index):
+    del array[index]
+    return array
+
+
+print(delete_element([5, 1, 4, 2], 3))
