@@ -39,7 +39,7 @@ traverse_array(arr1)
 def access_element(array, index):
     if index >= len(array):
         print("The element doesn't exit")
-#     else:
+    else:
 #         print(array[index])
 
 
