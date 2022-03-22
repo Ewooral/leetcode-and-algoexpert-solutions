@@ -37,26 +37,26 @@ traverse_array(arr1)
 
 # ACCESSING AN ELEMENT
 def access_element(array, index):
-    if index >= len(array):
-        print("The element doesn't exit")
-    else:
-        print(array[index])
+#     if index >= len(array):
+#         print("The element doesn't exit")
+#     else:
+#         print(array[index])
 
 
-access_element(arr2, 2)
-# Time and Space Complexity: O(1)
+# access_element(arr2, 2)
+# # Time and Space Complexity: O(1)
 
 
-# SEARCHING FOR EXISTING ELEMENT IN AN ARRAY
-def search(array, item):
-    for element in array:
-        if element == item:
-            return True, array.index(item);
-    return False
+# # SEARCHING FOR EXISTING ELEMENT IN AN ARRAY
+# def search(array, item):
+#     for element in array:
+#         if element == item:
+#             return True, array.index(item);
+#     return False
 
-# O(n) T complexity | O(1) S complexity
+# # O(n) T complexity | O(1) S complexity
 
-print(search(arr1, 2))
+# print(search(arr1, 2))
 
 
 # SEARCH A VALUE BY IT'S INDEX
