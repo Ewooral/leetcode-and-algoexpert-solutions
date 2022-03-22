@@ -49,20 +49,20 @@ access_element(arr2, 2)
 def search(array, item):
     for element in array:
         if element == item:
-            return True, item
+            return True, array.index(item);
     return False
 
 
-print(search(arr2, 0))
+print(search([5, 1, 4, 2], 2))
 
 
 # SEARCH A VALUE BY IT'S INDEX
 def search_by_index(array, index):
     for i in range(0, len(array)):
-        print(i)
+        # print(i)
         if i == index:
             return True, array[index]
     return "Index doesn't exist'"
 
 
-print(search(arr2, 0))
+print(search_by_index([5, 1, 4, 2], 3)) 
