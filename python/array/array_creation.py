@@ -27,7 +27,7 @@ print(arr2)
 
 
 def traverse_array(array):
-#     for element in array:
+    for element in array:
 #         print(element)
 
 
