@@ -32,7 +32,7 @@ def traverse_array(array):
 
 
 # # O(n) T complexity | O(1) S complexity
-# traverse_array(arr1)
+traverse_array(arr1)
 
 
 # ACCESSING AN ELEMENT
