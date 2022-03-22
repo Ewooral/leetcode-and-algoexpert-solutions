@@ -39,3 +39,4 @@ def access_element(array, index):
         print(array[index]);
 
 access_element(arr2, 4);
+# Time and Space Complexity: O(1)
