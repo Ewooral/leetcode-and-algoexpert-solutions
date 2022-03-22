@@ -38,5 +38,16 @@ def access_element(array, index):
     else:
         print(array[index]);
 
-access_element(arr2, 4);
+access_element(arr2, 2);
 # Time and Space Complexity: O(1)
+
+
+# SEARCHING FOR EXISTING ELEMENT IN AN ARRAY
+def search(array, item):
+    for element in array:
+        if element == item:
+           return True;
+    return False;
+
+
+print(search(arr2, 0))
