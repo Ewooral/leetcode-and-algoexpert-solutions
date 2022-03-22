@@ -17,7 +17,7 @@ print(arr1)
 # Insertion doesn't delete a value but shifts the value to
 # the right.
 
-# arr2.insert(3, 100.786)
+arr2.insert(3, 100.786)
 # print(arr2)
 
 # Insertion at the end of an array is O(1) T and S complexity
