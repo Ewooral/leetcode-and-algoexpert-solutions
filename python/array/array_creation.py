@@ -68,7 +68,7 @@ def search_by_index(array, index):
     return "Index doesn't exist'"
 
 
-# print(search_by_index(arr1, 3)) 
+print(search_by_index(arr1, 3)) 
 
 
 # # DELETE AN ELEMENT FROM THE ARRAY
