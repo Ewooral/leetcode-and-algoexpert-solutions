@@ -28,7 +28,7 @@ print(arr2)
 
 def traverse_array(array):
     for element in array:
-#         print(element)
+        print(element)
 
 
 # # O(n) T complexity | O(1) S complexity
