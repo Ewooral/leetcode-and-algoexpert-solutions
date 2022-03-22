@@ -12,7 +12,7 @@ arr2 = array('d', [4.2, 8.3, 0.2])
 # INSERTION OPERATION
 
 arr1.insert(0, 38)
-# print(arr1)
+print(arr1)
 
 # Insertion doesn't delete a value but shifts the value to
 # the right.
