@@ -64,7 +64,7 @@ def search_by_index(array, index):
     for i in range(0, len(array)):
         # print(i)
         if i == index:
-#             return True, array[index]
+            return True, array[index]
 #     return "Index doesn't exist'"
 
 
