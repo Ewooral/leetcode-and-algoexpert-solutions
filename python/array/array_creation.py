@@ -52,7 +52,7 @@ def search(array, item):
     for element in array:
         if element == item:
             return True, array.index(item);
-#     return False
+    return False
 
 # # O(n) T complexity | O(1) S complexity
 
