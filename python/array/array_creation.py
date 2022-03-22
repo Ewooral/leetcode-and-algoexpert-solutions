@@ -18,7 +18,7 @@ print(arr1)
 # the right.
 
 arr2.insert(3, 100.786)
-# print(arr2)
+print(arr2)
 
 # Insertion at the end of an array is O(1) T and S complexity
 # Insertion at the beginning or middle of an array is O(n)
