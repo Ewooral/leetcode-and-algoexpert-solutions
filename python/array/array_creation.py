@@ -53,8 +53,9 @@ def search(array, item):
             return True, array.index(item);
     return False
 
+# O(n) T complexity | O(1) S complexity
 
-print(search([5, 1, 4, 2], 2))
+print(search(arr1, 2))
 
 
 # SEARCH A VALUE BY IT'S INDEX
@@ -66,13 +67,17 @@ def search_by_index(array, index):
     return "Index doesn't exist'"
 
 
-print(search_by_index([5, 1, 4, 2], 3)) 
+print(search_by_index(arr1, 3)) 
 
 
 # DELETE AN ELEMENT FROM THE ARRAY
 def delete_element(array, index):
     del array[index]
+    # or array.remove(element)
     return array
 
+# O(n) T complexity | O(1) S complexity
 
-print(delete_element([5, 1, 4, 2], 3))
+
+print(delete_element(arr1, 3))
+print(search_by_index(arr1, 3))
