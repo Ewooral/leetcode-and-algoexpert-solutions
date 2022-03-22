@@ -73,7 +73,7 @@ print(search_by_index(arr1, 3))
 
 # # DELETE AN ELEMENT FROM THE ARRAY
 def delete_element(array, index):
-#     del array[index]
+    del array[index]
 #     # or array.remove(element)
 #     return array
 
