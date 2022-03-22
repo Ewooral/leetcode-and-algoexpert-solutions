@@ -80,5 +80,5 @@ def delete_element(array, index):
 # # O(n) T complexity | O(1) S complexity
 
 
-# print(delete_element(arr1, 3))
+print(delete_element(arr1, 3))
 # print(search_by_index(arr1, 3))
