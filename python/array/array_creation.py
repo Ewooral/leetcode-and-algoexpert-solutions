@@ -50,7 +50,7 @@ access_element(arr2, 2)
 # SEARCHING FOR EXISTING ELEMENT IN AN ARRAY
 def search(array, item):
     for element in array:
-#         if element == item:
+        if element == item:
 #             return True, array.index(item);
 #     return False
 
