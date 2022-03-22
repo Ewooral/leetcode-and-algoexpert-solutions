@@ -1,5 +1,5 @@
 from array import *
-from re import I
+
 
 arr1 = array('i', [1, 2, 3, 4, 5])
 arr2 = array('d', [4.2, 8.3, 0.2])
@@ -31,6 +31,7 @@ def traverse_array(array):
         print(element)
 
 
+# O(n) T complexity | O(1) S complexity
 traverse_array(arr1)
 
 
@@ -60,24 +61,24 @@ print(search(arr1, 2))
 
 # SEARCH A VALUE BY IT'S INDEX
 def search_by_index(array, index):
-    for i in range(0, len(array)):
-        # print(i)
-        if i == index:
-            return True, array[index]
-    return "Index doesn't exist'"
+#     for i in range(0, len(array)):
+#         # print(i)
+#         if i == index:
+#             return True, array[index]
+#     return "Index doesn't exist'"
 
 
-print(search_by_index(arr1, 3)) 
+# print(search_by_index(arr1, 3)) 
 
 
-# DELETE AN ELEMENT FROM THE ARRAY
-def delete_element(array, index):
-    del array[index]
-    # or array.remove(element)
-    return array
+# # DELETE AN ELEMENT FROM THE ARRAY
+# def delete_element(array, index):
+#     del array[index]
+#     # or array.remove(element)
+#     return array
 
-# O(n) T complexity | O(1) S complexity
+# # O(n) T complexity | O(1) S complexity
 
 
-print(delete_element(arr1, 3))
-print(search_by_index(arr1, 3))
+# print(delete_element(arr1, 3))
+# print(search_by_index(arr1, 3))
