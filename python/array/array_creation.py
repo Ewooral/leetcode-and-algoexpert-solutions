@@ -61,7 +61,7 @@ print(search(arr1, 2))
 
 # SEARCH A VALUE BY IT'S INDEX
 def search_by_index(array, index):
-#     for i in range(0, len(array)):
+    for i in range(0, len(array)):
 #         # print(i)
 #         if i == index:
 #             return True, array[index]
