@@ -33,9 +33,9 @@ traverse_array(arr1);
 
 # ACCESSING AN ELEMENT
 def access_element(array, index):
-    if index > len(array):
+    if index >= len(array):
         print("The element doesn't exit");
     else:
         print(array[index]);
 
-access_element(arr2, 10);
+access_element(arr2, 4);
