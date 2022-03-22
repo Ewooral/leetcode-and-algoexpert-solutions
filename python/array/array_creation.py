@@ -81,4 +81,4 @@ def delete_element(array, index):
 
 
 print(delete_element(arr1, 3))
-# print(search_by_index(arr1, 3))
+print(search_by_index(arr1, 3))
