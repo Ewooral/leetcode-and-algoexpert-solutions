@@ -11,14 +11,14 @@ arr2 = array('d', [4.2, 8.3, 0.2]);
 
 # INSERTION OPERATION
 
-# arr1.insert(0, 38);
-# print(arr1);
+arr1.insert(0, 38);
+print(arr1);
 
-# # Insertion doesn't delete a value but shifts the value to
-# # the right.
+# Insertion doesn't delete a value but shifts the value to
+# the right.
 
-# arr2.insert(3, 100.786);
-# print(arr2);
+arr2.insert(3, 100.786);
+print(arr2);
 
 # Insertion at the end of an array is O(1) T and S complexity
 # Insertion at the beginning or middle of an array is O(n)
@@ -29,3 +29,8 @@ def traverse_array(array):
         print(element);
 
 traverse_array(arr1);
+
+
+# ACCESSING AN ELEMENT
+def access_element(array, index):
+    
