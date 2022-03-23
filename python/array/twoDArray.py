@@ -59,7 +59,7 @@ print("...............................................");
 def printElement(array, value):
     for i in range(len(array)):
         for j in range(len(array[0])):
-#             if array[i][j] == value:
+            if array[i][j] == value:
 #                 return value;
 #     return None;
 
