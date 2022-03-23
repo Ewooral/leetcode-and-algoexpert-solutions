@@ -60,7 +60,7 @@ def printElement(array, value):
     for i in range(len(array)):
         for j in range(len(array[0])):
             if array[i][j] == value:
-#                 return value;
+                return value;
 #     return None;
 
 # # O(m*n) and O(1) T and S complexity respectively
