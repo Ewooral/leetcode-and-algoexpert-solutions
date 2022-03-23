@@ -12,10 +12,10 @@ print(arr2[0]);
 # INSERTION OPERATION
 
 arr1.insert(0, 38)
-print(arr1)
+print("Inserting at the beginning of the array: ", arr1)
 
 # Insertion doesn't delete a value but shifts the value to
-# the right.
+# the right .
 
 arr2.insert(3, 100.786)
 print(arr2)
@@ -82,3 +82,9 @@ def delete_element(array, index):
 
 print(delete_element(arr1, 3))
 print(search_by_index(arr1, 3))
+
+# using the count() method
+newArray = array('i', [1,4,3,6,2,7,3,2,1,0, 6])
+for i in newArray:
+    another = newArray.count(i)
+    print(i, "|", another)
