@@ -4,7 +4,7 @@ import numpy as np; # install numpy and import it
 twoDarray = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
 
 # O(1) and O(m*n) T and S complexity respectively
-# print(twoDarray);  
+print(twoDarray);  
 
 
 print("...............................................");
