@@ -1,2 +1,2 @@
 
-        if i == index:
+        hashset.add(array[element])

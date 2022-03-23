@@ -83,8 +83,29 @@ def delete_element(array, index):
 print(delete_element(arr1, 3))
 print(search_by_index(arr1, 3))
 
-# using the count() method
-newArray = array('i', [1,4,3,6,2,7,3,2,1,0, 6])
-for i in newArray:
-    another = newArray.count(i)
-    print(i, "|", another)
+# using the count() method to remove duplicates
+newArray = array('i', [1,4,3,6,2,7, 2, 3,2,1,0,4,4,6])
+newArray1 = array('i', [1, 3, 6, 3, 2, 6, 1, 2, 3, 1, 4, 5,  6, 2, 0])
+def removeDuplicates(arr):
+    hashset = set();
+    for i in arr:
+        hashset.add(i);
+        newlist=list(hashset);
+    print(newlist)
+        
+
+
+
+removeDuplicates(newArray)
+removeDuplicates(newArray1)
+
+def DupRemove(array):
+    temp = [];
+    for i in array:
+        if i not in temp:
+            temp.append(i)
+    return temp;
+
+
+print(DupRemove(newArray1))
+
