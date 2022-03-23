@@ -47,7 +47,7 @@ def printElement(array):
     for i in range(len(array)):
         for j in range(len(array[0])):
             print(array[i, j]);
-    # return;
+    return;
 
 # O(m*n) and O(1) T and S complexity respectively
 printElement(newtwoDarray); # this prints all items in the array
