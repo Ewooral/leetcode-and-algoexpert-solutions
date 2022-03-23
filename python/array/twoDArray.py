@@ -44,7 +44,7 @@ print("...............................................");
 # Traversing a 2d array
 
 def printElement(array):
-    # for i in range(len(array)):
+    for i in range(len(array)):
         for j in range(len(array[0])):
             print(array[i, j]);
     return;
