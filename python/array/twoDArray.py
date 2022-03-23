@@ -21,7 +21,7 @@ print("...............................................");
 # Append a row or a column at the end of the array using the append method
 # if axis = 0, append will happen at the row, and axis = 1 at the column
 newtwoDarray = np.append(twoDarray, [[13, 14, 15]], axis=0);
-# print(newtwoDarray);
+print(newtwoDarray);
 
 
 
