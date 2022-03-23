@@ -1,4 +1,4 @@
-from array import *
+from array import array
 
 
 arr1 = array('i', [1, 2, 3, 4, 5])
@@ -32,7 +32,7 @@ def traverse_array(array):
 
 
 # # O(n) T complexity | O(1) S complexity
-traverse_array(arr1)
+traverse_array(arr1);
 
 
 # ACCESSING AN ELEMENT
@@ -91,21 +91,21 @@ def removeDuplicates(arr):
     for i in arr:
         hashset.add(i);
         newlist=list(hashset);
-    print(newlist)
+    print(newlist);
         
 
 
 
-removeDuplicates(newArray)
-removeDuplicates(newArray1)
+removeDuplicates(newArray);
+removeDuplicates(newArray1);
 
 def DupRemove(array):
     temp = [];
     for i in array:
         if i not in temp:
-            temp.append(i)
+            temp.append(i);
     return temp;
 
 
-print(DupRemove(newArray1))
+print(DupRemove(newArray1));
 
