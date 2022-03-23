@@ -7,7 +7,7 @@ print(newtwoDarray);
 
 def printElement(array):
     for i in range(len(array)):
-#         for j in range(len(array)):
+        for j in range(len(array)):
 #             return array[1][1]
 #     return []
 
