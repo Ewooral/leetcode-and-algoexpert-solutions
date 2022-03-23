@@ -31,8 +31,8 @@ print("...............................................");
 
 def access_element(array, rowIndex, columnIndex):
     if rowIndex >= len(array) or columnIndex >= len(array):
-        # print("Index out of range");
-    else:
+        print("Index out of range");
+    # else:
         return array[rowIndex, columnIndex];
     
 # O(1) T and S complexity
