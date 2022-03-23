@@ -5,7 +5,7 @@ print(twoDarray);
 newtwoDarray = np.insert(twoDarray, 0, [[10, 11, 12]], axis=1)
 print(newtwoDarray);
 
-# def printElement(array):
+def printElement(array):
 #     for i in range(len(array)):
 #         for j in range(len(array)):
 #             return array[1][1]
