@@ -11,4 +11,4 @@ def printElement(array):
             return array[1][1]
     return []
 
-# print(printElement(newtwoDarray))
+print(printElement(newtwoDarray))
