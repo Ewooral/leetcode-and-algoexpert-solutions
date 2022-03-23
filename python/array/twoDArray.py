@@ -25,7 +25,7 @@ print(newtwoDarray);
 
 
 
-print("...............................................");
+# print("...............................................");
 
 # Accessing an element or a given cell in a 2d array 
 
