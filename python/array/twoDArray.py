@@ -15,7 +15,7 @@ print(newtwoDarray);
 
 # O(m*n) or O(1) and O(1) T and S complexity respectively
 
-# print("...............................................");
+print("...............................................");
 
 # APPEND
 # Append a row or a column at the end of the array using the append method
