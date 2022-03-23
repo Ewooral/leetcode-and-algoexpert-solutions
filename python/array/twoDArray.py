@@ -57,7 +57,7 @@ print("...............................................");
 
 # Searching an element 
 def printElement(array, value):
-#     for i in range(len(array)):
+    for i in range(len(array)):
 #         for j in range(len(array[0])):
 #             if array[i][j] == value:
 #                 return value;
