@@ -10,7 +10,7 @@ print(twoDarray);
 print("...............................................");
 
 # INSERT A COLUMN/ROW IN A 2D ARRAY
-# newtwoDarray = np.insert(twoDarray, 1, [[10, 11, 12]], axis=0);
+newtwoDarray = np.insert(twoDarray, 1, [[10, 11, 12]], axis=0);
 print(newtwoDarray);
 
 # O(m*n) or O(1) and O(1) T and S complexity respectively
