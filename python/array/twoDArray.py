@@ -61,7 +61,7 @@ def printElement(array, value):
         for j in range(len(array[0])):
             if array[i][j] == value:
                 return value;
-#     return None;
+    return None;
 
 # # O(m*n) and O(1) T and S complexity respectively
 # print(printElement(newtwoDarray, 9))
