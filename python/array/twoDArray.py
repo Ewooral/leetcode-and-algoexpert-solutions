@@ -46,7 +46,7 @@ print("...............................................");
 def printElement(array):
     for i in range(len(array)):
         for j in range(len(array[0])):
-            print(array[i, j]);
+            # print(array[i, j]);
     return;
 
 # O(m*n) and O(1) T and S complexity respectively
