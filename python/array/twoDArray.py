@@ -30,7 +30,7 @@ print("...............................................");
 # Accessing an element or a given cell in a 2d array 
 
 def access_element(array, rowIndex, columnIndex):
-    # if rowIndex >= len(array) or columnIndex >= len(array):
+    if rowIndex >= len(array) or columnIndex >= len(array):
         print("Index out of range");
     else:
         return array[rowIndex, columnIndex];
