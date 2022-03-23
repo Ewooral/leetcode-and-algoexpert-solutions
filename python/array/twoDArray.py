@@ -7,7 +7,7 @@ twoDarray = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
 print(twoDarray);  
 
 
-print("...............................................");
+# print("...............................................");
 
 # INSERT A COLUMN/ROW IN A 2D ARRAY
 newtwoDarray = np.insert(twoDarray, 1, [[10, 11, 12]], axis=0);
