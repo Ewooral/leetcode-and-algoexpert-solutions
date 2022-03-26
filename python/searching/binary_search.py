@@ -5,7 +5,7 @@ def binarySearch(array, item):
     high = len(array) - 1;
     while low <= high:
 
-        mid = (low + high) // 2;
+        # mid = (low + high) // 2;
         guess = array[mid];
 
         if guess == item:
