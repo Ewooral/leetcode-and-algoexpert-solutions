@@ -24,6 +24,6 @@ if __name__ == '__main__':
     array.sort();
     print("Sorted array: ", array);
     print(binarySearch(array, item));
-    # print(array.index(8));
+    print(array.index(8));
 
 
