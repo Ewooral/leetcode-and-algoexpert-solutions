@@ -34,6 +34,6 @@ if __name__ == '__main__':
     print("Sorted array: ", array);
     print(binarySearch(array, item));
     print(array.index(8));
-    # print(isEven());
+    print(isEven());
 
 
