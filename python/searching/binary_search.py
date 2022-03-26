@@ -20,7 +20,7 @@ def binarySearch(array, item):
     return None;
 
 def isEven():
-    number = binarySearch(array, item);
+    # number = binarySearch(array, item);
     if number is None: return -1;
 
     if number % 2 == 0:
