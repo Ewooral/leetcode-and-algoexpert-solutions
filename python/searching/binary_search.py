@@ -24,7 +24,7 @@ def isEven():
     if number is None: return -1;
 
     if number % 2 == 0:
-        # return True; 
+        return True; 
     return False;
 
 if __name__ == '__main__':
