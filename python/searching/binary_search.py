@@ -25,7 +25,7 @@ def isEven():
 
     if number % 2 == 0:
         return True; 
-    return False;
+    # return False;
 
 if __name__ == '__main__':
     array = [8, 2, 0, 1, 4, -2, 9, 7, 12];
