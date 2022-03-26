@@ -21,7 +21,7 @@ def binarySearch(array, item):
 if __name__ == '__main__':
     array = [8, 2, 0, 1, 4, -2, 12];
     item = -22;
-    array.sort();
+    # array.sort();
     print("Sorted array: ", array);
     print(binarySearch(array, item));
     print(array.index(8));
