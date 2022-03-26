@@ -21,15 +21,15 @@ def binarySearch(array, item):
 
 def isEven():
     number = binarySearch(array, item);
-    if number is None: return -1;
+    if number is None: return "is even received None:", -1;
 
     if number % 2 == 0:
-        return True; 
-    return False;
+        return "is even is:", True; 
+    return "is even is:",  False;
 
 if __name__ == '__main__':
     array = [8, 2, 0, 1, 4, -2, 9, 7, 12];
-    item = 7;
+    item = 8;
     # array.sort();
     # print("Sorted array: ", array);
     print(binarySearch(array, item));
