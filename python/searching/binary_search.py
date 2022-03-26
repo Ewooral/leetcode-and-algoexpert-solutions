@@ -1,4 +1,4 @@
-# def binarySearch(array, item):
+def binarySearch(array, item):
     # In binary search the array must always be sorted!
     array.sort();
     low = 0;
