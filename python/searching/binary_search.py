@@ -15,7 +15,7 @@ def binarySearch(array, item):
             high = mid - 1;
 
         else:
-            # low = mid + 1;
+            low = mid + 1;
     return None;
 
 if __name__ == '__main__':
