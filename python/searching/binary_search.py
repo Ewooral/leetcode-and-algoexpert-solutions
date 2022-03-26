@@ -18,8 +18,8 @@ def binarySearch(array, item):
             low = mid + 1;
     return None;
 
-# if __name__ == '__main__':
-    array = [8, 2, 0, 1, 4, -2, 12];
+if __name__ == '__main__':
+    # array = [8, 2, 0, 1, 4, -2, 12];
     item = -22;
     array.sort();
     print("Sorted array: ", array);
