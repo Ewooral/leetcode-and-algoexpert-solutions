@@ -3,7 +3,7 @@ def binarySearch(array, item):
     array.sort();
     low = 0;
     high = len(array) - 1;
-    # while low <= high:
+    while low <= high:
 
         mid = (low + high) // 2;
         guess = array[mid];
