@@ -23,7 +23,7 @@ if __name__ == '__main__':
     item = -22;
     array.sort();
     print("Sorted array: ", array);
-    print(binarySearch(array, item));
+    # print(binarySearch(array, item));
     print(array.index(8));
 
 
