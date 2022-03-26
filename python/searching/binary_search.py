@@ -19,7 +19,7 @@ def binarySearch(array, item):
             low = mid + 1;
     return None;
 
-# def isEven():
+def isEven():
     number = binarySearch(array, item);
     if number is None: return -1;
 
