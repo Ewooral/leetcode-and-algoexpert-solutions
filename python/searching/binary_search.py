@@ -9,7 +9,7 @@ def binarySearch(array, item):
         guess = array[mid];
 
         if guess == item:
-            return f"item { item } found at index: { mid }";
+            # return f"item { item } found at index: { mid }";
 
         elif guess > item:
             high = mid - 1;
