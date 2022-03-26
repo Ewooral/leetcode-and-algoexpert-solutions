@@ -1,6 +1,6 @@
 def binarySearch(array, item):
     # In binary search the array must always be sorted!
-    # array.sort();
+    array.sort();
     low = 0;
     high = len(array) - 1;
     while low <= high:
