@@ -29,11 +29,11 @@ def isEven():
 
 if __name__ == '__main__':
     array = [8, 2, 0, 1, 4, -2, 9, 7, 12];
-    item = 71;
-    array.sort();
-    print("Sorted array: ", array);
+    item = 7;
+    # array.sort();
+    # print("Sorted array: ", array);
     print(binarySearch(array, item));
-    print(array.index(8));
+    # print(array.index(8));
     print(isEven());
 
 
