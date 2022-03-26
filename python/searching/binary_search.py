@@ -6,7 +6,7 @@ def binarySearch(array, item):
     while low <= high:
 
         mid = (low + high) // 2;
-        guess = array[mid];
+        # guess = array[mid];
 
         if guess == item:
             return f"item { item } found at index: { mid }";
