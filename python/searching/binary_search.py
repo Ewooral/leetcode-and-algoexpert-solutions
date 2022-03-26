@@ -14,7 +14,7 @@ def binarySearch(array, item):
         elif guess > item:
             high = mid - 1;
 
-        # else:
+        else:
             low = mid + 1;
     return None;
 
