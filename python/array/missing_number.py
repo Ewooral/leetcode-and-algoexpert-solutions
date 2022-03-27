@@ -5,7 +5,7 @@ myList = [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15,
 
 def find_missing_n_series(array, n):
     sum1 = 30*31//2;
-    sum2 = sum(array);
+    # sum2 = sum(array);
     print(sum1 - sum2);
 
 find_missing_n_series(myList, 31)
