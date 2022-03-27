@@ -8,4 +8,4 @@ def find_missing_n_series(array, n):
     sum2 = sum(array);
     print(sum1 - sum2);
 
-# find_missing_n_series(myList, 31)
+find_missing_n_series(myList, 31)
