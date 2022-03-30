@@ -1,5 +1,5 @@
 def power(base, exp):
-    assert exp >= 0 and int(exp) == exp, 
+    assert exp >= 0 and int(exp) == exp
     'Only positive integers are accepted as exponent';
     if exp == 0:
         return 1

@@ -1,2 +1,2 @@
-
-        hashset.add(array[element])
+buy] < Prices[sell]:
+            profit
