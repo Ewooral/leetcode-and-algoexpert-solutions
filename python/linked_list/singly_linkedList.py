@@ -1,26 +1,26 @@
-# create Head and Tail and assign null references to it
+""" create Head and Tail and assign null references to it
 # O(1) T if more than one node is created O(N) S else O(1)S
-
+"""
 # CREATING A SINGLY LINKED LIST
-class Node:
-    def __init__(self, value=None):
-        self.value = value
-        self.next = None
+# class Node:
+#     def __init__(self, value=None):
+#         self.value = value
+#         self.next = None
 
 
-class SListList:
-    def __init__(self):
-        self.head = None;
-        self.tail = None;
+# class SListList:
+#     def __init__(self):
+#         self.head = None;
+#         self.tail = None;
 
 
-singlyListList = SListList();  
-node1 = Node(1);
-node2 = Node(2)
+# singlyListList = SListList();  
+# node1 = Node(1);
+# node2 = Node(2)
 
-singlyListList.head = node1;
-singlyListList.head.next = node2;
-singlyListList.tail = node2
+# singlyListList.head = node1;
+# singlyListList.head.next = node2;
+# singlyListList.tail = node2
 
 
 
@@ -47,4 +47,9 @@ class SListList:
         while node:
             yield node;
             node = node.next
+
+    # insert in linked list
+    def insertSLL(self, value, location):
+        newNode = Node(value)
+
 
