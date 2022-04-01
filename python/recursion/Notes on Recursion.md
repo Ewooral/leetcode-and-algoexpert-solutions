@@ -16,3 +16,6 @@
 
  
 
+# Recursion contains the ff steps
+  1. setting the recursive case
+  2. setting the base case
