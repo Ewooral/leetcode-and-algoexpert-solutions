@@ -74,7 +74,7 @@ class SLinkedList:
                 tempNode.next = newNode
                 newNode.next = nextNode
 
-
+# Traverse a singly linked list
 
 singlyLinkedList = SLinkedList();
 singlyLinkedList.insertSLL(1, 1)
@@ -82,8 +82,11 @@ singlyLinkedList.insertSLL(2, 1)
 singlyLinkedList.insertSLL(3, 1)
 singlyLinkedList.insertSLL(4, 1)  
 
-#insert at the beginning
+#insert at the beginning 
 singlyLinkedList.insertSLL(30, 0)
+
+# insert in the middle
+singlyLinkedList.insertSLL(9, 3)
 print([node.value for node in singlyLinkedList])
     
 
