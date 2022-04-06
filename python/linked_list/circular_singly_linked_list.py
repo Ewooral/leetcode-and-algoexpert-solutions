@@ -15,7 +15,8 @@ class CircularSLL:
             node = node.next
             if node == self.tail.next:  # if node references itself
                 break;
-            
+
+    # O(1) T, O(1) S        
     def createSLL(self, nodeValue =None):
         node = Node(nodeValue);
         node.next = node;
@@ -23,13 +24,13 @@ class CircularSLL:
         self.tail = node;
         return "Circular Singly linked list is created";
 
-     
+     # O(1) T, O(1) S
     def insertCSLL(self, value, location):
         if self.head is None:
             return "The head reference is None";
         else:
             newNode = Node(value);
-            if location == 0:
+            if location == 0:  
                 newNode.next = self.head;
                 self.head = newNode;
                 self.tail.next = newNode;
@@ -60,7 +61,16 @@ class CircularSLL:
             return "The node has been successfully inserted!!";
 
 
-          
+    def traverseCSLL(self):
+        if self.head is None:
+            return "There is no element for traversal";
+        else:
+            tempNode = self.head
+            while tempNode:
+                print(tempNode.value);
+                tempNode = tempNode.next
+                if tempNode == self.tail.next:
+                    break    
                 
              
 
@@ -72,7 +82,8 @@ newCircularSLL = CircularSLL();
 print(newCircularSLL.createSLL(1111));
 newCircularSLL.insertCSLL(11, 0);
 newCircularSLL.insertCSLL(1, 0);
-newCircularSLL.insertCSLL(1111, 2);
+newCircularSLL.insertCSLL(111, 2);
 newCircularSLL.insertCSLL(11111, 1);
+newCircularSLL.traverseCSLL();
 
 print([node.value for node in newCircularSLL])
