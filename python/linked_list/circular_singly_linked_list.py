@@ -60,7 +60,7 @@ class CircularSLL:
                 tempNode.next = newNode;
             return "The node has been successfully inserted!!";
 
-
+    # O(1) T, O(1) S
     def traverseCSLL(self):
         if self.head is None:
             return "There is no element for traversal";
