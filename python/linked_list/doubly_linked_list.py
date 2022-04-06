@@ -31,7 +31,7 @@ class DoublyLinedList:
         return "Doubly linked list is created"
 
     def insertDLL(self, value, location):
-    #     if self.head is None:
+        if self.head is None:
     #         print("the node cannot be inserted")
     #     else:
     #         newNode = Node(value);
