@@ -14,7 +14,7 @@ class DoublyLinedList:
     def __iter__(self):
         node = self.head
         while node:
-#             yield node
+            yield node
 #             node = node.next
             
 
