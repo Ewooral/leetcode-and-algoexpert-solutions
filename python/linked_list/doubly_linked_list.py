@@ -18,8 +18,8 @@ class DoublyLinedList:
             node = node.next
             
 
-#     # O(1) T, O(1) S
-#     def createDLL(self, nodeValue=None):
+    # O(1) T, O(1) S
+    def createDLL(self, nodeValue=None):
 #         node = Node(nodeValue)
 #         node.next = None
 #         node.previous = None;
