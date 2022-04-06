@@ -30,6 +30,7 @@ class DoublyLinedList:
         self.tail = node
         return "Doubly linked list is created"
 
+    # O(N) T, O(1) S
     def insertDLL(self, value, location):
         if self.head is None:
             print("the node cannot be inserted")
@@ -55,8 +56,17 @@ class DoublyLinedList:
                 newNode.previous = tempNode
                 newNode.next.previous = newNode
                 tempNode.next = newNode
-
-                
+     
+     # O(N) T, O(1) S
+    def traverseDLL(self):
+        if self.head is None:
+            print("Nothing to traverse");
+        else:
+            node = self.head
+            while node is not None:
+                print(node.value)
+                node = node.next
+                           
 
 
 doublyLL = DoublyLinedList()
@@ -67,3 +77,4 @@ doublyLL.insertDLL(3, 2)
 doublyLL.insertDLL(30, 3)
 
 print([node.value for node in doublyLL])
+doublyLL.traverseDLL()
