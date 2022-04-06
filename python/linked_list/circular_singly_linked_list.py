@@ -155,12 +155,10 @@ print(".................................\n")
 
 print(newCircularSLL.searchCSLL("Jupiter"))
 print(".................................\n")
-
 newCircularSLL.deleteCSLL(0)
 newCircularSLL.deleteCSLL(0)
 newCircularSLL.deleteCSLL(1)
 print([node.value for node in newCircularSLL])
 print(".................................\n")
-
 newCircularSLL.deleteEntireCSLL()
 print([node.value for node in newCircularSLL])

@@ -1,2 +1,2 @@
-if node == self.tail.next:  # if node references itself
-            #     break;
+doublyLL.deleteNodeDLL(2)
+# doublyLL.deleteNodeDLL(0)

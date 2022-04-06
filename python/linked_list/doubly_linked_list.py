@@ -1,7 +1,4 @@
 
-from decimal import Inexact
-
-
 class Node:
     def __init__(self, value=None):
         self.value = value
@@ -22,10 +19,10 @@ class DoublyLinedList:
             
 
     # O(1) T, O(1) S
-    def createDLL(self, nodeValue=None):
+    def createDLL(self, nodeValue):
         node = Node(nodeValue)
-        node.next = None
         node.previous = None;
+        node.next = None
         self.head = node
         self.tail = node
         return "Doubly linked list is created"
@@ -66,15 +63,78 @@ class DoublyLinedList:
             while node is not None:
                 print(node.value)
                 node = node.next
-                           
+    
+     # O(N) T, O(1) S
+    def reverseTraverseDLL(self):
+        if self.head is None:
+            print("Nothing to traverse")
+        else:
+            node = self.tail
+            while node is not None:
+                print(node.value)
+                node = node.previous
 
+     # O(N) T, O(1) S
+    def searchDLL(self, nodeValue):
+        if self.head is None:
+            print("Nothing to search");
+        else:
+            node = self.head
+            while node is not None:
+                if node.value == nodeValue:
+                     print(node.value)
+                node = node.next
+                    
+    def deleteNode(self, location):
+        if self.head is None:
+            print("There is not any element in DLL")
+        else:
+            if location == 0:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head = self.head.next
+                    self.head.previous = None
+            elif location == 1:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.tail = self.tail.previous
+                    self.tail.next = None
+            else:
+                curNode = self.head
+                index = 0
+                while index < location - 1:
+                    curNode = curNode.next
+                    index += 1
+                curNode.next = curNode.next.next
+                curNode.next.previous = curNode
+            print("The node has been successfully deleted")
+
+
+                
+                    
 
 doublyLL = DoublyLinedList()
 doublyLL.createDLL(5);
 doublyLL.insertDLL(1, 0)
 doublyLL.insertDLL(2, 1)
 doublyLL.insertDLL(3, 2)
-doublyLL.insertDLL(30, 3)
+
+
 
 print([node.value for node in doublyLL])
 doublyLL.traverseDLL()
+
+print("Reverse Traversal.......................")
+doublyLL.reverseTraverseDLL()
+
+print("Search.......................")
+doublyLL.searchDLL(30)
+
+print("Delete.......................")
+# doublyLL.deleteNodeDLL(2)
+doublyLL.deleteNode(0)
+print([node.value for node in doublyLL])
