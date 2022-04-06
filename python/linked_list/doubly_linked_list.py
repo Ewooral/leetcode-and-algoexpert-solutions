@@ -39,7 +39,7 @@ class DoublyLinedList:
                 newNode.previous = None;
                 newNode.next = self.head;
                 self.head.previous = newNode
-    #             self.head = newNode
+                self.head = newNode
     #         elif location == 1:
     #             newNode.next = None;
     #             newNode.previous = self.tail
