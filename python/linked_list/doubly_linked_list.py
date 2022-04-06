@@ -40,7 +40,7 @@ class DoublyLinedList:
                 newNode.next = self.head;
                 self.head.previous = newNode
                 self.head = newNode
-    #         elif location == 1:
+            elif location == 1:
     #             newNode.next = None;
     #             newNode.previous = self.tail
     #             self.tail.next = newNode
