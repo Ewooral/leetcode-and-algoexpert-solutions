@@ -121,11 +121,10 @@ class CircularSLL:
                 while index < location - 1:
                     tempNode = tempNode.next
                     index += 1
-                nextNode = tempNode.next;
+                nextNode = tempNode.next; 
                 tempNode.next = nextNode.next
 
-        
-
+     # O(1) T, O(1) S
     def deleteEntireCSLL(self):
         self.head = None
         self.tail.next = None
@@ -138,22 +137,30 @@ class CircularSLL:
 
      
 newCircularSLL = CircularSLL();
+print(".................................\n")
 print(newCircularSLL.createSLL(1111));
+print(".................................\n")
 newCircularSLL.insertCSLL(11, 0);
 newCircularSLL.insertCSLL(1, 0);
 newCircularSLL.insertCSLL("Jupiter", 0);
 newCircularSLL.insertCSLL(False, 0);
 newCircularSLL.insertCSLL(111, 2);
 newCircularSLL.insertCSLL(11111, 1);
+
 print([node.value for node in newCircularSLL])
+print(".................................\n")
 
 newCircularSLL.traverseCSLL()
+print(".................................\n")
+
 print(newCircularSLL.searchCSLL("Jupiter"))
+print(".................................\n")
 
 newCircularSLL.deleteCSLL(0)
 newCircularSLL.deleteCSLL(0)
 newCircularSLL.deleteCSLL(1)
 print([node.value for node in newCircularSLL])
+print(".................................\n")
 
 newCircularSLL.deleteEntireCSLL()
 print([node.value for node in newCircularSLL])
