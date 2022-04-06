@@ -20,10 +20,10 @@ class CircularSLL:
         node.next = node;
         self.head = node
         self.tail = node;
-        return "circular Singly linked list is created";
+        return "Circular Singly linked list is created";
 
      
-    def  insertCSLL(self, value, location):
+    def insertCSLL(self, value, location):
         if self.head is None:
             print("List doesn't exit")
         else:
@@ -46,7 +46,15 @@ class CircularSLL:
                 self.tail = newNode;
 
             else:
+                tempNode = self.head;
+                index = 0;
+                while index < location - 1:  # this will loop tilllast but one node
+                    tempNode = tempNode.next; 
+                    index += 1;
+                nextNode = tempNode.next
                 
+
+
           
                 
                 
