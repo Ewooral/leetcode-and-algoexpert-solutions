@@ -9,7 +9,7 @@ class Node:
 class DoublyLinedList:
     def __init__(self) -> None:
         self.head = None
-#         self.tail = None
+        self.tail = None
 
 #     def __iter__(self):
 #         node = self.head
