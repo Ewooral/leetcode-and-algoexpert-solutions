@@ -28,6 +28,6 @@ class DoublyLinedList:
         return "Doubly linked list is created"
 
 doublyLL = DoublyLinedList()
-# doublyLL.createDLL(5);
+doublyLL.createDLL(5);
 
 # print([node.value for node in doublyLL])
