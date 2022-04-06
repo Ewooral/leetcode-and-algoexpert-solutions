@@ -24,7 +24,7 @@ class DoublyLinedList:
         node.next = None
         node.previous = None;
         self.head = node
-#         self.tail = node
+        self.tail = node
 #         return "Doubly linked list is created"
 
 # doublyLL = DoublyLinedList()
