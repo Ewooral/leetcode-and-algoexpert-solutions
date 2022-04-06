@@ -22,7 +22,7 @@ class DoublyLinedList:
     def createDLL(self, nodeValue=None):
         node = Node(nodeValue)
         node.next = None
-#         node.previous = None;
+        node.previous = None;
 #         self.head = node
 #         self.tail = node
 #         return "Doubly linked list is created"
