@@ -37,7 +37,7 @@ class DoublyLinedList:
             newNode = Node(value);
             if location == 0:
                 newNode.previous = None;
-    #             newNode.next = self.head;
+                newNode.next = self.head;
     #             self.head.previous = newNode
     #             self.head = newNode
     #         elif location == 1:
