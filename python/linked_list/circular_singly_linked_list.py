@@ -27,7 +27,7 @@ class CircularSLL:
         self.tail = node;
         return "Circular Singly linked list is created";
 
-     # O(1) T, O(1) S
+     # O(N) T, O(1) S
     def insertCSLL(self, value, location):
         if self.head is None:
             return "The head reference is None";
@@ -63,7 +63,7 @@ class CircularSLL:
                 tempNode.next = newNode;
             return "The node has been successfully inserted!!";
 
-    # O(1) T, O(1) S
+    # O(N) T, O(1) S
     def traverseCSLL(self):
         if self.head is None:
             return "There is no element for traversal";
@@ -75,7 +75,7 @@ class CircularSLL:
                 if tempNode == self.tail.next:
                     break    
                 
-     # O(1) T, O(1) S
+     # O(N) T, O(1) S
     def searchCSLL(self, nodeValue):
         if self.head is None:
             print("list doesn't exit")
@@ -88,8 +88,7 @@ class CircularSLL:
                 if node == self.tail.next:
                     return "Nothing..."
 
-
-    
+     # O(N) T, O(1) S
     def deleteCSLL(self, location):
         if self.head is None:
             print("Nothing to delete");
@@ -125,12 +124,12 @@ class CircularSLL:
                 nextNode = tempNode.next;
                 tempNode.next = nextNode.next
 
+        
 
-                
-
-                
-
-
+    def deleteEntireCSLL(self):
+        self.head = None
+        self.tail.next = None
+        self.tail = None
             
                 
 
@@ -147,7 +146,14 @@ newCircularSLL.insertCSLL(False, 0);
 newCircularSLL.insertCSLL(111, 2);
 newCircularSLL.insertCSLL(11111, 1);
 print([node.value for node in newCircularSLL])
+
 newCircularSLL.traverseCSLL()
 print(newCircularSLL.searchCSLL("Jupiter"))
+
 newCircularSLL.deleteCSLL(0)
+newCircularSLL.deleteCSLL(0)
+newCircularSLL.deleteCSLL(1)
+print([node.value for node in newCircularSLL])
+
+newCircularSLL.deleteEntireCSLL()
 print([node.value for node in newCircularSLL])
