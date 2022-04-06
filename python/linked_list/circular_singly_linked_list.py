@@ -25,9 +25,9 @@ class CircularSLL:
      
     def insertCSLL(self, value, location):
         if self.head is None:
-            print("List doesn't exit")
+            print("List doesn't exit");
         else:
-            newNode = Node(value)
+            newNode = Node(value);
             if location == 0:
                 newNode.next = self.head;
                 self.head = newNode
@@ -52,7 +52,9 @@ class CircularSLL:
                     tempNode = tempNode.next; 
                     index += 1;
                 nextNode = tempNode.next
-                
+                newNode.next = nextNode
+                tempNode.next = newNode
+            return "The node has been successfully inserted!!"
 
 
           
