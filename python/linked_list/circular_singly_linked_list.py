@@ -1,3 +1,6 @@
+from tkinter.messagebox import NO
+
+
 class Node:
     def __init__(self, value = None):
         self.value = value;
@@ -72,7 +75,64 @@ class CircularSLL:
                 if tempNode == self.tail.next:
                     break    
                 
-             
+     # O(1) T, O(1) S
+    def searchCSLL(self, nodeValue):
+        if self.head is None:
+            print("list doesn't exit")
+        else:
+            node = self.head
+            while node is not None:
+                node = node.next
+                if nodeValue == node.value:
+                    return "searched value: ", node.value
+                if node == self.tail.next:
+                    return "Nothing..."
+
+
+    
+    def deleteCSLL(self, location):
+        if self.head is None:
+            print("Nothing to delete");
+        else:
+            if location == 0:
+                if self.head == self.tail:
+                    self.head.next = None
+                    self.head = None;
+                    self.tail = None;
+                else:
+                    self.head = self.head.next
+                    self.tail.next = self.head
+                   
+            elif location == 1:
+                if self.head == self.tail:
+                    self.head.next = None;
+                    self.head = None;
+                    self.tail = None;
+                else:
+                    node = self.head 
+                    while node is not None:
+                        if node.next == self.tail:
+                            break
+                        node = node.next 
+                    node.next = self.head
+                    self.tail = node
+            else:
+                tempNode = self.head
+                index = 0;
+                while index < location - 1:
+                    tempNode = tempNode.next
+                    index += 1
+                nextNode = tempNode.next;
+                tempNode.next = nextNode.next
+
+
+                
+
+                
+
+
+            
+                
 
 
                 
@@ -82,8 +142,12 @@ newCircularSLL = CircularSLL();
 print(newCircularSLL.createSLL(1111));
 newCircularSLL.insertCSLL(11, 0);
 newCircularSLL.insertCSLL(1, 0);
+newCircularSLL.insertCSLL("Jupiter", 0);
+newCircularSLL.insertCSLL(False, 0);
 newCircularSLL.insertCSLL(111, 2);
 newCircularSLL.insertCSLL(11111, 1);
-newCircularSLL.traverseCSLL();
-
+print([node.value for node in newCircularSLL])
+newCircularSLL.traverseCSLL()
+print(newCircularSLL.searchCSLL("Jupiter"))
+newCircularSLL.deleteCSLL(0)
 print([node.value for node in newCircularSLL])
