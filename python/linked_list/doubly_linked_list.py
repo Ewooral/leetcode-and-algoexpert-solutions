@@ -30,4 +30,4 @@ class DoublyLinedList:
 doublyLL = DoublyLinedList()
 doublyLL.createDLL(5);
 
-# print([node.value for node in doublyLL])
+print([node.value for node in doublyLL])
