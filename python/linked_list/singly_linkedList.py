@@ -25,7 +25,7 @@ class SLinkedList:
 # insert in linked list  -> O(N) T and O(1) S
     def insertSLL(self, value, location):
         newNode = Node(value)
-        if self.head is None:
+        if self.head is None: # if the list doesn't exit, create it
             self.head = newNode
             self.tail = newNode
         else:
@@ -33,65 +33,83 @@ class SLinkedList:
                 newNode.next = self.head
                 self.head = newNode
             elif location == 1:
-                newNode.next = None 
+                newNode.next = None
                 self.tail.next = newNode
                 self.tail = newNode
+
             else:
-                tempNode = self.head
+                # insert at/in the middle
                 index = 0
+                prevNode = self.head
                 while index < location - 1:
-                    tempNode = tempNode.next 
+                    currentNode = prevNode.next
                     index += 1
-                nextNode = tempNode.next
-                tempNode.next = newNode
+                nextNode = currentNode.next
                 newNode.next = nextNode
+                currentNode.next = newNode
 
 # Traverse a singly linked list  -> O(N) T, O(1) S
     def traverseSLL(self):
         if self.head is None:
-            print("The Singly Linked List does not exist");
-        else:
-            node = self.head
-            while node is not None:
-                print(node.value)
-                node = node.next
+            return
+        node = self.head
+        while node is not None:
+            print(node.value)
+            node = node.next
 
 
 # Seaarch for a node in a given singly linked list -> O(N) T, O(1) S
-    def searchSLL(self, nodeValue) -> None:
+
+    def searchSLL(self, nodeValue):
         if self.head is None:
-            return "The list does not exit"
+            return "List doesn't exit"
         else:
             node = self.head
             while node is not None:
                 if node.value == nodeValue:
                     return node.value
                 node = node.next
-            return "The value does not exist in this list"
+            return "node value not found"
+   
+   
+# count the number of values in the list
+    def length(self):
+        count = 0;
+        # node = self.head
+        if self.head == None:
+            return;
+        else:
+            while self.head is not None:
+                self.head = self.head.next
+                count += 1;
+        return count
+
 
 # delete a node from a singly linked list -> O(N) T, O(1) S
+
     def deleteNode(self, location):
         if self.head is None:
-            print('the singly linked list does not exist');
+            print("List doesn't exit")
+
         else:
-            if location == 0: # deleting from the begining
-                if self.head == self.tail: # if we have only one node
-                    self.head = None;
-                    self.tail = None;
-                else: # if we have more than one node
-                    self.head = self.head.next;
-            elif location == 1:
-                if self.head == self.tail:  # if we have only one node
+            if location == 0:
+                if self.head == self.tail:
                     self.head = None
                     self.tail = None
                 else:
-                    node = self.head
-                    while node is not None:
-                        if node.next == self.tail:
+                    self.head = self.head.next
+            elif location == 1:  # the end of list
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                else:
+                    prevNode = self.head
+                    while prevNode is not None:
+                        if prevNode.next == self.tail:
                             break
-                        node = node.next 
-                    node.next = None
-                    self.tail = node;
+                        prevNode = prevNode.next
+                    prevNode.next = None
+                    self.tail = prevNode
             else:
                 tempNode = self.head
                 index = 0
@@ -110,28 +128,41 @@ class SLinkedList:
             self.tail = None;
 
 singlyLinkedList = SLinkedList();
+
+#insert at the end
 singlyLinkedList.insertSLL(1, 1)
 singlyLinkedList.insertSLL(2, 1)
-singlyLinkedList.insertSLL(3, 1)
-singlyLinkedList.insertSLL(4, 1)  
 
 #insert at the beginning 
-singlyLinkedList.insertSLL(30, 0)
+singlyLinkedList.insertSLL(-78, 0)
 
 # insert in the middle -> O(N) T, O(1) S
+
 singlyLinkedList.insertSLL(9, 3)
+singlyLinkedList.insertSLL(29011993, 3)
+
+print("Print List...................................")
+# print the linked list
 print([node.value for node in singlyLinkedList])
 
+print("Traverse ....................................")
 # traverse a singly linked list -> O(N) T, O(1) S
-singlyLinkedList.traverseSLL();
+singlyLinkedList.traverseSLL()
 
+print("Search.......................................")
 # search a node in a singly linked list -> O(N) T, O(1) S
-print("node exits and it is: ", singlyLinkedList.searchSLL(30));
-    
+print(singlyLinkedList.searchSLL(9));
+
+print("Delete.......................................")
 # delete a node
 singlyLinkedList.deleteNode(1)
+singlyLinkedList.deleteNode(3)
 print([node.value for node in singlyLinkedList])
 
+print("Length of List.......................................")
+print(singlyLinkedList.length())
 # delete the entire singly linked list -> O(1) T, O(1) S
-singlyLinkedList.deleteEntireSLL();
-print([node.value for node in singlyLinkedList])
+# singlyLinkedList.deleteEntireSLL();
+
+# print([node.value for node in singlyLinkedList])
+
