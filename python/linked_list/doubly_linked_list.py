@@ -35,7 +35,7 @@ class DoublyLinedList:
             print("the node cannot be inserted")
         else:
             newNode = Node(value);
-    #         if location == 0:
+            if location == 0:
     #             newNode.previous = None;
     #             newNode.next = self.head;
     #             self.head.previous = newNode
