@@ -27,7 +27,7 @@ class DoublyLinedList:
         self.tail = node
         return "Doubly linked list is created"
 
-# doublyLL = DoublyLinedList()
+doublyLL = DoublyLinedList()
 # doublyLL.createDLL(5);
 
 # print([node.value for node in doublyLL])
