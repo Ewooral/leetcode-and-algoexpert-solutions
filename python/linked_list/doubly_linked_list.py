@@ -11,7 +11,7 @@ class DoublyLinedList:
         self.head = None
         self.tail = None
 
-#     def __iter__(self):
+    def __iter__(self):
 #         node = self.head
 #         while node:
 #             yield node
