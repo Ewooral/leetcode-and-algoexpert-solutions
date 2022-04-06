@@ -6,7 +6,7 @@ class Node:
         self.previous = None
 
 
-# class DoublyLinedList:
+class DoublyLinedList:
 #     def __init__(self) -> None:
 #         self.head = None
 #         self.tail = None
