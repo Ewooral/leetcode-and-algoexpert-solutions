@@ -15,7 +15,7 @@ class DoublyLinedList:
         node = self.head
         while node:
             yield node
-#             node = node.next
+            node = node.next
             
 
 #     # O(1) T, O(1) S
