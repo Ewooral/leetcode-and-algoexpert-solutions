@@ -45,7 +45,7 @@ class DoublyLinedList:
                 newNode.previous = self.tail
                 self.tail.next = newNode
                 self.tail = newNode
-    #         else:
+            else:
     #             tempNode = self.head
     #             index = 0
     #             while index < location - 1:
