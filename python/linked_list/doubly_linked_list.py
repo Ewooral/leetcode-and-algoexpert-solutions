@@ -32,7 +32,7 @@ class DoublyLinedList:
 
     def insertDLL(self, value, location):
         if self.head is None:
-    #         print("the node cannot be inserted")
+            print("the node cannot be inserted")
     #     else:
     #         newNode = Node(value);
     #         if location == 0:
