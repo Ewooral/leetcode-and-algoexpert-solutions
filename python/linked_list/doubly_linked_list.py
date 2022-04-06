@@ -53,7 +53,7 @@ class DoublyLinedList:
                     index += 1;
                 newNode.next = tempNode.next
                 newNode.previous = tempNode
-    #             newNode.next.previous = newNode
+                newNode.next.previous = newNode
     #             tempNode.next = newNode
 
                 
