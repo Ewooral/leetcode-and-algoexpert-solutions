@@ -49,7 +49,7 @@ class DoublyLinedList:
                 tempNode = self.head
                 index = 0
                 while index < location - 1:
-    #                 tempNode = tempNode.next
+                    tempNode = tempNode.next
     #                 index += 1;
     #             newNode.next = tempNode.next
     #             newNode.previous = tempNode
