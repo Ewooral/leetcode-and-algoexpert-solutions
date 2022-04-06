@@ -27,6 +27,9 @@ class DoublyLinedList:
         self.tail = node
         return "Doubly linked list is created"
 
+    def insertDLL(self, value, location):
+        
+
 doublyLL = DoublyLinedList()
 doublyLL.createDLL(5);
 
