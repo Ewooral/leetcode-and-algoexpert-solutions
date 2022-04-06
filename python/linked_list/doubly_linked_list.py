@@ -21,7 +21,7 @@ class DoublyLinedList:
     # O(1) T, O(1) S
     def createDLL(self, nodeValue=None):
         node = Node(nodeValue)
-#         node.next = None
+        node.next = None
 #         node.previous = None;
 #         self.head = node
 #         self.tail = node
