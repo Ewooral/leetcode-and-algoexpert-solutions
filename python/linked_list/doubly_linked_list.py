@@ -54,7 +54,7 @@ class DoublyLinedList:
                 newNode.next = tempNode.next
                 newNode.previous = tempNode
                 newNode.next.previous = newNode
-    #             tempNode.next = newNode
+                tempNode.next = newNode
 
                 
 
