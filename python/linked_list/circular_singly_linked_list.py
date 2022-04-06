@@ -9,29 +9,31 @@ class CircularSLL:
         self.tail = None;
 
     def __iter__(self):
-        node = self.head
+        node = self.head;
         while node:
-            yield node
-            if node == self.head.next:  # if node references itself
-                break;
+            yield node;
             node = node.next
-    def createSLL(self, nodeValue):
-        node = Node(nodeValue)
+            if node == self.tail.next:  # if node references itself
+                break;
+            
+    def createSLL(self, nodeValue =None):
+        node = Node(nodeValue);
         node.next = node;
-        self.head = node
+        self.head = node;
         self.tail = node;
         return "Circular Singly linked list is created";
 
      
     def insertCSLL(self, value, location):
         if self.head is None:
-            print("List doesn't exit");
+            return "The head reference is None";
         else:
             newNode = Node(value);
             if location == 0:
                 newNode.next = self.head;
-                self.head = newNode
-                self.tail.next = newNode 
+                self.head = newNode;
+                self.tail.next = newNode;
+
                 """
                 The last step to make this circular is to connect
                 last node to newNode. thus by saving newNode's memory address
@@ -40,6 +42,7 @@ class CircularSLL:
                 By connecting self.tail.next to our newNode we 
                 are connecting our last node to 
                 # """
+
             elif location == 1:
                 newNode.next = self.tail.next;
                 self.tail.next = newNode;
@@ -51,21 +54,25 @@ class CircularSLL:
                 while index < location - 1:  # this will loop tilllast but one node
                     tempNode = tempNode.next; 
                     index += 1;
-                nextNode = tempNode.next
-                newNode.next = nextNode
-                tempNode.next = newNode
-            return "The node has been successfully inserted!!"
+                nextNode = tempNode.next;
+                newNode.next = nextNode;
+                tempNode.next = newNode;
+            return "The node has been successfully inserted!!";
 
 
           
                 
-                
+             
 
 
                 
 
      
-newCircularSLL = CircularSLL()
-newCircularSLL.createSLL(21)
-newCircularSLL.insertCSLL(100, 0)
+newCircularSLL = CircularSLL();
+print(newCircularSLL.createSLL(1111));
+newCircularSLL.insertCSLL(11, 0);
+newCircularSLL.insertCSLL(1, 0);
+newCircularSLL.insertCSLL(1111, 2);
+newCircularSLL.insertCSLL(11111, 1);
+
 print([node.value for node in newCircularSLL])

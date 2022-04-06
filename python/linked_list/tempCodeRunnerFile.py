@@ -1,2 +1,2 @@
-
-                    while node is not None:
+if node == self.tail.next:  # if node references itself
+            #     break;
