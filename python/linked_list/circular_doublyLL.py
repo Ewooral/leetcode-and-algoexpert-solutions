@@ -20,7 +20,7 @@ class circularDoublyLinkedList:
             if node == self.tail.next:
                 break;
     def createCircularDLL(self, nodeValue):
-#         node = Node(nodeValue);
+        node = Node(nodeValue);
 #         self.head = node;
 #         self.tail = node;
 #         node.previous = node;
