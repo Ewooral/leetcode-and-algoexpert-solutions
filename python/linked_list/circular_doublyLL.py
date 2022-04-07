@@ -93,4 +93,4 @@ circularDLL.insertCircularDLL(4000, 3);
 print([node.value for node in circularDLL]);
 
 circularDLL.traverseCircularDLL()
-# circularDLL.reverseTraverseCDLL()
+circularDLL.reverseTraverseCDLL()
