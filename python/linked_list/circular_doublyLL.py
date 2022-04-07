@@ -64,7 +64,7 @@ class circularDoublyLinkedList:
           else:
               node = self.head;
               while node:
-#                   print(node.value)
+                  print(node.value)
 #                   node = node.next;
 #                   if node == self.tail.next:
 #                       break;
