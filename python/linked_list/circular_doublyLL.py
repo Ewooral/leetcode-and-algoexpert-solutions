@@ -73,7 +73,7 @@ class circularDoublyLinkedList:
         if self.head is None:
             print("head doesn't exist");
         else:
-#             node = self.tail
+            node = self.tail
 #             while node:
 #                 print(node.value)
 #                 if node == self.head:
