@@ -74,7 +74,7 @@ class circularDoublyLinkedList:
             print("head doesn't exist");
         else:
             node = self.tail
-#             while node:
+            while node:
 #                 print(node.value)
 #                 if node == self.head:
 #                     break
