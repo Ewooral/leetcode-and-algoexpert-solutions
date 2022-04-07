@@ -29,7 +29,7 @@ class circularDoublyLinkedList:
 
     def insertCircularDLL(self, value, location):
         if self.head is None:
-#             print("Nothing to insert because head is not available");
+            print("Nothing to insert because head is not available");
 #         else:
 #             node = Node(value);
 #             if location == 0:
