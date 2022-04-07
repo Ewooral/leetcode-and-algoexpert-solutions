@@ -4,7 +4,7 @@
 class Node:
     def __init__(self, value = None) -> None:
         self.value = value;
-#         self.next = None;
+        self.next = None;
 #         self.previous = None;
 
 # class circularDoublyLinkedList:
