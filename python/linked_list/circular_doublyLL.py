@@ -2,7 +2,7 @@
 # #   Copyright © 2022 Optimize Code. All rights reserved.
 
 class Node:
-#     def __init__(self, value = None) -> None:
+    def __init__(self, value = None) -> None:
 #         self.value = value;
 #         self.next = None;
 #         self.previous = None;
