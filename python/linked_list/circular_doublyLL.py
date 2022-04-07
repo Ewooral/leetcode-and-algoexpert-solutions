@@ -8,7 +8,7 @@ class Node:
         self.previous = None;
 
 class circularDoublyLinkedList:
-#     def __init(self):
+    def __init(self):
 #         self.head = None;
 #         self.tail = None;
 
