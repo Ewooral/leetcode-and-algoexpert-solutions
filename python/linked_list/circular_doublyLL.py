@@ -50,7 +50,7 @@ class circularDoublyLinkedList:
                 while index < location - 1:
                     tempNode = tempNode.next
                     index += 1;
-#                 node.next = tempNode.next
+                node.next = tempNode.next
 #                 node.prev = tempNode
 #                 node.next.prev = node
 #                 tempNode.next = node
