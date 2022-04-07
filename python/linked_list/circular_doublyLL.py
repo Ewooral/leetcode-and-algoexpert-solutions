@@ -18,7 +18,7 @@ class circularDoublyLinkedList:
             yield node;
             node = node.next;
             if node == self.tail.next:
-#                 break;
+                break;
 #     def createCircularDLL(self, nodeValue):
 #         node = Node(nodeValue);
 #         self.head = node;
