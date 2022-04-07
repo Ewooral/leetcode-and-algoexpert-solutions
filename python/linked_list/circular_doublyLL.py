@@ -28,7 +28,7 @@ class circularDoublyLinkedList:
         print("Circular doubly linked list has been successfully created!!"); 
 
     def insertCircularDLL(self, value, location):
-#         if self.head is None:
+        if self.head is None:
 #             print("Nothing to insert because head is not available");
 #         else:
 #             node = Node(value);
