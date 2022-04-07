@@ -9,7 +9,7 @@ class Node:
 
 class circularDoublyLinkedList:
     def __init(self):
-#         self.head = None;
+        self.head = None;
 #         self.tail = None;
 
 #     def __iter__(self):
