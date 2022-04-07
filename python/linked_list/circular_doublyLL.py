@@ -31,7 +31,7 @@ class circularDoublyLinkedList:
         if self.head is None:
             print("Nothing to insert because head is not available");
         else:
-#             node = Node(value);
+            node = Node(value);
 #             if location == 0:
 #                node.next = self.head
 #                node.previous = self.tail
