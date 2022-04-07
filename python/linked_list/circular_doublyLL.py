@@ -70,7 +70,7 @@ class circularDoublyLinkedList:
                       break;
     
     def reverseTraverseCDLL(self):
-#         if self.head is None:
+        if self.head is None:
 #             print("head doesn't exist");
 #         else:
 #             node = self.tail
