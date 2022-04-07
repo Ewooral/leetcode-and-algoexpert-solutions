@@ -53,7 +53,7 @@ class circularDoublyLinkedList:
                 node.next = tempNode.next
                 node.prev = tempNode
                 node.next.prev = node
-#                 tempNode.next = node
+                tempNode.next = node
 #             return "The node has been successfully inserted"
 
 
