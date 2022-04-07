@@ -15,7 +15,7 @@ class circularDoublyLinkedList:
     def __iter__(self):
         node = self.head;
         while node:
-#             yield node;
+            yield node;
 #             node = node.next;
 #             if node == self.tail.next:
 #                 break;
