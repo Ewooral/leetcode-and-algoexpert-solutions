@@ -59,8 +59,8 @@ class circularDoublyLinkedList:
 
 
     def traverseCircularDLL(self):
-#           if self.head is None:
-#               print("Head doesn'nt exit");
+          if self.head is None:
+              print("Head doesn'nt exit");
 #           else:
 #               node = self.head;
 #               while node:
