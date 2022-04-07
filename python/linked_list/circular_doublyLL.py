@@ -13,7 +13,7 @@ class circularDoublyLinkedList:
         self.tail = None;
 
     def __iter__(self):
-#         node = self.head;
+        node = self.head;
 #         while node:
 #             yield node;
 #             node = node.next;
