@@ -24,7 +24,7 @@ class circularDoublyLinkedList:
         self.head = node;
         self.tail = node;
         node.previous = node;
-#         node.next = node
+        node.next = node
 #         print("Circular doubly linked list has been successfully created!!"); 
 
 #     def insertCircularDLL(self, value, location):
