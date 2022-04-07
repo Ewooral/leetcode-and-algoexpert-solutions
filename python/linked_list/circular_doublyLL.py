@@ -62,7 +62,7 @@ class circularDoublyLinkedList:
           if self.head is None:
               print("Head doesn'nt exit");
           else:
-#               node = self.head;
+              node = self.head;
 #               while node:
 #                   print(node.value)
 #                   node = node.next;
