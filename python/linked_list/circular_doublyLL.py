@@ -67,7 +67,7 @@ class circularDoublyLinkedList:
                   print(node.value)
                   node = node.next;
                   if node == self.tail.next:
-#                       break;
+                      break;
     
 #     def reverseTraverseCDLL(self):
 #         if self.head is None:
