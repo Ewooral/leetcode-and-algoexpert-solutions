@@ -35,7 +35,7 @@ class circularDoublyLinkedList:
             if location == 0:
                node.next = self.head
                node.previous = self.tail
-#                self.head.previous = node
+               self.head.previous = node
 #                self.head = node;
 #                self.tail.next = node
 #             elif location == 1:
