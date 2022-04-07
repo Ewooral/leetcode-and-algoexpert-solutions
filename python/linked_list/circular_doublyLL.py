@@ -83,7 +83,7 @@ class circularDoublyLinkedList:
 
 
 
-# circularDLL = circularDoublyLinkedList();
+circularDLL = circularDoublyLinkedList();
 # circularDLL.createCircularDLL(1);
 # circularDLL.insertCircularDLL(2, 0);
 # circularDLL.insertCircularDLL(3, 1);
