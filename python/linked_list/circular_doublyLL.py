@@ -51,7 +51,7 @@ class circularDoublyLinkedList:
                     tempNode = tempNode.next
                     index += 1;
                 node.next = tempNode.next
-#                 node.prev = tempNode
+                node.prev = tempNode
 #                 node.next.prev = node
 #                 tempNode.next = node
 #             return "The node has been successfully inserted"
