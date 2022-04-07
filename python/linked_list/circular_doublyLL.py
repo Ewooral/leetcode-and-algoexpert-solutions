@@ -90,7 +90,7 @@ circularDLL.insertCircularDLL(3, 1);
 circularDLL.insertCircularDLL(30, 2);
 circularDLL.insertCircularDLL(4000, 3);
 
-# print([node.value for node in circularDLL]);
+print([node.value for node in circularDLL]);
 
 # circularDLL.traverseCircularDLL()
 # circularDLL.reverseTraverseCDLL()
