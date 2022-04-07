@@ -138,7 +138,8 @@ class CircularSLL:
      
 newCircularSLL = CircularSLL();
 print(".................................\n")
-print(newCircularSLL.createSLL(1111));
+print(newCircularSLL.createSLL(1000));
+print(newCircularSLL.createSLL(3000));
 print(".................................\n")
 newCircularSLL.insertCSLL(11, 0);
 newCircularSLL.insertCSLL(1, 0);

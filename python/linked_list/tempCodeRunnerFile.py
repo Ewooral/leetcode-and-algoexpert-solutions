@@ -1,2 +1,2 @@
-doublyLL.deleteNodeDLL(2)
-# doublyLL.deleteNodeDLL(0)
+if node == self.tail.next:
+                      break;

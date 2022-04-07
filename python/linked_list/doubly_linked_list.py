@@ -84,7 +84,8 @@ class DoublyLinedList:
                 if node.value == nodeValue:
                      print(node.value)
                 node = node.next
-                    
+
+    # O(N) T, O(1) S
     def deleteNode(self, location):
         if self.head is None:
             print("There is not any element in DLL")
@@ -111,9 +112,21 @@ class DoublyLinedList:
                     index += 1
                 curNode.next = curNode.next.next
                 curNode.next.previous = curNode
-            print("The node has been successfully deleted")
+            print("The node has been successfully deleted"); 
 
-
+     # O(N) T, O(1) S
+    def deleteDLL(self):
+        if self.head is None:
+            print("Nothing to delete");
+        else:
+            node = self.head;
+            while node:
+                node.previous = None;
+                node = node.next;
+            self.head = None;
+            self.tail = None;
+            print("The Entire Linked list is successfully deleted")
+            
                 
                     
 
@@ -135,6 +148,9 @@ print("Search.......................")
 doublyLL.searchDLL(30)
 
 print("Delete.......................")
-# doublyLL.deleteNodeDLL(2)
-doublyLL.deleteNode(0)
+doublyLL.deleteNode(2)
+print([node.value for node in doublyLL])
+
+print(".............................")
+doublyLL.deleteDLL();
 print([node.value for node in doublyLL])
