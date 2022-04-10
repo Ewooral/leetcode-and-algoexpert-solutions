@@ -15,7 +15,7 @@ tea = TreeNode("tea")
 coffee = TreeNode("coffee")
 
 # # cold
-# fanta = TreeNode("fanta")
+fanta = TreeNode("fanta")
 # cola = TreeNode("cola")
 
 # leftChild.leftChild = tea
