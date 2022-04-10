@@ -37,7 +37,7 @@ def preOrderTraversal(rootNode):
 
 
 preOrderTraversal(newBT)
-# print("..................................")
+print("..................................")
 
 # # ........> O(n)T, S
 # def inOrderTraversal(rootNode):
