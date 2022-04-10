@@ -22,7 +22,7 @@ leftChild.leftChild = tea
 leftChild.rightChild = coffee
 
 rightChild.leftChild = fanta
-# # rightChild.rightChild = cola
+# rightChild.rightChild = cola
 
 # newBT.leftChild = leftChild
 # newBT.rightChild = rightChild
