@@ -50,7 +50,7 @@ def inOrderTraversal(rootNode):
 inOrderTraversal(newBT)
  
 # # ........> O(n)T, S
-# def postOrderTraversal(rootNode):
+def postOrderTraversal(rootNode):
 #     if not rootNode:  # ........> O(1)
 #         return
 #     postOrderTraversal(rootNode.leftChild)  # ........> O(n/2)
