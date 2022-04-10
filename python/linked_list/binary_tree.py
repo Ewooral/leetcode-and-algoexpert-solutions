@@ -12,7 +12,7 @@ rightChild = TreeNode("Cold")
 
 # # hot 
 tea = TreeNode("tea")
-# coffee = TreeNode("coffee")
+coffee = TreeNode("coffee")
 
 # # cold
 # fanta = TreeNode("fanta")
