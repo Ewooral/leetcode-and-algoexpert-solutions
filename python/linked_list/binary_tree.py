@@ -47,7 +47,7 @@ def inOrderTraversal(rootNode):
     print(rootNode.data)  # ........> O(1)
     inOrderTraversal(rootNode.rightChild)  # ........> O(n/2)
 
-# inOrderTraversal(newBT)
+inOrderTraversal(newBT)
  
 # # ........> O(n)T, S
 # def postOrderTraversal(rootNode):
