@@ -57,4 +57,4 @@ def postOrderTraversal(rootNode):
     postOrderTraversal(rootNode.rightChild)  # ........> O(n/2)
     print(rootNode.data)  # ........> O(1)
 
-# postOrderTraversal(newBT)
+postOrderTraversal(newBT)
