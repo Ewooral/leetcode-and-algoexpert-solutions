@@ -36,7 +36,7 @@ def preOrderTraversal(rootNode):
     preOrderTraversal(rootNode.rightChild) # ......> o(n/2)
 
 
-# preOrderTraversal(newBT)
+preOrderTraversal(newBT)
 # print("..................................")
 
 # # ........> O(n)T, S
