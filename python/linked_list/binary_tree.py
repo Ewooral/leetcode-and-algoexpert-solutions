@@ -5,7 +5,7 @@ class TreeNode:
         self.leftChild = None
         self.rightChild = None
 
-# newBT = TreeNode("Drinks") # instance of the TreeNode class with a value
+newBT = TreeNode("Drinks") # instance of the TreeNode class with a value
 
 # leftChild = TreeNode("Hot")
 # rightChild = TreeNode("Cold")
