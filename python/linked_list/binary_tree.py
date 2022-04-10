@@ -21,7 +21,7 @@ cola = TreeNode("cola")
 leftChild.leftChild = tea
 leftChild.rightChild = coffee
 
-# rightChild.leftChild = fanta
+rightChild.leftChild = fanta
 # # rightChild.rightChild = cola
 
 # newBT.leftChild = leftChild
