@@ -24,7 +24,7 @@ leftChild.rightChild = coffee
 rightChild.leftChild = fanta
 rightChild.rightChild = cola
 
-# newBT.leftChild = leftChild
+newBT.leftChild = leftChild
 # newBT.rightChild = rightChild
 
 # # O(n) T, O(n) S
