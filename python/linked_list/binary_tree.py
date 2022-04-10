@@ -29,7 +29,7 @@ newBT.rightChild = rightChild
 
 # # O(n) T, O(n) S
 def preOrderTraversal(rootNode):
-#     if not rootNode: #........> O(1)
+    if not rootNode: #........> O(1)
 #         return
 #     print(rootNode.data) # .......> O(1)
 #     preOrderTraversal(rootNode.leftChild) # ......> o(n/2)
