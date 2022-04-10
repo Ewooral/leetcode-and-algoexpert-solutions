@@ -8,7 +8,7 @@ class TreeNode:
 newBT = TreeNode("Drinks") # instance of the TreeNode class with a value
 
 leftChild = TreeNode("Hot")
-# rightChild = TreeNode("Cold")
+rightChild = TreeNode("Cold")
 
 # # hot 
 # tea = TreeNode("tea")
