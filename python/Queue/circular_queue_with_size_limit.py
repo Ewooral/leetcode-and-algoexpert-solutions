@@ -94,13 +94,13 @@ customQueue = Queue(3) # A queue with maxsize of 3
 customQueue.enqueue(1)
 customQueue.enqueue(2)
 customQueue.enqueue(3)
-print("elements in the queue:\n", customQueue)
+print("elements in the queue:\n",  customQueue.items)
 
 customQueue.enqueue(4)
 
 
 customQueue.dequeue()
-print("elements after dequeuing:\n", customQueue)
+print("elements after dequeuing:\n",  customQueue.items)
 
 print("Peek: ", customQueue.peek())
 
@@ -108,4 +108,4 @@ print("Peek: ", customQueue.peek())
 print("isFull: ", customQueue.isFull())
 
 customQueue.delete()
-print("Queue after deletion: ", customQueue)
+print("Queue after deletion: ", customQueue.items)

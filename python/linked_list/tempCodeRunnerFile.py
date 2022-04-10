@@ -1,2 +1,1 @@
-if node == self.tail.next:
-                      break;
+rsal(newBT)

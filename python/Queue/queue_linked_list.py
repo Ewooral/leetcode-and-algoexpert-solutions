@@ -2,9 +2,6 @@
 # Copyright 2020 Optimize Code. All rights reserved.
 
 
-from distutils.errors import LinkError
-
-
 class Node:
     def __init__(self, value = None) -> None:
         self.value = value;
@@ -49,7 +46,8 @@ class Queue:
             return True
         else:
             False;
-    
+
+     # O(1) T, O(1) S
     def dequeue(self):
         if self.isEmpty():
             return "No node in the queue"
@@ -61,6 +59,18 @@ class Queue:
             else:
                 self.linkedlist.head = self.linkedlist.head.next
             return temp_node
+
+     # O(1) T, O(1) S
+    def peek(self):
+        if self.isEmpty():
+            return "Queue is empty"
+        else:
+            return self.linkedlist.head
+
+     # O(1) T, O(1) S
+    def delete(self):
+        self.linkedlist.head = None;
+        self.linkedlist.tail = None;
        
 customQueue = Queue()
 customQueue.enqueue(1)
@@ -69,3 +79,8 @@ customQueue.enqueue(3)
 print(customQueue)
 print(customQueue.dequeue())
 print(customQueue)
+print(customQueue.peek())
+
+customQueue.delete()
+print("queue deleted", customQueue)
+
