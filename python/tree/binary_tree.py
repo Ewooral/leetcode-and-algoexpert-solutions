@@ -8,21 +8,21 @@ class TreeNode:
 newBT = TreeNode("Drinks") # instance of the TreeNode class with a value
 
 leftChild = TreeNode("Hot")
-rightChild = TreeNode("Cold")
-
-# # hot 
+# hot
 tea = TreeNode("tea")
 coffee = TreeNode("coffee")
-
-# # cold
-fanta = TreeNode("fanta")
-cola = TreeNode("cola")
 
 leftChild.leftChild = tea
 leftChild.rightChild = coffee
 
-rightChild.leftChild = fanta
-rightChild.rightChild = cola
+rightChild = TreeNode("Cold")
+
+# cold
+# fanta = TreeNode("fanta")
+# cola = TreeNode("cola")
+
+# rightChild.leftChild = fanta
+# rightChild.rightChild = cola
 
 newBT.leftChild = leftChild
 newBT.rightChild = rightChild
@@ -48,6 +48,7 @@ def inOrderTraversal(rootNode):
     inOrderTraversal(rootNode.rightChild)  # ........> O(n/2)
 
 inOrderTraversal(newBT)
+print("..................................")
  
 # # ........> O(n)T, S
 def postOrderTraversal(rootNode):
