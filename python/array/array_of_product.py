@@ -1,4 +1,5 @@
 # T = O(n^2), S = O(n)
+from math import prod
 def array_of_product(array):
     # products = [1 for _ in range(len(array))];
     final_products = [None] * len(array);
@@ -11,7 +12,25 @@ def array_of_product(array):
         final_products[i] = currentProduct
     return final_products
 
-print(array_of_product([5, 1, 4, 2]))  # [8, 40, 10, 20] 
+print(array_of_product([5, 1, 4, 2]))  # [8, 40, 10, 20]
+
+
+def arr_product(arr):
+    finalProduct = [1 for _ in range(len(arr))]
+    for i in range(len(arr)):
+        product = 1
+        for j in range(len(arr)):
+            if i == j:
+                continue
+            product = product * arr[j]
+            j = j + 1
+        finalProduct[i] = product
+        i = i + 1
+    return finalProduct
+
+
+print(arr_product([2, 5, 1, 4]))
+print(arr_product([5, 1, 4, 2]))
 
 # T = O(n), S = O(n)
 def array_of_product2(arr):
