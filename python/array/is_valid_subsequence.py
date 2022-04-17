@@ -12,7 +12,7 @@ form a subsequence of the array [1, 2, 3, 4], and so do the numbers [2, 4]
 # 1st Approach
 def isValidSequence(arr, subarr):
     arrPointer = 0
-    # subarrPointer = 0
+    subarrPointer = 0
     while arrPointer < len(arr) and subarrPointer < len(subarr):
         if subarr[subarrPointer] == arr[arrPointer]:
             subarrPointer += 1
