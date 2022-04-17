@@ -35,5 +35,5 @@ def is_vs(arr, subarr):
     return seqI == len(subarr)
 
 
-# print(is_vs([4, -1, 0, 2, 1, 3, -2], [-1, 2, 3, -2]))
+print(is_vs([4, -1, 0, 2, 1, 3, -2], [-1, 2, 3, -2]))
 print(is_vs([4, -1, 0, 2, 1, 3, -2], [3, 2, 4]))
