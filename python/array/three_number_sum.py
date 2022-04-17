@@ -54,13 +54,15 @@ print("Result: " ,three_sum.three_sums([4, 1, 2, 3, 4, 5, -5, 6, -1], 6))
 """ 
 Algorithm
 
-The implementation is straightforward - we just need to modify twoSumII to produce triplets and skip repeating values.
+The implementation is straightforward - 
+we just need to modify twoSumII to produce triplets and skip repeating values.
 
 For the main function:
 
 Sort the input array nums.
 Iterate through the array:
-If the current value is greater than zero, break from the loop. Remaining values cannot sum to zero.
+If the current value is greater than zero, break from the loop. 
+Remaining values cannot sum to zero.
 If the current value is the same as the one before, skip it.
 Otherwise, call twoSumII for the current position i.
 For twoSumII function:

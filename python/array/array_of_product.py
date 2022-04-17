@@ -1,5 +1,4 @@
 # T = O(n^2), S = O(n)
-from math import prod
 def array_of_product(array):
     # products = [1 for _ in range(len(array))];
     final_products = [None] * len(array);
@@ -12,25 +11,9 @@ def array_of_product(array):
         final_products[i] = currentProduct
     return final_products
 
-print(array_of_product([5, 1, 4, 2]))  # [8, 40, 10, 20]
 
+print("1st Approach: ", array_of_product([5, 1, 4, 2]))  # [8, 40, 10, 20]
 
-def arr_product(arr):
-    finalProduct = [1 for _ in range(len(arr))]
-    for i in range(len(arr)):
-        product = 1
-        for j in range(len(arr)):
-            if i == j:
-                continue
-            product = product * arr[j]
-            j = j + 1
-        finalProduct[i] = product
-        i = i + 1
-    return finalProduct
-
-
-print(arr_product([2, 5, 1, 4]))
-print(arr_product([5, 1, 4, 2]))
 
 # T = O(n), S = O(n)
 def array_of_product2(arr):
@@ -40,6 +23,7 @@ def array_of_product2(arr):
     for i in range(len(arr)):
         leftProduct[i] = left_product
         left_product *= arr[i]
+
     right_product = 1
     for i in range(len(arr)-1, -1, -1):
         rightProduct[i] = right_product
@@ -50,4 +34,22 @@ def array_of_product2(arr):
     return product
 
 
-print(array_of_product2([5, 1, 4, 2]))  # [8, 40, 10, 20]
+print("2nd Approach: ", array_of_product2([5, 1, 4, 2]))  # [8, 40, 10, 20]
+
+
+def arr_P(arr):
+    mainProduct = [1] * len(arr) # where mP is MainProduct
+
+    leftProduct = 1
+    for i in range(len(arr)):
+        mainProduct[i] = leftProduct
+        leftProduct = leftProduct * arr[i]
+
+    rightProduct = 1
+    for i in reversed(range(len(arr))):
+        mainProduct[i] *= rightProduct
+        rightProduct = rightProduct * arr[i]
+    return mainProduct
+
+
+print("3rd Approach: ", arr_P([2, 5, 1, 4]))
