@@ -26,7 +26,7 @@ print(isValidSequence([1, 2, 3, 4], [4, 3]))
 # 2nd Approach
 def is_vs(arr, subarr):
     seqI = 0
-    for value in arr:
+    # for value in arr:
         if seqI == len(subarr):
             break
         if value == subarr[seqI]:
