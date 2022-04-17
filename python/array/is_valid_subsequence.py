@@ -32,7 +32,7 @@ def is_vs(arr, subarr):
         if value == subarr[seqI]:
             seqI += 1
 
-    return seqI == len(subarr)
+    # return seqI == len(subarr)
 
 
 print(is_vs([4, -1, 0, 2, 1, 3, -2], [-1, 2, 3, -2]))
