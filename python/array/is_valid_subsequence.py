@@ -19,7 +19,7 @@ def isValidSequence(arr, subarr):
         arrPointer += 1
     return subarrPointer == len(subarr)
 
-print(isValidSequence([1, 2, 3, 4], [4, 3]))
+# print(isValidSequence([1, 2, 3, 4], [4, 3]))
 
 
 
