@@ -30,7 +30,7 @@ def is_vs(arr, subarr):
         if seqI == len(subarr):
             break
         if value == subarr[seqI]:
-            # seqI += 1
+            seqI += 1
 
     return seqI == len(subarr)
 
