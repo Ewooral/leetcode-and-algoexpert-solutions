@@ -29,7 +29,7 @@ def is_vs(arr, subarr):
     for value in arr:
         if seqI == len(subarr):
             break
-        if value == subarr[seqI]:
+        # if value == subarr[seqI]:
             seqI += 1
 
     return seqI == len(subarr)
