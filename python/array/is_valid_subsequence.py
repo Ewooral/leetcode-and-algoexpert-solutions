@@ -15,7 +15,7 @@ def isValidSequence(arr, subarr):
     subarrPointer = 0
     while arrPointer < len(arr) and subarrPointer < len(subarr):
         if subarr[subarrPointer] == arr[arrPointer]:
-            subarrPointer += 1
+            # subarrPointer += 1
         arrPointer += 1
     return subarrPointer == len(subarr)
 
