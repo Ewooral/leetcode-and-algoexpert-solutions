@@ -17,7 +17,7 @@
         => h(x) = x
            
         The draw back is that, the space needed is huge. Huge space could
-        be 
+        be resolved using the modulus hashing technique
 
       2. many to one (Modulus Hash function)
         => h(x) = x % len(arr)
