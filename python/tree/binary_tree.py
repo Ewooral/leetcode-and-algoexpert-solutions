@@ -46,7 +46,7 @@ print("..................................")
 # # ........> O(n)T, S
 def inOrderTraversal(rootNode):
     if not rootNode:  # ........> O(1)
-        # return
+        return
     inOrderTraversal(rootNode.leftChild)  # ........> O(n/2)
     print(rootNode.data)  # ........> O(1)
     inOrderTraversal(rootNode.rightChild)  # ........> O(n/2)
