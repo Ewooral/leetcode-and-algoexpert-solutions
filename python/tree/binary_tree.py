@@ -12,7 +12,7 @@ newBT = TreeNode("Drinks")
 LeftChild = TreeNode("Hot")
 # hot
 tea = TreeNode("tea") 
-# coffee = TreeNode("coffee")
+coffee = TreeNode("coffee")
 
 LeftChild.leftChild = tea
 LeftChild.rightChild = coffee
