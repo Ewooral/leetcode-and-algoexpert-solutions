@@ -14,7 +14,7 @@ LeftChild = TreeNode("Hot")
 tea = TreeNode("tea") 
 coffee = TreeNode("coffee")
 
-LeftChild.leftChild = tea
+# LeftChild.leftChild = tea
 LeftChild.rightChild = coffee
 
 RightChild = TreeNode("Cold")
