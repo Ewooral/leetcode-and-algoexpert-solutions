@@ -9,7 +9,7 @@ class TreeNode:
  # instance of the TreeNode class with a value
 newBT = TreeNode("Drinks")
 
-# LeftChild = TreeNode("Hot")
+LeftChild = TreeNode("Hot")
 # hot
 tea = TreeNode("tea") 
 coffee = TreeNode("coffee")
