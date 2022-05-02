@@ -3,7 +3,7 @@ import queue_linked_list as queue
 class TreeNode:
     def __init__(self, data) -> None:
         self.data = data
-        # self.leftChild = None
+        self.leftChild = None
         self.rightChild = None
 
  # instance of the TreeNode class with a value
