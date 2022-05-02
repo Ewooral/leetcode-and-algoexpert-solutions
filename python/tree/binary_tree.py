@@ -1,3 +1,4 @@
+# import queue_linked_list as queue
 # # O(1) T, O(1) S
 class TreeNode:
     def __init__(self, data) -> None:
@@ -5,17 +6,19 @@ class TreeNode:
         self.leftChild = None
         self.rightChild = None
 
-newBT = TreeNode("Drinks") # instance of the TreeNode class with a value
+ # instance of the TreeNode class with a value
+newBT = TreeNode("Drinks")
 
-leftChild = TreeNode("Hot")
+LeftChild = TreeNode("Hot")
 # hot
-tea = TreeNode("tea")
+tea = TreeNode("tea") 
 coffee = TreeNode("coffee")
 
-leftChild.leftChild = tea
-leftChild.rightChild = coffee
+LeftChild.leftChild = tea
+LeftChild.rightChild = coffee
 
-rightChild = TreeNode("Cold")
+RightChild = TreeNode("Cold")
+
 
 # cold
 # fanta = TreeNode("fanta")
@@ -24,8 +27,9 @@ rightChild = TreeNode("Cold")
 # rightChild.leftChild = fanta
 # rightChild.rightChild = cola
 
-newBT.leftChild = leftChild
-newBT.rightChild = rightChild
+newBT.leftChild = LeftChild
+newBT.rightChild = RightChild
+
 
 # # O(n) T, O(n) S
 def preOrderTraversal(rootNode):
@@ -48,10 +52,10 @@ def inOrderTraversal(rootNode):
     inOrderTraversal(rootNode.rightChild)  # ........> O(n/2)
 
 inOrderTraversal(newBT)
-print("..................................")
+print("...............postOrder...................")
  
 # # ........> O(n)T, S
-def postOrderTraversal(rootNode):
+def postOrderTraversal(rootNode): 
     if not rootNode:  # ........> O(1)
         return
     postOrderTraversal(rootNode.leftChild)  # ........> O(n/2)
@@ -59,3 +63,65 @@ def postOrderTraversal(rootNode):
     print(rootNode.data)  # ........> O(1)
 
 postOrderTraversal(newBT)
+print("..............levelOrder....................")
+
+def levelOrderTraversal(rootNode): # O(n)T, O(n)S
+    if not rootNode:
+        return
+    else:
+        customQueue = queue.Queue()
+        customQueue.enqueue(rootNode)
+        while not customQueue.isEmpty():
+            root = customQueue.dequeue()
+            print(root.value.data)
+            if root.value.leftChild is not None:
+                customQueue.enqueue(root.value.leftChild)
+            
+            if root.value.rightChild is not None:
+                customQueue.enqueue(root.value.rightChild)
+    
+levelOrderTraversal(newBT)
+
+print("...............Search...................")
+def searchBT(rootNode, nodeValue): # O(n)T and S
+    if not rootNode:
+        return "The BT does not exit"
+    else:
+        customQueue = queue.Queue()
+        customQueue.enqueue(rootNode)
+        while not(customQueue.isEmpty()):
+            root = customQueue.dequeue();
+            if root.value.data == nodeValue:
+                return "Found!"
+            if root.value.leftChild is not None:
+                customQueue.enqueue(root.value.leftChild)
+            if root.value.rightChild is not None:
+                customQueue.enqueue(root.value.rightChild)
+        return "Not found"
+print(searchBT(newBT, "tea"))
+print(".................insert.......................")
+
+def insertBT(rootNode, newNode):
+    if not rootNode:
+        rootNode = newNode
+    else:
+        customQueue = queue.Queue()
+        customQueue.enqueue(rootNode)
+        while not(customQueue.isEmpty()):
+            root = customQueue.dequeue();
+            if root.value.leftChild is not None:
+                customQueue.enqueue(root.value.leftChild)
+            else:
+                root.value.leftChild = newNode
+                return "Inserted successfully"
+            if root.value.rightChild is not None:
+                customQueue.enqueue(root.value.rightChild)
+            else:
+                root.value.rightChild = newNode
+                return "Inserted successfully"
+
+newNode = TreeNode("Cola")
+newNode1 = TreeNode("Apketeshie")
+print(insertBT(newBT, newNode))
+print(insertBT(newBT, newNode1))
+levelOrderTraversal(newBT)
