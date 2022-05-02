@@ -27,7 +27,7 @@ RightChild = TreeNode("Cold")
 # rightChild.leftChild = fanta
 # rightChild.rightChild = cola
 
-# newBT.leftChild = LeftChild
+newBT.leftChild = LeftChild
 newBT.rightChild = RightChild
 
 
