@@ -28,7 +28,7 @@ RightChild = TreeNode("Cold")
 # rightChild.rightChild = cola
 
 newBT.leftChild = LeftChild
-newBT.rightChild = RightChild
+# newBT.rightChild = RightChild
 
 
 # # O(n) T, O(n) S
