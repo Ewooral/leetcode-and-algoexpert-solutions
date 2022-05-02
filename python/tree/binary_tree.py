@@ -44,7 +44,7 @@ preOrderTraversal(newBT)
 print("..................................")
 
 # # ........> O(n)T, S
-# def inOrderTraversal(rootNode):
+def inOrderTraversal(rootNode):
     if not rootNode:  # ........> O(1)
         return
     inOrderTraversal(rootNode.leftChild)  # ........> O(n/2)
