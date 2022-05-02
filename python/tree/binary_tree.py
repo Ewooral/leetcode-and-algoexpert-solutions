@@ -36,7 +36,7 @@ def preOrderTraversal(rootNode):
     if not rootNode: #........> O(1)
         return
     print(rootNode.data) # .......> O(1)
-    # preOrderTraversal(rootNode.leftChild) # ......> o(n/2)
+    preOrderTraversal(rootNode.leftChild) # ......> o(n/2)
     preOrderTraversal(rootNode.rightChild) # ......> o(n/2)
 
 
