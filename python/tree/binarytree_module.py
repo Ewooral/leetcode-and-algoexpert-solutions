@@ -1,4 +1,4 @@
-# from BT import Node, get_parent, _get_tree_properties, NodeValue
+from BT import Node, get_parent, _get_tree_properties, NodeValue
 
 root = Node("Drink")
 
