@@ -2,7 +2,7 @@ from BT import Node, get_parent, _get_tree_properties, NodeValue
 
 root = Node("Drink")
 
-root.left = Node("Hot")
+# root.left = Node("Hot")
 root.right = Node("Cold")
 leftChild = root.left
 rightChild = root.right
