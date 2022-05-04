@@ -13,7 +13,7 @@ rightChild.right = Node("Akpeteshie")
 
 
 root.validate()
-# root.pprint()
+root.pprint()
 print(root.levelorder)
 
 print(get_parent(root, rightChild))
