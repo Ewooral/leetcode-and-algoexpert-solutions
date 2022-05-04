@@ -9,7 +9,7 @@ rightChild = root.right
 leftChild.left = Node("tea")
 leftChild.right = Node("coffee")
 rightChild.left = Node("Cola")
-rightChild.right = Node("Akpeteshie")
+# rightChild.right = Node("Akpeteshie")
 
 
 root.validate()
