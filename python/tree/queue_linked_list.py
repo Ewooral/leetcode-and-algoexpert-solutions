@@ -39,7 +39,9 @@ class Queue:
         else:
             self.linkedlist.tail.next = node
             self.linkedlist.tail = node
-
+    '''
+    
+    '''
     # O(1) T, O(1) S
     def isEmpty(self):
         if self.linkedlist.head == None:
@@ -79,7 +81,7 @@ customQueue.enqueue(3)
 print(customQueue)
 print("dequeue: ", customQueue.dequeue())
 print(customQueue)
-print(customQueue.peek())
+print("Peek: ", customQueue.peek())
 
 customQueue.delete()
 print("queue deleted", customQueue)

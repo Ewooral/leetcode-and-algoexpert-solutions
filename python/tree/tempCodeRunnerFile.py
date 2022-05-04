@@ -1,2 +1,1 @@
-
-class TreeNode:
+from binarytree import Node

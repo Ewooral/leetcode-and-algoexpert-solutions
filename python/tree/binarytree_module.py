@@ -1,4 +1,4 @@
-from binarytree import Node
+# from BT import Node, get_parent, _get_tree_properties, NodeValue
 
 root = Node("Drink")
 
@@ -14,3 +14,7 @@ rightChild.right = Node("Akpeteshie")
 
 root.validate()
 root.pprint()
+print(root.levelorder)
+
+print(get_parent(root, rightChild))
+print(_get_tree_properties(root).is_complete)
