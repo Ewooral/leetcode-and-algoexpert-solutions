@@ -1,6 +1,6 @@
 from BT import Node, get_parent, _get_tree_properties, NodeValue
 
-# root = Node("Drink")
+root = Node("Drink")
 
 root.left = Node("Hot")
 root.right = Node("Cold")
