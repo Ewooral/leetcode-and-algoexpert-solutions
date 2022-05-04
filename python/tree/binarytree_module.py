@@ -12,7 +12,7 @@ rightChild.left = Node("Cola")
 rightChild.right = Node("Akpeteshie")
 
 
-root.validate()
+# root.validate()
 root.pprint()
 print(root.levelorder)
 
