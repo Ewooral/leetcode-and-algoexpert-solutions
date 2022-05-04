@@ -14,7 +14,7 @@ rightChild.right = Node("Akpeteshie")
 
 root.validate()
 root.pprint()
-# print(root.levelorder)
+print(root.levelorder)
 
 print(get_parent(root, rightChild))
 print(_get_tree_properties(root).is_complete)
