@@ -17,4 +17,4 @@ root.pprint()
 print(root.levelorder)
 
 print(get_parent(root, rightChild))
-print(_get_tree_properties(root).is_complete)
+# print(_get_tree_properties(root).is_complete)
