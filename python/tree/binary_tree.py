@@ -30,6 +30,7 @@ RightChild = TreeNode("Cold")
 newBT.leftChild = LeftChild
 newBT.rightChild = RightChild
 
+print(".................PreOrder.................")
 
 # # O(n) T, O(n) S
 def preOrderTraversal(rootNode):
@@ -41,7 +42,7 @@ def preOrderTraversal(rootNode):
 
 
 preOrderTraversal(newBT)
-print("..................................")
+print("...............InOrder...................")
 
 # # ........> O(n)T, S
 def inOrderTraversal(rootNode):

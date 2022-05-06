@@ -1,1 +1,2 @@
-from binarytree import Node
+
+    print(rootNode.value)
