@@ -180,7 +180,7 @@ def deleteNode(rootNode, node):
                 dNode = getDeepestNode(rootNode)
                 root.data = dNode
                 deleteDeepestNode(rootNode, dNode)
-                return "Node is deleted"
+                return "deleted!!!!!!"
             if root.left is not None:
                 cQ.put(root.left)
             if root.right is not None:
@@ -188,5 +188,5 @@ def deleteNode(rootNode, node):
         return "Failed to delete"
             
 
-print(deleteNode(root, "Aps. K-Larbi"))
+deleteNode(root, "Aps. K-Larbi")
 levelorder(root)
