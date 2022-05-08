@@ -167,4 +167,26 @@ newNode = getDeepestNode(root)
 deleteDeepestNode(root, newNode)
 levelorder(root)
 
+print("............delete any Node...........")
+def deleteNode(rootNode, node):
+    if rootNode is None:
+        return
+    else:
+        cQ = q.Queue()
+        cQ.put(rootNode)
+        while not cQ.empty():
+            root = cQ.get()
+            if root.data == node:
+                dNode = getDeepestNode(rootNode)
+                root.data = dNode
+                deleteDeepestNode(rootNode, dNode)
+                return "Node is deleted"
+            if root.left is not None:
+                cQ.put(root.left)
+            if root.right is not None:
+                cQ.put(root.right)
+        return "Failed to delete"
+            
 
+print(deleteNode(root, "Aps. K-Larbi"))
+levelorder(root)
