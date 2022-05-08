@@ -102,7 +102,8 @@ def searchBT(rootNode, nodeValue): # O(n)T and S
 print(searchBT(newBT, "tea"))
 print(".................insert.......................")
 
-def insertBT(rootNode, newNode):
+# O(n)T, S
+def insertBT(rootNode, newNode): 
     if not rootNode:
         rootNode = newNode
     else:
@@ -122,7 +123,31 @@ def insertBT(rootNode, newNode):
                 return "Inserted successfully"
 
 newNode = TreeNode("Cola")
-newNode1 = TreeNode("Apketeshie")
+newNode1 = TreeNode("Tekela")
 print(insertBT(newBT, newNode))
 print(insertBT(newBT, newNode1))
 levelOrderTraversal(newBT)
+
+
+print(".........Deepest Node...........")
+# # O(n)T, S
+def getDeepestNode(rootNode):
+    if rootNode is None:
+        return
+    else:
+        customQ = queue.Queue();
+        customQ.enqueue(rootNode);
+        while not customQ.isEmpty():
+            root = customQ.dequeue();
+            if root.value.leftChild is not None:
+                customQ.enqueue(root.value.leftChild)
+            if root.value.rightChild is not None:
+                customQ.enqueue(root.value.rightChild)
+        
+        DeepestNode = root.value
+        return DeepestNode
+
+deepestNode = getDeepestNode(newBT)
+print(deepestNode.data)
+
+
