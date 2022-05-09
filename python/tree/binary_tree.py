@@ -151,3 +151,32 @@ deepestNode = getDeepestNode(newBT)
 print(deepestNode.data)
 
 
+def deleteDeepestNode(rootNode, dNode):
+    if rootNode is None:
+        return
+    else:
+        customQ = queue.Queue()
+        customQ.enqueue(rootNode)
+        while not customQ.isEmpty():
+            root = customQ.dequeue()
+            if root.data is dNode:
+                root.data = None;
+                return 
+            if root.right is not None:
+                if root.right is dNode:
+                    root.right = None;
+                    return
+                else:
+                    customQ.enqueue(root.right)
+            if root.leftChild is not None:
+                if root.leftChild is dNode:
+                    root.leftChild = None;
+                    return
+                else:
+                    customQ.enqueue(root.right)
+
+deleteDeepestNode(ronewotChild, getDeepestNode(root))
+
+
+
+

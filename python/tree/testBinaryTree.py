@@ -110,11 +110,11 @@ def insert(rootNode, newNode):
                 root.right = newNode
                 return 
 
-overseer = BinaryTree("Ovr. Prosper")
-overseer1 = BinaryTree("Ovr. Fred")
-insert(root, overseer)
-insert(root, overseer1)
-levelorder(root)
+# overseer = BinaryTree("Ovr. Prosper")
+# overseer1 = BinaryTree("Ovr. Fred")
+# insert(root, overseer)
+# insert(root, overseer1)
+# levelorder(root)
 
 print("..........Deepest Node............")
 
@@ -138,6 +138,7 @@ def getDeepestNode(rootNode):
 dp = getDeepestNode(root)
 print(dp)
 
+# O(N) T and S
 print(".........delete DeepestNode.........")
 def deleteDeepestNode(rootNode, dNode):
     if not rootNode:
@@ -163,11 +164,12 @@ def deleteDeepestNode(rootNode, dNode):
                 else:
                     cQ.put(root.left) 
 
-newNode = getDeepestNode(root)
-deleteDeepestNode(root, newNode)
-levelorder(root)
+# newNode = getDeepestNode(root)
+# deleteDeepestNode(root, newNode)
+# levelorder(root)
 
 print("............delete any Node...........")
+# O(N) T and S
 def deleteNode(rootNode, node):
     if rootNode is None:
         return
@@ -178,8 +180,8 @@ def deleteNode(rootNode, node):
             root = cQ.get()
             if root.data == node:
                 dNode = getDeepestNode(rootNode)
-                root.data = dNode
                 deleteDeepestNode(rootNode, dNode)
+                root.data = dNode
                 return "deleted!!!!!!"
             if root.left is not None:
                 cQ.put(root.left)
@@ -188,5 +190,5 @@ def deleteNode(rootNode, node):
         return "Failed to delete"
             
 
-deleteNode(root, "Aps. K-Larbi")
+deleteNode(root, "Aps. G.Addo")
 levelorder(root)
