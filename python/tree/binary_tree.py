@@ -207,13 +207,16 @@ deleteAnyNode(newBT, "Drinks")
 levelOrderTraversal(newBT)
 
 
+# O(1) T, S
+print("........delete Binary Tree........")
 def deleteTree(rootNode):
     rootNode.data = None
     rootNode.leftChild = None
     rootNode.rightChild = None
     return "suceessfully deleted!"
 
-
+deleteTree(newBT)
+levelOrderTraversal(newBT)
 
 
 
