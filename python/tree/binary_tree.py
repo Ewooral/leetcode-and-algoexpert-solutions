@@ -115,21 +115,21 @@ def insertBT(rootNode, newNode):
                 customQueue.enqueue(root.value.leftChild)
             else:
                 root.value.leftChild = newNode
-                return "Inserted successfully"
+                return 
             if root.value.rightChild is not None:
                 customQueue.enqueue(root.value.rightChild)
             else:
                 root.value.rightChild = newNode
-                return "Inserted successfully"
+                return 
 
 newNode = TreeNode("Cola")
 newNode1 = TreeNode("Tekela")
-print(insertBT(newBT, newNode))
-print(insertBT(newBT, newNode1))
+insertBT(newBT, newNode)
+insertBT(newBT, newNode1)
 levelOrderTraversal(newBT)
 
 
-print(".........Deepest Node...........")
+print(".........Get Deepest Node...........")
 # # O(n)T, S
 def getDeepestNode(rootNode):
     if rootNode is None:
@@ -150,7 +150,7 @@ def getDeepestNode(rootNode):
 deepestNode = getDeepestNode(newBT)
 print(deepestNode.data)
 
-
+print("..........delete deepest node.....................")
 def deleteDeepestNode(rootNode, dNode):
     if rootNode is None:
         return
@@ -159,23 +159,61 @@ def deleteDeepestNode(rootNode, dNode):
         customQ.enqueue(rootNode)
         while not customQ.isEmpty():
             root = customQ.dequeue()
-            if root.data is dNode:
-                root.data = None;
+            if root.value is dNode:
+                root.value = None;
                 return 
-            if root.right is not None:
-                if root.right is dNode:
-                    root.right = None;
+            if root.value.rightChild is not None:
+                if root.value.rightChild is dNode:
+                    root.value.rightChild = None;
                     return
                 else:
-                    customQ.enqueue(root.right)
-            if root.leftChild is not None:
-                if root.leftChild is dNode:
-                    root.leftChild = None;
-                    return
-                else:
-                    customQ.enqueue(root.right)
+                    customQ.enqueue(root.value.rightChild)
 
-deleteDeepestNode(ronewotChild, getDeepestNode(root))
+            if root.value.leftChild is not None:
+                if root.value.leftChild is dNode:
+                    root.value.leftChild = None;
+                    return
+                else:
+                    customQ.enqueue(root.value.leftChild)
+
+deleteDeepestNode(newBT, getDeepestNode(newBT))
+levelOrderTraversal(newBT)
+
+print("..............delete any node....................")
+
+def deleteAnyNode(rootNode, node):
+    if rootNode is None:
+        return
+    else:
+        customQ = queue.Queue()
+        customQ.enqueue(rootNode)
+        while not customQ.isEmpty():
+            root = customQ.dequeue()
+            if root.value.data is node:
+                dNode = getDeepestNode(rootNode)
+                root.value.data = dNode.data
+                deleteDeepestNode(rootNode, dNode)
+                return 
+            if root.value.leftChild is not None:
+                customQ.enqueue(root.value.leftChild)
+                 
+            if root.value.rightChild is not None:
+                customQ.enqueue(root.value.rightChild)
+                 
+        print("Failed to delete node")
+
+
+deleteAnyNode(newBT, "Drinks")
+levelOrderTraversal(newBT)
+
+
+def deleteTree(rootNode):
+    rootNode.data = None
+    rootNode.leftChild = None
+    rootNode.rightChild = None
+    return "suceessfully deleted!"
+
+
 
 
 
