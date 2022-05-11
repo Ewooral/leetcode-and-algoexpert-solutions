@@ -141,7 +141,7 @@ def getDeepestNode(rootNode):
         cQ = q.Queue()
         cQ.put(rootNode)
         while not cQ.empty():
-            root = cQ.get()
+            root = cQ.queue.popleft()
             if root.left is not None:
                 cQ.put(root.left)
             if root.right is not None:
@@ -169,7 +169,6 @@ def deleteDeepestNode(rootNode, dNode):
             if root.value is dNode:
                 root.value = None
                 return
-
             if root.left is not None:
                 if root.left is dNode:
                     root.left = None
@@ -182,8 +181,8 @@ def deleteDeepestNode(rootNode, dNode):
                     cQ.put(root.right)
 
 
-deleteDeepestNode(root, getDeepestNode(root))
-levelorder(root)
+# deleteDeepestNode(root, getDeepestNode(root))
+# levelorder(root)
 
 
 print("..........delete any node..........")
@@ -199,8 +198,9 @@ def deleteAnyNode(rootNode, node):
             root = customQ.queue.popleft()
             if root.value is node:
                 dNode = getDeepestNode(rootNode)
-                root.value = dNode
                 deleteDeepestNode(rootNode, dNode)
+                root.value = dNode
+
                 return 
             if root.left is not None:
                 customQ.put(root.left)
@@ -214,3 +214,5 @@ def deleteAnyNode(rootNode, node):
 
 deleteAnyNode(root, "Aps. G.Addo")
 levelorder(root)
+
+

@@ -6,14 +6,12 @@ class Binarytree:
         self.maxSize = size
 
     # O(1) T, S
-
     def insert(self, value):
         if self.lastUsedIndex + 1 == self.maxSize:
             return "List is full"
         self.customList[self.lastUsedIndex + 1] = value
         self.lastUsedIndex += 1
         return "Inserted"
-
      # O(N) T, O(1) S
     def search(self, nodeValue):
         for i in range(len(self.customList)):
@@ -21,7 +19,6 @@ class Binarytree:
                 return "success"
         return "Not found"
     # O(n) T, S
-
     def preorder(self, index):
         if index > self.lastUsedIndex:
             return
@@ -29,7 +26,6 @@ class Binarytree:
         self.preorder(index * 2)
         self.preorder(index * 2 + 1)
     # O(n) T, S
-
     def inorder(self, index):
         if index > self.lastUsedIndex:
             return
@@ -37,7 +33,6 @@ class Binarytree:
         print(self.customList[index])
         self.inorder(index * 2 + 1)
     # O(n) T, S
-
     def postorder(self, index):
         if index > self.lastUsedIndex:
             return
@@ -45,36 +40,29 @@ class Binarytree:
         self.postorder(index * 2 + 1)
         print(self.customList[index])
     # O(n) T, O(1)S
-
     def levelorder(self, index):
         try:
             for i in range(index, self.lastUsedIndex + 1):
                 print(self.customList[i])
-        except (ValueError, RuntimeError, TypeError, NameError) as err:
-            print(f"Oops!...{err}")
-        finally:
-            print("These are all the elements in the list")
+        except (ValueError, RuntimeError, TypeError, NameError, SyntaxError) as err:
+            print(f"Oops!... traversing failed. List is empty")
+        # finally:
+        #     print("These are all the elements in the list")
 
     # O(n) T, O(1) S
-
     def deleteAny(self, value):
         if self.lastUsedIndex == 0:
             return "There is not any node to delete"
-        for i in range(1, self.lastUsedIndex + 1):
+        for i in range(1, len(self.customList)):
             if self.customList[i] == value:
                 self.customList[i] = self.customList[self.lastUsedIndex]
                 self.customList[self.lastUsedIndex] = None
                 self.lastUsedIndex -= 1
                 return "deleted"
     # O(1) T, S
-
     def deleteAll(self):
-        try:
-            self.customList = None
-            return "deleted..."
-
-        except (ValueError, RuntimeError, TypeError, NameError) as err:
-            print(f"Oops!...")
+        self.customList = None
+        return "deleted..."
 
 
 newbt = Binarytree(8)
