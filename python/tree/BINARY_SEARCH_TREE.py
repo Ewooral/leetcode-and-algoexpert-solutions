@@ -97,7 +97,7 @@ def deleteAny(rootNode, nodeValue):
         rootNode.right = deleteAny(rootNode.right, nodeValue)
     else:
         if rootNode.left is None:
-            temp = rootNode.left
+            temp = rootNode.right
             rootNode = None;
             return temp
         if rootNode.right is None:
@@ -126,7 +126,7 @@ print(insert(newBST, 80))
 print(insert(newBST, 100))
 print(insert(newBST, 20))
 print(insert(newBST, 40))
-print(insert(newBST, 40))
+print(insert(newBST, 20))
 print(newBST.data)
 print("........preorder........")
 preorder(newBST)
@@ -140,7 +140,7 @@ print("........search......")
 search(newBST,  100)
 search(newBST,  130)
 print(".......delete any node......")
-deleteAny(newBST, 70)
+deleteAny(newBST, 80)
 levelorder(newBST)
 print(".....delete tree....")
 deleteAll(newBST)
