@@ -1,4 +1,4 @@
-from BT import Node, get_parent, _get_tree_properties
+from bt_module import Node, get_parent, _get_tree_properties
 import queue as q
 
 

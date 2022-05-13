@@ -1,10 +1,13 @@
 import queue
+
+
 # O(1) T and S
 class BST:
     def __init__(self, data):
         self.data = data 
         self.left = None
         self.right = None
+
 
 # O(log N) T, S
 def insert(rootNode, value):
@@ -22,6 +25,7 @@ def insert(rootNode, value):
             insert(rootNode.right, value)
     return "..........Inserted!........"
 
+
 # O(N)T, S
 def preorder(rootNode):
     if rootNode is None:
@@ -30,12 +34,16 @@ def preorder(rootNode):
     preorder(rootNode.left)
     preorder(rootNode.right)
 # O(N)T, S
+
+
 def inorder(rootNode):
     if rootNode is None:
         return
     inorder(rootNode.left)
     print(rootNode.data)
     inorder(rootNode.right)
+
+
 # O(N)T, S
 def postorder(rootNode):
     if rootNode is None:
@@ -43,6 +51,8 @@ def postorder(rootNode):
     postorder(rootNode.left)
     postorder(rootNode.right)
     print(rootNode.data)
+
+
 # O(N)T, S
 def levelorder(rootNode):
     try:
@@ -60,6 +70,7 @@ def levelorder(rootNode):
                     cq.put(root.right)
     except (TypeError, SyntaxError, NameError, AttributeError) as err:
         print(f"Oops!, {err} \n")
+
 
 # O(log N)T, S
 def search(rootNode, nodeValue):
@@ -87,6 +98,7 @@ def minValue(node):
         current = current.left
     return current
 
+
 # O(log N)T, S 
 def deleteAny(rootNode, nodeValue):
     if rootNode is None:
@@ -108,6 +120,8 @@ def deleteAny(rootNode, nodeValue):
         rootNode.data = temp.data
         rootNode.right = deleteAny(rootNode.right, temp.data)
     return rootNode
+
+
 # O(1) T, S 
 def deleteAll(rootNode):
     rootNode.data = None
@@ -134,7 +148,7 @@ print("........inorder........")
 inorder(newBST)
 print("........postorder........")
 postorder(newBST)
-print("........levelorder........")
+print("........level order........")
 levelorder(newBST)
 print("........search......")
 search(newBST,  100)
