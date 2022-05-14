@@ -4,7 +4,7 @@
 # O(1) T, O(N) S
 class BH:
     def __init__(self, size) -> None:
-        self.List = (size + 1) * [None]
+        self.List = (size + 1) * [None] # fix size list
         self.heapSize = 0
         self.maxSize = size + 1
 
@@ -17,12 +17,14 @@ def peek(rootNode):
     else:
         return rootNode.List[1]
 
+
 # O(1)T, S
 def heapSize(rootNode):
     if not rootNode:
         return
     else:
         return rootNode.heapSize
+
 
 # Traversal
 # O(N)T, O(1)S
@@ -33,7 +35,6 @@ def levelorder(rootNode):
         
     except (ValueError, RuntimeError, TypeError, NameError, SyntaxError) as err:
         print(f"Oops!... traversing failed. List is empty")
-
 
 
 # O(log N)T, S
@@ -55,6 +56,7 @@ def heapifyInsert(rootNode, index, heapType):
             rootNode.List[parentIndex] = temp
         heapifyInsert(rootNode, parentIndex, heapType)
 
+
 # O(log N)T, S
 def insert(rootNode, nodeValue, heapType):
     if rootNode.heapSize + 1 == rootNode.maxSize:
@@ -63,6 +65,7 @@ def insert(rootNode, nodeValue, heapType):
     rootNode.heapSize += 1
     heapifyInsert(rootNode, rootNode.heapSize, heapType)
     return "Inserted Successfully"
+
 
 # O(log N)T, S
 def heapifyExtract(rootNode, index, heapType):
@@ -105,6 +108,7 @@ def heapifyExtract(rootNode, index, heapType):
                 rootNode.List[leftIndex] = temp
     heapifyExtract(rootNode, swapChild, heapSize)
 
+
 # The only element allowed to be extracted from a heap is the root Node
 # O(log N)T, S
 def extract(rootNode, heapType):
@@ -119,12 +123,10 @@ def extract(rootNode, heapType):
         return extractedNode
 
 
+# O(1)T, S 
 def deleteHeap(rootNode):
     rootNode.List = None
     return "Binary Heap Tree has been Deleted"
-
-            
-
 
 
 newBH = BH(5)
