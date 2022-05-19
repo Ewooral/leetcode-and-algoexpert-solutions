@@ -1,6 +1,7 @@
 # Binary Heap by Elijah Owusu Boahen
 # 13th April, 2022
 
+import heapq
 # O(1) T, O(N) S
 class BH:
     def __init__(self, size) -> None:

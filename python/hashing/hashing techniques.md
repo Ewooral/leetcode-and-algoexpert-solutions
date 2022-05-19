@@ -36,4 +36,10 @@
         - double probing
 
 
+# Properties of a good Hash function
+1. It distributes hash values uniformly across hash tables
+
+2. It has to use all the input data
+
+# Collision Resolution Techniques
 

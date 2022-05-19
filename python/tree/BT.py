@@ -204,6 +204,7 @@ def deleteAnyNode(rootNode, node):
 
 
 deleteAnyNode(newBT, "Drinks")
+deleteAnyNode(newBT, "Hot")
 levelOrderTraversal(newBT)
 
 
