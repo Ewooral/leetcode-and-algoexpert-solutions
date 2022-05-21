@@ -1,3 +1,12 @@
-customStack.push(1)
-# customStack.push(2)
-# customStack.push(3)
+customStack.pop()
+# print(customStack)
+
+# print("......................")
+# print(customStack.peek())
+
+# print(".......................")
+# print(customStack.isEmpty())
+
+# print(".......................")
+# customStack.delete()
+# print(customStack)

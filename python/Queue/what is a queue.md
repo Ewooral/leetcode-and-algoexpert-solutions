@@ -8,7 +8,7 @@
 
 # E.g. Application of Queue
     - Point sale system of a restaurant
-    - A single share printer
+    - A single shared printer
     - call center phone system
     - Cash withdrawal at the bank or ATM machine
 
@@ -19,4 +19,5 @@
     - Peek
     - isEmpty
     - isFull
-    - deleteQueue
+    - delete Queue
+

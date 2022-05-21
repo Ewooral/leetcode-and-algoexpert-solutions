@@ -7,7 +7,7 @@
 class Node:
     def __init__(self, value = None) -> None:
         self.value = value
-        self.next = None;
+        self.next = next;
 
 class LinkedList:
     def __init__(self):
@@ -20,12 +20,13 @@ class LinkedList:
             node = node.next
 
 class Stack:
-    def __init__(self) -> None:
+    def __init__(self):
         self.LinkedList = LinkedList();
     
     def __str__(self):
+        
         values = [str(x.value) for x in self.LinkedList]
-        return '\n'.join(values)
+        return ' '.join(values)   
 
     # O(1) T, O(1) S
     def isEmpty(self):
@@ -39,6 +40,8 @@ class Stack:
         node = Node(value)
         node.next = self.LinkedList.head
         self.LinkedList.head = node
+            
+        
 
     # O(1) T, O(1) S
     def pop(self):
@@ -51,7 +54,7 @@ class Stack:
 
     # O(1) T, O(1) S
     def peek(self):
-        if self.isEmpty():
+        if self.isEmpty(): 
             return "There is no element in the stack"
         else:
             nodeValue = self.LinkedList.head.value

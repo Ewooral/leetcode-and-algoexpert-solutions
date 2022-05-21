@@ -1,1 +1,0 @@
-rsal(newBT)

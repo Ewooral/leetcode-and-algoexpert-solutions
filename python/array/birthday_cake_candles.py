@@ -44,5 +44,6 @@ def birthdayCakeCandles(candles):
 
 
 if __name__ == '__main__':
-    print(birthdayCakeCandles([200, -234, 0, 2, 99, 1000, -18, 22, 1]))
+    print(birthdayCakeCandles([200, -234, 0, 2, 99, 20 -18, 22, 1]))
+    print(birthdayCakeCandles([4, 4, 1, 3]))
 

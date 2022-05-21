@@ -44,7 +44,7 @@ class Binarytree:
         try:
             for i in range(index, self.lastUsedIndex + 1):
                 print(self.customList[i])
-        except (ValueError, RuntimeError, TypeError, NameError, SyntaxError) as err:
+        except (ValueError, RuntimeError, TypeError, NameError, SyntaxError, AttributeError) as err:
             print(f"Oops!... traversing failed. List is empty")
         # finally:
         #     print("These are all the elements in the list")
@@ -53,7 +53,7 @@ class Binarytree:
     def deleteAny(self, value):
         if self.lastUsedIndex == 0:
             return "There is not any node to delete"
-        for i in range(1, len(self.customList)):
+        for i in range(1, self.lastUsedIndex + 1):
             if self.customList[i] == value:
                 self.customList[i] = self.customList[self.lastUsedIndex]
                 self.customList[self.lastUsedIndex] = None

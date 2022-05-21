@@ -1,6 +1,5 @@
 import queue
 
-
 # O(1) T and S
 class BST:
     def __init__(self, data):
@@ -103,19 +102,22 @@ def minValue(node):
 def deleteAny(rootNode, nodeValue):
     if rootNode is None:
         return rootNode
+    # if you're deleting a leaf node
     if nodeValue < rootNode.data:
         rootNode.left = deleteAny(rootNode.left, nodeValue)
     elif nodeValue > rootNode.data:
         rootNode.right = deleteAny(rootNode.right, nodeValue)
     else:
+        # if rootNode has only one child
         if rootNode.left is None:
-            temp = rootNode.right
-            rootNode = None;
+            temp = rootNode.right  
+            rootNode.right = None
             return temp
         if rootNode.right is None:
             temp = rootNode.left
-            rootNode = None
+            rootNode.left = None
             return temp
+        # if rootNode has two children
         temp = minValue(rootNode.right)
         rootNode.data = temp.data
         rootNode.right = deleteAny(rootNode.right, temp.data)
@@ -128,7 +130,7 @@ def deleteAll(rootNode):
     rootNode.left = None
     rootNode.right = None
 
-   
+
 newBST = BST(None)
 print("........insert........")
 print(insert(newBST, 70))
@@ -154,7 +156,7 @@ print("........search......")
 search(newBST,  100)
 search(newBST,  130)
 print(".......delete any node......")
-deleteAny(newBST, 80)
+deleteAny(newBST, 100)
 levelorder(newBST)
 print(".....delete tree....")
 deleteAll(newBST)

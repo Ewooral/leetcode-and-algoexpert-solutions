@@ -4,7 +4,7 @@ class Queue:
         self.items = maxSize * [None]
         self.maxSize = maxSize # analogous to length of the array
         self.start = -1
-        self.top = -1
+        self.end = -1 
         
 
     def __str__(self) -> str:
@@ -13,16 +13,16 @@ class Queue:
     
     # O(1) T, O(1) S
     def isFull(self):
-        if self.top + 1 == self.start:
+        if self.end + 1 == self.start:
             return True
-        elif self.start == 0 and self.top + 1 == self.maxSize:
+        elif self.start == 0 and self.end + 1 == self.maxSize:
             return True;
         else:
             return False;
     
     # O(1) T, O(1) S
     def isEmpty(self):
-        if self.top == -1:
+        if self.end == -1:
             return True;
         else:
             return False
@@ -42,7 +42,7 @@ class Queue:
     and check if the first element's index is set to -1
 
     4. after that enqueue the element at the end of 
-    the queue using the index
+    the queue using the index 
     """
 
     # O(1) T, O(1) S
@@ -50,13 +50,13 @@ class Queue:
         if self.isFull():
             print ("The queue is full")
         else:
-            if self.top + 1 == self.maxSize: 
-                self.top = 0
+            if self.end + 1 == self.maxSize:    
+                self.end = 0
             else:
-                self.top += 1
+                self.end += 1
                 if self.start == -1:
                     self.start = 0
-            self.items[self.top] = value
+            self.items[self.end] = value
             return "The element is inserted at the end of Queue"
    
     # O(1) T, O(1) S
@@ -66,10 +66,10 @@ class Queue:
         else:
             firstElement = self.items[self.start]
             start = self.start
-            if self.start == self.top: # if only one item is in the queue
+            if self.start == self.end: # if only one item is in the queue
                 self.start = -1
-                self.top = -1
-            elif self.start + 1 == self.maxSize: # if the first element points to the last element
+                self.end = -1
+            elif self.start + 1 == self.maxSize: # if the start index points to the last element
                 self.start = 0
             else:
                 self.start += 1
@@ -85,9 +85,9 @@ class Queue:
 
         # O(1) T, O(1) S
     def delete(self):
-        self.items = self.maxSize * [None]
+        self.items = self.maxSize * [None]  
         self.start = -1
-        self.top = -1
+        self.end = -1
 
 
 customQueue = Queue(3) # A queue with maxsize of 3
@@ -96,7 +96,7 @@ customQueue.enqueue(2)
 customQueue.enqueue(3)
 print("elements in the queue:\n",  customQueue.items)
 
-customQueue.enqueue(4)
+print(customQueue.enqueue(4))
 
 
 customQueue.dequeue()

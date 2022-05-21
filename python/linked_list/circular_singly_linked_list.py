@@ -1,5 +1,3 @@
-from tkinter.messagebox import NO
-
 
 class Node:
     def __init__(self, value = None):
@@ -22,7 +20,7 @@ class CircularSLL:
     # O(1) T, O(1) S        
     def createSLL(self, nodeValue =None):
         node = Node(nodeValue);
-        node.next = node;
+        node.next = node; # node should point to itself if its the only node
         self.head = node;
         self.tail = node;
         return "Circular Singly linked list is created";
@@ -42,14 +40,12 @@ class CircularSLL:
                 The last step to make this circular is to connect
                 last node to newNode. thus by saving newNode's memory address
                 inside of lastNode's reference slot. self.tail.next is the memory 
-                location of lastNode
-                By connecting self.tail.next to our newNode we 
-                are connecting our last node to 
+                location of the LastNode that points to the firstNode.
                 # """
 
             elif location == 1:
                 newNode.next = self.tail.next;
-                self.tail.next = newNode;
+                self.tail.next = newNode; # we've connected newNode to last node
                 self.tail = newNode;
 
             else:
@@ -154,7 +150,7 @@ print(".................................\n")
 newCircularSLL.traverseCSLL()
 print(".................................\n")
 
-print(newCircularSLL.searchCSLL("Jupiter"))
+print(newCircularSLL.searchCSLL("Jupit"))
 print(".................................\n")
 newCircularSLL.deleteCSLL(0)
 newCircularSLL.deleteCSLL(0)

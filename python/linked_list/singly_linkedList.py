@@ -130,15 +130,17 @@ singlyLinkedList = SLinkedList();
 
 #insert at the end
 singlyLinkedList.insertSLL(1, 1)
-singlyLinkedList.insertSLL(2, 1)
+
 
 #insert at the beginning 
 singlyLinkedList.insertSLL(-78, 0)
+singlyLinkedList.insertSLL(2, 8)
 
 # insert in the middle -> O(N) T, O(1) S
 
 singlyLinkedList.insertSLL(9, 3)
 singlyLinkedList.insertSLL(29011993, 3)
+singlyLinkedList.insertSLL(False, 4)
 
 print("Print List...................................")
 # print the linked list
@@ -154,8 +156,8 @@ print(singlyLinkedList.searchSLL(9));
 
 print("Delete.......................................")
 # delete a node
-singlyLinkedList.deleteNode(2)
-# singlyLinkedList.deleteNode(3)
+singlyLinkedList.deleteNode(0)
+singlyLinkedList.deleteNode(1)
 print([node.value for node in singlyLinkedList])
 
 print("Length of List.......................................")

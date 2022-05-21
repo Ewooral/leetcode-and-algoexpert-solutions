@@ -24,7 +24,7 @@ class Stack:
     def isFull(self):
         if len(self.list) == self.maxSize:
             return True
-        else:return False;
+        else: return False;
 
       # Amortised constant time,O(1)/O(n^2),  O(1) S
     def push(self, value):
@@ -59,6 +59,10 @@ print(customStack.isFull())
 customStack.push(1)
 customStack.push(2)
 customStack.push(3)
+customStack.delete()
 print(customStack)
+
+# customStack.delete()
+# print(customStack.isFull())
 
  
