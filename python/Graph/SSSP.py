@@ -31,4 +31,4 @@ customDict = {"a": ["b", "c"],
 
 graph = Graph(customDict)
 print(graph.BFS("a", "f"))
-# print(graph.BFS("a", "e"))
+print(graph.BFS("a", "e"))
