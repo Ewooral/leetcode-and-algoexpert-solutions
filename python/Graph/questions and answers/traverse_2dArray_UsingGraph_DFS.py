@@ -14,7 +14,7 @@ vis = [[False for i in range(3)] for j in range(3)]
 
 def isValid(row, col):
     global ROW
-    global COL
+    # global COL
     # global vis
 
     # If cell is out of bounds
