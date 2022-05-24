@@ -20,15 +20,18 @@ class Graph:
         for key, value in dist.items():
             print('  ' + key, ' :    ', value)
 
+    #src = source vertex, dist = distance
     def bellmanFord(self, src):
         dist = {i: float("Inf") for i in self.nodes}
         dist[src] = 0
 
+        # s-source, d-destination, w- weight
         for _ in range(self.V-1):
             for s, d, w in self.graph:
-                if dist[s] != float("Inf") and dist[s] + w < dist[d]:
+                if dist[s] !=  float("Inf") and dist[s] + w < dist[d]:
                     dist[d] = dist[s] + w
 
+        # s-source, d-destination, w- weight
         for s, d, w in self.graph:
             if dist[s] != float("Inf") and dist[s] + w < dist[d]:
                 print("Graph contains negative cycle")
