@@ -1,5 +1,5 @@
 # O(N) T and S
-# def reverseWordsInString(string):
+def reverseWordsInString(string):
     words = [];
     startOFword = 0;
     for index in range(len(string)):
