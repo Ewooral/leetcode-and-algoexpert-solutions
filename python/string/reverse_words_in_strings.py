@@ -2,7 +2,7 @@
 def reverseWordsInString(string):
     words = [];
     startOFword = 0;
-    # for index in range(len(string)):
+    for index in range(len(string)):
         character = string[index];
         
         # adding word in a string when we hit a whitespace
