@@ -6,7 +6,7 @@ def reverseWordsInString(string):
         character = string[index];
         
         # adding word in a string when we hit a whitespace
-        if character == " ":
+        # if character == " ":
             words.append(string[startOFword:index]);
             startOFword = index;
 
