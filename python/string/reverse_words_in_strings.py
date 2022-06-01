@@ -26,7 +26,7 @@ def reverseList(list):
     while start < end:
         list[start], list[end] = list[end], list[start];
         start += 1;
-        # end -= 1;
+        end -= 1;
 
 print(reverseWordsInString("Hello Heavenly Father, I trust your works"));
 
