@@ -1,6 +1,6 @@
 # O(N) T and S
 def reverseWordsInString(string):
-    words = [];
+    # words = [];
     startOFword = 0;
     for index in range(len(string)):
         character = string[index];
