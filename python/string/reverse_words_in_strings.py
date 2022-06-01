@@ -18,7 +18,7 @@ def reverseWordsInString(string):
     words.append(string[startOFword:]);
 
     reverseList(words);
-    # return "".join(words);
+    return "".join(words);
 
 # reverse words in the list
 def reverseList(list):
