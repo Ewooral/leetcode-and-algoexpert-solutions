@@ -15,7 +15,7 @@ def knapsackMethod(items, capacity):
             totalValue += i.value
         else:
             unusedWeight = capacity - usedCapacity
-            # value = i.ratio * unusedWeight
+            value = i.ratio * unusedWeight
             usedCapacity += unusedWeight
             totalValue += value
 
