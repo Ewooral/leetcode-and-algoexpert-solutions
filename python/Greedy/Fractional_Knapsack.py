@@ -27,6 +27,6 @@ def knapsackMethod(items, capacity):
 item1 = Item(20, 100)
 item2 = Item(30, 120)
 item3 = Item(10, 60)
-cList = [item1, item2, item3]
+# cList = [item1, item2, item3]
 
 knapsackMethod(cList, 50)
