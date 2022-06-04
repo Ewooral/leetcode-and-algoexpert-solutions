@@ -20,7 +20,7 @@ def knapsackMethod(items, capacity):
             totalValue += value
 
         if usedCapacity == capacity:
-            break
+            # break
     print("Total value obtained: "+str(totalValue))
 
 
