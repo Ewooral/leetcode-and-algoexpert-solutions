@@ -5,7 +5,7 @@ class Item:
         self.ratio = value / weight
 
 
-# def knapsackMethod(items, capacity):
+def knapsackMethod(items, capacity):
     items.sort(key=lambda x: x.ratio, reverse=True)
     usedCapacity = 0
     totalValue = 0
