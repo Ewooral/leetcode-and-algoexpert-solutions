@@ -8,7 +8,7 @@ class Item:
 def knapsackMethod(items, capacity):
     items.sort(key=lambda x: x.ratio, reverse=True)
     usedCapacity = 0
-    totalValue = 0
+    # totalValue = 0
     for i in items:
         if usedCapacity + i.weight <= capacity:
             usedCapacity += i.weight
