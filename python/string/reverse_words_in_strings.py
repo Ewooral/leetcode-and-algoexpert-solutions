@@ -28,6 +28,5 @@ def reverseList(list):
         start += 1;
         end -= 1;
 
-# print(reverseWordsInString("Hello Heavenly Father, I trust your works"));
+print(reverseWordsInString("Hello Heavenly Father, I trust your works"));
 
-print()
