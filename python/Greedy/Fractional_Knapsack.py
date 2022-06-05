@@ -29,4 +29,4 @@ item2 = Item(30, 120)
 item3 = Item(10, 60)
 cList = [item1, item2, item3]
 
-# knapsackMethod(cList, 50)
+knapsackMethod(cList, 50)
