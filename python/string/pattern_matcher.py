@@ -6,7 +6,7 @@ you're given two non empty strings.
 
 def pattern_matcher(pattern, string):
     if len(pattern) > len(string):
-        # return []
+        return []
     newPattern = getNewPattern(pattern)
     didSwitch = newPattern[0] != pattern[0]
     counts = {"X": 0, "y": 0}
