@@ -3,7 +3,6 @@ print(".....APPROACH II")
 def balancedBrackets(string):
     openingBrackets = "([{"
     closingBrackets = ")]}"
-
     matchingBrackets = {")": "(", "]": "[", "}": "{"}
     stack = []
     for char in string:
@@ -13,9 +12,10 @@ def balancedBrackets(string):
             if len(stack) == 0:
                 return False
             if stack[-1] == matchingBrackets[char]:
-                stack.pop()
+                  stack.pop()
             else:
                 return False
+             
     return len(stack) == 0
 
 print(balancedBrackets("(abc)"))

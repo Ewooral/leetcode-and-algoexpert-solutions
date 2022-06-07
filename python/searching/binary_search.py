@@ -6,7 +6,7 @@ def binarySearch(array, item):
     while low <= high:
 
         mid = (low + high) // 2;  # index of the mid item
-        guess = array[mid]; # middle item
+        guess = array[mid];  # middle item
 
         if guess == item:
             print( f"item { item } found at index: { mid }");
@@ -19,6 +19,7 @@ def binarySearch(array, item):
             low = mid + 1;
     return None;
 
+
 def isEven():
     number = binarySearch(array, item);
     if number is None: return "isEven: ", -1;
@@ -26,6 +27,7 @@ def isEven():
     if number % 2 == 0:
         return "isEven: ", True; 
     return "isEven: ",  False;
+
 
 if __name__ == '__main__':
     array = [8, 2, 0, 1, 4, -2, 9, 7, 12];
@@ -35,7 +37,6 @@ if __name__ == '__main__':
     print(binarySearch(array, item));
     # print(array.index(8));
     print(isEven());
-
 
 
 def recursiveBinarySearch(low, high, array, item):
@@ -52,6 +53,7 @@ def recursiveBinarySearch(low, high, array, item):
 
         else:
             return recursiveBinarySearch(mid + 1, high, array, item);
+
 
     return -1;
 
