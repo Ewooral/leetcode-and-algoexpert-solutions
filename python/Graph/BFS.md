@@ -17,3 +17,6 @@
 
     Notice that this only works if you search people in the same order in 
     which they’re added
+
+    There’s a data 
+    structure for this: it’s called a QUEUE
