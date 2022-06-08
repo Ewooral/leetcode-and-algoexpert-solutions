@@ -20,3 +20,6 @@
 
     There’s a data 
     structure for this: it’s called a QUEUE
+    
+     - from collections import dequeue - 
+     - append() and popleft()
