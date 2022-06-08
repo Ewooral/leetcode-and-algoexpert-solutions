@@ -51,14 +51,15 @@ Queues.append(22)
 
 
 class Graph:
-    def __init__(self, graph = None) -> None:
+    def __init__(self, graph: dict = None) -> None:
         if graph is None:
-            graph = defaultdict()
+            graph = {}
         self.graph = graph
 
     def add_edge(self, vertex, edges) -> None:
         self.graph[vertex].append(edges)
 
+    
 
 
 
@@ -75,9 +76,11 @@ def main() -> None:
 
     print("............")
     # graph
-    graph = Graph()
-    print(graph.graph.get("Elijah"))
-    print(graph.add_edge("Kumasi", 4))
+    graph = Graph({})
+    graph.graph.update({"Kumasi": ["dropong", "Frante", "T_Krom"]})
+    graph.add_edge("Kumasi", "d")
+   
+    print(graph.graph)
 
 
 if __name__ == "__main__":

@@ -49,6 +49,7 @@ print(graph.graphDic)
 print("...insert...")
 # let's add edge f to the graph 
 graph.addGraph("e", "f")
+graph.addGraph("e", "b")
 print(graph.graphDic)
 print("...traverse(BFS)...")
 graph.BFS("a")
