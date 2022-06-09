@@ -131,3 +131,18 @@ in both the document and characters variables/identifiers
 3. return True if stack is empty and False if not empty
         
         return len(stack) == 0. 
+
+
+# Breadth First Search Algorithm
+
+1. keep a queue containing list of vertices and adjacent edges thru which you want to search for a particular item.
+
+2. dequeue a vertex off the queue and check if it is what you're looking for
+
+3. if yes, mark the vertex or edge as checked and then you're done
+
+4. if no, check if vertex has neighbors or adjacent vertices and enqueue them in the queue
+
+5. dequeue the next item off the queue and repeat the process again until the queue is empty while marking each item as checked!
+
+5. 

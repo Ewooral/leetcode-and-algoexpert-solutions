@@ -16,7 +16,7 @@ class Graph:
             print(deVertex)
             for adjacentVertex in self.graphDic[deVertex]:
                 if adjacentVertex not in visited:
-                    visited.append(adjacentVertex)
+                    visited.append(adjacentVertex)  
                     queue.append(adjacentVertex) 
 
 
@@ -28,7 +28,7 @@ customDic = {
     "c": ["a", "e"],
     "d": ["b", "e", "f"],
     "e": ["d", "c"],
-    "f": ["d", "e"],
+    "f": ["d", "e"], 
 }
 anotherDic = {
     "a": ["b", "c", "d"],
@@ -52,7 +52,7 @@ graph.addGraph("e", "f")
 graph.addGraph("e", "b")
 print(graph.graphDic)
 print("...traverse(BFS)...")
-graph.BFS("a")
+graph.BFS("e")
 print()
 graph2 = Graph(anotherDic)
-graph2.BFS("a")
+graph2.BFS("f")
