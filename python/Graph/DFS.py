@@ -6,7 +6,8 @@ class Graph:
 
     def addGraph(self, vertex, edge):
         self.graphDic[vertex].append(edge)
-    #
+
+    # O(v + e) T, O(v) S
     def DFS(self, vertex):
         visited = [vertex]
         stack = [vertex]
@@ -36,4 +37,30 @@ print("...insert...")
 graph.addGraph("e", "f")
 print(graph.graphDic)
 print("...traverse(DFS)...")
-graph.DFS("a")
+graph.DFS("f")
+
+
+class Node:
+    def __init__(self, name) -> None:
+        self.children = []
+        self.name = name
+
+    def __str__(self) -> str:
+        return self.name
+    
+    def addChild(self, name):
+        self.children.append(Node(name))
+
+    def depthFirstSearch(self, array):
+        array.append(self.name)
+        for child in self.children:
+            child.depthFirstSearch(array)
+        return array
+
+graph = Node("Acc")
+graph.addChild("Kum")
+graph.addChild("Kam")
+graph.addChild("Kibi")
+graph.addChild("Kumchacha")
+print(graph.children[3])
+print(graph.depthFirstSearch([0]))
