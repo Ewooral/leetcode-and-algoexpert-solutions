@@ -133,16 +133,73 @@ in both the document and characters variables/identifiers
         return len(stack) == 0. 
 
 
-# Breadth First Search Algorithm
 
-1. keep a queue containing list of vertices and adjacent edges thru which you want to search for a particular item.
 
-2. dequeue a vertex off the queue and check if it is what you're looking for
+# Breadth First Search Algorithm.........................
 
-3. if yes, mark the vertex or edge as checked and then you're done
+1. keep a **QUEUE** data structure containing list of vertices and adjacent edges thru which you want to search for a particular item.
+
+2. dequeue a vertex off the queue and check if it matches with what you're looking for
+
+3. if yes, mark the vertex or edge as checked and then return True
 
 4. if no, check if vertex has neighbors or adjacent vertices and enqueue them in the queue
 
 5. dequeue the next item off the queue and repeat the process again until the queue is empty while marking each item as checked!
 
-5. 
+6. return False if nothing is found
+
+
+
+# Depth First Search Algorithm.............................
+
+1. keep a **STACK** data structure containing list of vertices and adjacent edges thru which you want to search for a particular item.
+
+2. dequeue a vertex off the queue and check if it matches with what you're looking for
+
+3. if yes, mark the vertex or edge as checked and then return True
+
+4. if no, check if vertex has neighbors or adjacent vertices and enqueue them in the queue
+
+5. dequeue the next item off the queue and repeat the process again until the queue is empty while marking each item as checked!
+
+6. return False if nothing is found
+
+
+# Single cycle check
+   Given a list of integers, write a function that takes in that list and return
+   a boolean that determine whether the list has a single cycle
+
+   list = [2, 3, 1, -4, -4, -1]
+   each integer represents the number of jumps in the array
+   so 2 jumps twice to value 1. 1 jumps forward to value -4 and -4 jumps
+   backwards four times and ends on value -1
+   
+   1. we want to make sure we visit n elements where n is the length of the list
+   2. if we visit more than one element, and we find ourselves back at 
+      the starting point which is 2, without visiting all elements in the list, we return
+      False
+   3. If we visit all element in the list, and we're not back at the starting
+      point, return False
+      
+   ```py
+        def hasSingleCycle(array):
+        currentIndex = 0
+        elementsVisited = 0
+        while elementsVisited < len(array):
+        if elementsVisited > 0 and currentIndex == 0:
+                return  False
+        elementsVisited += 1
+        currentIndex = getNextIndex(currentIndex, array)
+        return currentIndex == 0
+
+        def getNextIndex(currentIndex, array):
+        jump = array[currentIndex]
+        nextIndex = (currentIndex + jump) % len(array)
+        return nextIndex if nextIndex >= 0 else nextIndex + len(array)
+            
+        
+   ```
+      
+
+   

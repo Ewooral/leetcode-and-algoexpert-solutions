@@ -41,6 +41,9 @@ def two_sum(clist: list, target: int) -> list:
 [1, 3, 9, 1, 0]
 '''
 from collections import deque, defaultdict
+from typing import List
+
+from pandas import array
 # from typing import Any
 
 Queues = deque()
@@ -59,8 +62,23 @@ class Graph:
     def add_edge(self, vertex, edges) -> None:
         self.graph[vertex].append(edges)
 
-    
+def hasSingleCycle(customList: List) -> bool:
+    numOfElementsVisited:int = len(customList)
+    currentIndex:int = 0
+    while numOfElementsVisited < len(customList):
+        if numOfElementsVisited > 0 and currentIndex == 0:
+            return False
+        numOfElementsVisited += 1
+        currentIndex = getNextIndex(currentIndex, customList)
+    return currentIndex == 0
 
+def getNextIndex(currentIndex, customList):
+    jump = customList[currentIndex]
+    nextIndex = (currentIndex + jump) % len(customList)
+    if nextIndex >=0:
+        return nextIndex
+    else:
+        nextIndex + len(customList)
 
 
 
@@ -79,8 +97,8 @@ def main() -> None:
     graph = Graph({})
     graph.graph.update({"Kumasi": ["dropong", "Frante", "T_Krom"]})
     graph.add_edge("Kumasi", "d")
-   
     print(graph.graph)
+    print(hasSingleCycle(customList=[2, 1, -1]))
 
 
 if __name__ == "__main__":

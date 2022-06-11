@@ -7,15 +7,15 @@ def hasSingleCycle(array):
         elementsVisited += 1
         currentIndex = getNextIndex(currentIndex, array)
     return currentIndex == 0
-
+# [2, 3, 1, -4, -4, 2] 
 
 def getNextIndex(currentIndex, array):
-    jump = array[currentIndex]
+    jump: int = array[currentIndex]
     nextIndex = (currentIndex + jump) % len(array)
     return nextIndex if nextIndex >= 0 else nextIndex + len(array)
 
 
-# BRUTE FORCE APPROACH
+
 def circularArrayLoop(nums):
     n, visited = len(nums), set()
     for i in range(n):
@@ -35,16 +35,20 @@ def circularArrayLoop(nums):
 
 
 def main():
-    custom_list = [2, 3, 1, -4, -4, -1]
+    custom_list = [2, 3, 1, -4, -4, 2] 
     cl = [1, 2, 1, -3]
     ku = [2, -1, 1, 2, 2]
-    nums = [-1, 2]
+    nums = [2, 2, -1]
+
     print(hasSingleCycle(custom_list))
     print(hasSingleCycle(cl))
     print(hasSingleCycle(ku))
+    print(hasSingleCycle(nums))
     print()
     print(circularArrayLoop(ku))
     print(circularArrayLoop(nums))
+    print(circularArrayLoop(custom_list))
+
 
 
 if __name__ == "__main__":
