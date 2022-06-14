@@ -82,6 +82,8 @@ def getNextIndex(currentIndex, customList):
 
 
 
+
+
 def main() -> None:
     # queue
     print(Queues)
@@ -99,7 +101,6 @@ def main() -> None:
     graph.add_edge("Kumasi", "d")
     print(graph.graph)
     print(hasSingleCycle(customList=[2, 1, -1]))
-
 
 if __name__ == "__main__":
     main()
