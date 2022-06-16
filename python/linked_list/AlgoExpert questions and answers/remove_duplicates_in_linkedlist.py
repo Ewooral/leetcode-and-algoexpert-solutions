@@ -25,7 +25,7 @@ def remove_duplicates(linkedList):
         
         currentNode.next = nextDistinctNode
         currentNode = nextDistinctNode
-    # return LinkedList
+    return LinkedList
 
 def main():
     linkedlist = LinkedList(value=1)
