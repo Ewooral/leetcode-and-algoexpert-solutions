@@ -74,6 +74,12 @@ class DoublyLinedList:
                 print(node.value)
                 node = node.previous
 
+    def containsNodeWithValue(self, value):
+        node = self.head
+        while node is not None and node.value != value:
+            node = node.next
+        return node is not None
+
      # O(N) T, O(1) S
     def searchDLL(self, nodeValue):
         if self.head is None:
@@ -114,6 +120,21 @@ class DoublyLinedList:
                 curNode.next.previous = curNode
             print("The node has been successfully deleted"); 
 
+    def remove(self, node):
+        if node == self.head:
+            self.head = self.head.next
+        if node == self.tail:
+            self.tail = self.tail.previous
+        self.removeNodeBindings(node)
+
+    def removeNodeBindings(self, node):
+        if node.previous is not None:
+            node.previous.next = node.next
+        if node.next is not None:
+            node.next.previous = node.previous
+        node.previous = None
+        node.next = None 
+
      # O(N) T, O(1) S
     def deleteDLL(self):
         if self.head is None:
@@ -144,11 +165,15 @@ doublyLL.traverseDLL()
 print("Reverse Traversal.......................")
 doublyLL.reverseTraverseDLL()
 
+print("does the node contain value?: ", doublyLL.containsNodeWithValue(2))
+
 print("Search.......................")
-doublyLL.searchDLL(30)
+doublyLL.searchDLL(2)
 
 print("Delete.......................")
 doublyLL.deleteNode(2)
+
+doublyLL.remove(Node(5))
 print([node.value for node in doublyLL])
 
 print(".............................")

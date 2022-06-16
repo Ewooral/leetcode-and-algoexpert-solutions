@@ -85,3 +85,86 @@ def traverse(names):
 
 traverse(names)
 
+
+houses = ["Eric's house", "Kenny's house", "Kyle's house", "Stan's house"]
+
+
+print("................")
+print("Iteratively")
+def deliver_presents_iteratively():
+    for house in houses:
+        print("Delivering presents to", house)
+
+
+deliver_presents_iteratively()
+
+
+print("................")
+print("Recursively")
+# Each function call represents an elf doing his work
+def deliver_presents_recursively(houses):
+    # Worker elf doing his work
+    if len(houses) == 1:
+        house = houses[0]
+        print("Delivering presents to", house)
+
+    # Manager elf doing his work
+    else:
+        mid = len(houses) // 2
+        first_half = houses[:mid]
+        second_half = houses[mid:]
+
+        # Divides his work among two elves
+        deliver_presents_recursively(first_half)
+        deliver_presents_recursively(second_half)
+
+
+deliver_presents_recursively(houses)
+
+
+print()
+print("...............")
+print("Recursive without caching ")
+def fibonacci_recursive(n):
+    print("Calculating F", "(", n, ")", sep="", end=", ")
+
+    # Base case
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+
+    # Recursive case
+    else:
+        return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
+fibonacci_recursive(5)
+
+
+
+print()
+print("...............")
+print("Recursive with caching ")
+'''
+Naively following the recursive deﬁnition of the nth Fibonacci
+number was rather inefficient. As you can see from the output above, 
+we are unnecessarily recomputing values. Let’s try to improve 
+fibonacci_recursive by caching the results of each Fibonacci computation Fk:
+'''
+from functools import lru_cache
+
+@lru_cache(maxsize=None)
+def fibonacci_recursive(n):
+    print("Calculating F", "(", n, ")", sep="", end=", ")
+
+    # Base case
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+
+    # Recursive case
+    else:
+        return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
+
+
+fibonacci_recursive(5)

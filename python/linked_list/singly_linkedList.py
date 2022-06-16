@@ -116,7 +116,7 @@ class SLinkedList:
                 while index < location - 1: # this loops till it gets to the node which is previous to the node to be deleted. 
                     tempNode = tempNode.next
                     index += 1
-                tempNode.next = tempNode.next.next
+                tempNode.next = tempNode.next.next 
 
 # delete entire singly linked list -> O(1) T, O(1) S
     def deleteEntireSLL(self):
