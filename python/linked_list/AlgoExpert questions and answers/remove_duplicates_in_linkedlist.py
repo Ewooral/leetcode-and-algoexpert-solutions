@@ -28,7 +28,7 @@ def remove_duplicates(linkedList):
     return LinkedList
 
 def main():
-    linkedlist = LinkedList(value=1)
+    # linkedlist = LinkedList(value=1)
     linkedlist.next = LinkedList(value= 2)
     linkedlist.next.next = LinkedList(value= 2)
     linkedlist.next.next.next = LinkedList(value= 3)
