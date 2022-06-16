@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import Any, Optional
 
 
-@dataclass
+# @dataclass
 class LinkedList:
     value: Any = None
     next: Optional[Any] = None
