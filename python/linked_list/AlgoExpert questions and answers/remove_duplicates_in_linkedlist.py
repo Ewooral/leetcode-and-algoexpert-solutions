@@ -7,7 +7,7 @@ class LinkedList:
     value: Any = None
     next: Optional[Any] = None
 
-    # def print_list(self):
+    def print_list(self):
         temp = self
         while temp is not None:
             print(temp.value, end=" ")
