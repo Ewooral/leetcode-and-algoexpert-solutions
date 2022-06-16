@@ -17,7 +17,7 @@ class LinkedList:
 
 
 def remove_duplicates(linkedList):
-    currentNode = linkedList
+    # currentNode = linkedList
     while currentNode is not None:
         nextDistinctNode = currentNode.next
         while nextDistinctNode is not None and nextDistinctNode.value == currentNode.value:
