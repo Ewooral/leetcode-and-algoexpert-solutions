@@ -12,7 +12,7 @@ class LinkedList:
         while temp is not None:
             print(temp.value, end=" ")
             temp = temp.next
-        # print()
+        print()
 
 
 
