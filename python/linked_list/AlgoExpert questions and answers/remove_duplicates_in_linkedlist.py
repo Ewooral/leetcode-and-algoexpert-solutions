@@ -20,7 +20,7 @@ def remove_duplicates(linkedList):
     currentNode = linkedList
     while currentNode is not None:
         nextDistinctNode = currentNode.next
-        # while nextDistinctNode is not None and nextDistinctNode.value == currentNode.value:
+        while nextDistinctNode is not None and nextDistinctNode.value == currentNode.value:
             nextDistinctNode = nextDistinctNode.next 
         
         currentNode.next = nextDistinctNode
