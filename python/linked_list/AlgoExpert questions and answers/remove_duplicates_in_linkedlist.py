@@ -38,7 +38,7 @@ def main():
     print()
     print(".............")
     remove_duplicates(linkedlist)
-    linkedlist.print_list()
+    # linkedlist.print_list()
     print(linkedlist.value)
 
 if __name__ == '__main__':
