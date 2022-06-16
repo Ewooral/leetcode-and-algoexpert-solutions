@@ -41,5 +41,5 @@ def main():
     linkedlist.print_list()
     print(linkedlist.value)
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
     main()
