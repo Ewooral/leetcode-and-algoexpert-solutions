@@ -37,7 +37,7 @@ def main():
     print()
     print()
     print(".............")
-    remove_duplicates(linkedlist)
+    # remove_duplicates(linkedlist)
     linkedlist.print_list()
     print(linkedlist.value)
 
