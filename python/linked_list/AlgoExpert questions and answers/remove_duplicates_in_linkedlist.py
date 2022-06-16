@@ -33,7 +33,7 @@ def main():
     linkedlist.next.next = LinkedList(value= 2)
     linkedlist.next.next.next = LinkedList(value= 3)
     linkedlist.next.next.next.next = LinkedList(value= 3)
-    linkedlist.next.next.next.next.next = LinkedList(value= 4)
+    # linkedlist.next.next.next.next.next = LinkedList(value= 4)
     print()
     print()
     print(".............")
