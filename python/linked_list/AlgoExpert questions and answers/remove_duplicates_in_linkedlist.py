@@ -4,7 +4,7 @@ from typing import Any, Optional
 
 @dataclass
 class LinkedList:
-    value: Any = None
+    # value: Any = None
     next: Optional[Any] = None
 
     def print_list(self):
