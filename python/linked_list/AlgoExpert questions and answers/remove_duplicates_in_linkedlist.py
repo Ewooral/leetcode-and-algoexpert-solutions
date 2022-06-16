@@ -36,7 +36,7 @@ def main():
     linkedlist.next.next.next.next.next = LinkedList(value= 4)
     print()
     print()
-    print(".............")
+    # print(".............")
     remove_duplicates(linkedlist)
     linkedlist.print_list()
     print(linkedlist.value)
