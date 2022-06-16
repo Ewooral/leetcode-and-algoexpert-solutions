@@ -42,4 +42,4 @@ def main():
     print(linkedlist.value)
 
 if __name__ == '__main__':
-    # main()
+    main()
