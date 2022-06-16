@@ -16,7 +16,7 @@ class LinkedList:
 
 
 
-# def remove_duplicates(linkedList):
+def remove_duplicates(linkedList):
     currentNode = linkedList
     while currentNode is not None:
         nextDistinctNode = currentNode.next
