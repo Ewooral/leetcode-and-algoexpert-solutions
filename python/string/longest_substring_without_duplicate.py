@@ -11,7 +11,7 @@ def longestSubstringWithoutDuplication(string):
   return string[longest[0]:longest[1]]
 
 
-def non_repeat_substringA(str):
+def non_repeat_substringA(str): 
   window_start = 0
   max_length = 0
   char_index_map = {}
