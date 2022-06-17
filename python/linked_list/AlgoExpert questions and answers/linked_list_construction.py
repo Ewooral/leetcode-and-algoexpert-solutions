@@ -30,7 +30,7 @@ class DoublyLinkedList:
             li.append(temp.value)
             # print(temp.value, end=" ")
             temp = temp.next
-        print(li)
+        # print(li)
 
     def setHead(self, node):
         if self.head is None:
