@@ -15,7 +15,7 @@ class Node:
 @dataclass
 class DoublyLinkedList:
     head: Any = None
-    # tail: Any = None
+    tail: Any = None
     
     # def __iter__(self):
     #     node = self.head
