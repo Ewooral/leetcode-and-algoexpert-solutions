@@ -29,7 +29,7 @@ class DoublyLinkedList:
         while temp is not None:
             li.append(temp.value)
             # print(temp.value, end=" ")
-            # temp = temp.next
+            temp = temp.next
         print(li)
 
     def setHead(self, node):
