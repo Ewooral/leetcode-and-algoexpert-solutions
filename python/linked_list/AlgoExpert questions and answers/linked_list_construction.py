@@ -12,7 +12,7 @@ class Node:
     prev: Any = None
 
 
-# @dataclass
+@dataclass
 class DoublyLinkedList:
     head: Any = None
     tail: Any = None
