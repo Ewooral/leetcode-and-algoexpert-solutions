@@ -36,7 +36,7 @@ class DoublyLinkedList:
         if self.head is None:
             self.head = node
             self.tail = node
-            # return
+            return
         self.insertBefore(self.head, node)
 
     def setTail(self, node):
