@@ -26,7 +26,7 @@ class DoublyLinkedList:
     def print_list(self):
         temp = self.head
         li = []
-        while temp is not None:
+        # while temp is not None:
             li.append(temp.value)
             # print(temp.value, end=" ")
             temp = temp.next
