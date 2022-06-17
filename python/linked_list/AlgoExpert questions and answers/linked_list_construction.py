@@ -51,7 +51,7 @@ class DoublyLinkedList:
         if self.head == None:
             return
         else:
-            while self.head is not None:
+            # while self.head is not None:
                 self.head = self.head.next
                 count += 1;
         return count
