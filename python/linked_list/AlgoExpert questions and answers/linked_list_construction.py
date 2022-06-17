@@ -23,7 +23,7 @@ class DoublyLinkedList:
     #         yield node
     #         node = node.next
 
-    # def print_list(self):
+    def print_list(self):
         temp = self.head
         li = []
         while temp is not None:
