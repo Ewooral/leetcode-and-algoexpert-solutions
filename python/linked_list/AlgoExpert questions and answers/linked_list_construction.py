@@ -9,7 +9,7 @@ from typing import Any
 class Node:
     value: Any = None
     next: Any = None
-    # prev: Any = None
+    prev: Any = None
 
 
 @dataclass
