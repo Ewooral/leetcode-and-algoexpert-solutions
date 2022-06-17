@@ -24,7 +24,7 @@ class DoublyLinkedList:
     #         node = node.next
 
     # def print_list(self):
-    #     temp = self.head
+        temp = self.head
         li = []
         while temp is not None:
             li.append(temp.value)
