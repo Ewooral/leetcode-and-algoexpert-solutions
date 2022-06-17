@@ -2,28 +2,26 @@
 # insert O(n)Time, O(1) space -> worst case
 
 from dataclasses import dataclass
-from platform import node
 from typing import Any
+
 
 @dataclass
 class Node:
-    value:Any = None
+    value: Any = None
     next: Any = None
     prev: Any = None
 
 
-    
-    # 
 @dataclass
 class DoublyLinkedList:
     head: Any = None
     tail: Any = None
     
-    def __iter__(self):
-        node = self.head
-        while node:
-            yield node
-            node = node.next
+    # def __iter__(self):
+    #     node = self.head
+    #     while node:
+    #         yield node
+    #         node = node.next
 
     def print_list(self):
         temp = self.head
@@ -82,7 +80,6 @@ class DoublyLinkedList:
             node.next.prev = nodeToInsert
         node.next = nodeToInsert # update
 
-
     def insertAtPosition(self, position, nodeToInsert):
         if position == 1:
             self.setHead(nodeToInsert)
@@ -104,7 +101,6 @@ class DoublyLinkedList:
             node = node.next
             if nodeToRemove.value == value:
                 self.remove(nodeToRemove)
-            
 
     def remove(self, node):
         if node == self.head:
@@ -119,7 +115,6 @@ class DoublyLinkedList:
             node = node.next 
         return node is not None
 
-
     def removeNodeBindings(self, node):
         if node.prev is not None:
             node.prev.next = node.next
@@ -129,24 +124,28 @@ class DoublyLinkedList:
         node.next = None 
 
 
+def main():
+    node = Node(value= 20)
+    node1 = Node(value=30)
+    node3 = Node(value = 89)
 
-node = Node(value= 20)
-node1 = Node(value=30)
-node3 = Node(value = 89)
+    linkedList = DoublyLinkedList()
+    linkedList.setHead(node)
 
-linkedList = DoublyLinkedList()
-linkedList.setHead(node)
+    print()
+    print("......................")
+    # print(linkedList.head)
 
-print()
-print("......................")
-# print(linkedList.head)
+    linkedList.insertBefore(node, Node(value=320) )
+    linkedList.insertAfter(node, node1 )
+    linkedList.insertAtPosition(4, node3)
 
-linkedList.insertBefore(node, Node(value=320) )
-linkedList.insertAfter(node, node1 )
-linkedList.insertAtPosition(4, node3)
+    linkedList.print_list()
+    print(linkedList.length())
 
-linkedList.print_list()
-print(linkedList.length())
+
+if __name__ == "__main__":
+    main()
 
 
 
