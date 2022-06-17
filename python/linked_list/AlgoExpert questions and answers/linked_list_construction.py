@@ -48,7 +48,7 @@ class DoublyLinkedList:
     def length(self):
         count = 0
         node = self.head
-        # if self.head == None:
+        if self.head == None:
             return;
         else:
             while self.head is not None:
