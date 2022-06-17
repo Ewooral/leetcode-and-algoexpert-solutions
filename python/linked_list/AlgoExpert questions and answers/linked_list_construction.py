@@ -1,7 +1,7 @@
 # Search O(N)Time, O(1) space
 # insert O(n)Time, O(1) space -> worst case
 
-# from dataclasses import dataclass
+from dataclasses import dataclass
 from typing import Any
 
 
