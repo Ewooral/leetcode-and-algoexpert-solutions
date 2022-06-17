@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from typing import Any
 
 
-# @dataclass
+@dataclass
 class Node:
     value: Any = None
     next: Any = None
