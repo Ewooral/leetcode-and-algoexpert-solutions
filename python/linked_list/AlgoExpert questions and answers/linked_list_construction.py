@@ -8,7 +8,7 @@ from typing import Any
 @dataclass
 class Node:
     value: Any = None
-    # next: Any = None
+    next: Any = None
     prev: Any = None
 
 
