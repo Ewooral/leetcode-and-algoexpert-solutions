@@ -49,7 +49,7 @@ class DoublyLinkedList:
         count = 0
         node = self.head
         if self.head == None:
-            return;
+            # return
         else:
             while self.head is not None:
                 self.head = self.head.next
