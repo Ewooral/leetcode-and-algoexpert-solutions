@@ -43,7 +43,7 @@ class DoublyLinkedList:
         if self.tail is None:
             # self.head = node
             return
-        self.insertAfter(self.tail, node)
+        # self.insertAfter(self.tail, node)
 
     def length(self):
         count = 0;
