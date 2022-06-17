@@ -32,7 +32,7 @@ class DoublyLinkedList:
             temp = temp.next
         print(li)
 
-    def setHead(self, node):
+    # def setHead(self, node):
         if self.head is None:
             self.head = node
             self.tail = node
