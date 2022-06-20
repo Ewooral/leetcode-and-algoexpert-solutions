@@ -102,6 +102,7 @@ def main() -> None:
     print(graph.graph)
     print(hasSingleCycle(customList=[2, 1, -1]))
 
+
 if __name__ == "__main__":
     main()
 

@@ -127,10 +127,12 @@ in both the document and characters variables/identifiers
 
                 if stack[-1] == matchingBrackets[char]:
                    stack.pop()
+                else:
+                    return False
 
 3. return True if stack is empty and False if not empty
         
-        return len(stack) == 0. 
+        return len(stack) == 0. or True if len(stack) < 1 else False
 
 
 
@@ -182,24 +184,26 @@ in both the document and characters variables/identifiers
    3. If we visit all element in the list, and we're not back at the starting
       point, return False
       
-   ```py
-        def hasSingleCycle(array):
-        currentIndex = 0
-        elementsVisited = 0
-        while elementsVisited < len(array):
-        if elementsVisited > 0 and currentIndex == 0:
-                return  False
-        elementsVisited += 1
-        currentIndex = getNextIndex(currentIndex, array)
-        return currentIndex == 0
+```py
+def hasSingleCycle(_array):
+   currentIndex = 0
+   elementsVisited = 0
+   while elementsVisited < len(_array):
+      if elementsVisited > 0 and currentIndex == 0:
+              return  False
+   elementsVisited += 1
+   currentIndex = getNextIndex(currentIndex,_array)
+   return currentIndex == 0
 
-        def getNextIndex(currentIndex, array):
-        jump = array[currentIndex]
-        nextIndex = (currentIndex + jump) % len(array)
-        return nextIndex if nextIndex >= 0 else nextIndex + len(array)
-            
+def getNextIndex(currentIndex, array):
+    jump = array[currentIndex]
+    nextIndex = (currentIndex + jump) % len(array)
+    return nextIndex if nextIndex >= 0 else nextIndex + len(array)
+    
         
-   ```
+```
       
+# Frequency of an element
 
    
+# Dijkstra's Algorithm
