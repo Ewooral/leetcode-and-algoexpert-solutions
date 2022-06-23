@@ -11,3 +11,6 @@ def select_sort_rec(a):
         # b[0] = aux
 
     return [aux] + select_sort_rec(b[1:])
+
+
+print(select_sort_rec([3, 0, 9, 1, 5, 4]))
