@@ -24,7 +24,7 @@ def Selection_Sort(customList):
         for i in range(currentIndex + 1, len(customList)):
             if customList[minValueIndex] > customList[i]:
                 minValueIndex = i
-        swap1(currentIndex, minValueIndex, customList,)
+        swap1(currentIndex, minValueIndex, customList, )
         currentIndex += 1
     return customList
 
@@ -34,3 +34,45 @@ def swap1(i, j, array):
 
 
 print("Approach 2: ", Selection_Sort([9, 2, 3, 8, 4]))
+
+
+print("Selection sort Approach 3")
+
+
+def select_sort_rec(a):
+    print("selection_sort ", "(", a, ")")
+    if len(a) <= 1:
+        return a
+    else:
+        b = list(a)
+        min_index = b.index(min(b))
+        min_value = b[min_index]
+        # b[min_index] = b[0]
+        # b[0] = min_value
+        swap2(0, min_index, b)
+
+    return [min_value] + select_sort_rec(b[1:])
+
+
+def swap2(i, j, array):
+    array[i], array[j] = array[j], array[i]
+
+
+print(select_sort_rec([3, 2, 6, 0, 1, 10]))
+
+print("Selection sort Approach 4")
+
+
+def select_sort_recA(a):
+    print("selection_sort ", "(", a, ")")
+    if len(a) <= 1:
+        return a
+    else:
+        b = list(a)
+        mini = min(b)
+        b.remove(mini)
+
+    return [mini] + select_sort_rec(b)
+
+
+print(select_sort_recA([3, 2, 6, 0, 1, 10]))
