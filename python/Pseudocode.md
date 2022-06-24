@@ -207,3 +207,88 @@ def getNextIndex(currentIndex, array):
 
    
 # Dijkstra's Algorithm
+
+
+# Sliding window maximum element of k values
+E.g. nums = [1, 3, -1, -3, 5, 3, 6, 7], k=3
+[1, 3, -1] = 3,
+[3, -1, -3] = 3, 
+[-1, -3, 5] = 5, 
+[-3, 5, 3] = 5, 
+[5, 3, 6] = 6,
+[3, 6, 7] = 7
+output: = [3, 3, 5, 5, 6, 7]
+
+1. Our function will have two params, **nums** and **k** where nums represent
+   our list and k represents our window size.
+2. we will have an **output** variable to keep track of our max values
+3. we will use a queue data structure to keep track of values in our window
+4. Our sliding window will have both **left** and **right** pointers 
+   where **l = 0,** and **r = 0**   
+5. while our right pointer index is not more than the length of our list, while our 
+   queue is not empty, and the left pointer value in our window is greater than the right,
+   pop the first value off the queue. repeat the process till the condition is False.
+6. Append the right pointer index into the queue
+```py
+nums:list
+k: int
+output = [],Queue = [], l = r = 0
+while len(Queue) >= 1 and nums[Queue[-1]] < nums[r]:
+   Queue.pop(0)
+```
+
+
+# SELECTION SORT - using recursion
+1. The base case is, if the list is empty or has only one
+   item, return the list, else, start from point 2
+2. Given a sequence of unsorted nums, create a list out of them 
+
+        new_sequence = list(sequence_of_nums)
+
+3. search for the index of the min value in the sequence
+   and save it in a variable **min_index**
+   
+        min_index = new_sequence.index(min(new_sequence))
+
+4. find the value of min_index and save it in a variable
+   
+        min_value = new_sequence[min_index]
+
+5. swap the min_value with the first item in the list
+
+        new_sequence[min_index] = new_sequence[0]
+        new_sequence[0] = min_value
+
+6. return a list of min_value + recursive call to the function
+   starting from the second item in the list
+   
+        return [min_value] + select_sort_rec(b[1:])
+
+
+
+# Kadane's Algorithm
+Time = O(N), space = O(1)
+        
+1. set **currentMax** and **FinalMax** to first item in the array
+         
+       currentMax = FinalSum = array[0]
+
+2. loop through the list keep track of **currentNum**
+       
+       for currentNum in array[1:]:
+   
+3. find max of (currentNum) and (currentNum + currentMax)
+
+       currentMax = max(currentNum, currentMax + currentNum)
+
+4. update the values of both currentMax and FinalMax
+   
+       finalMax = max(finalMax, currentMax)
+
+[3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]
+E.g currentMaxSum = 3 picked -> 3+5 = 8 or 5, 8 picked -> 8 + -(9) = -1 or -9, -1 picked -> 
+-1 + 1 = 0 or 1, 1 picked -> and so on,... 
+    finalMax = 3 -> 8, ... -> 19 
+    finalMax = 19
+    
+

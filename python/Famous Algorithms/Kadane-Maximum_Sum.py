@@ -1,7 +1,6 @@
 # O(n) time, O(1) space
 def kadanes_algorithm(array):
-    currentMax = array[0]
-    finalMax = array[0]
+    currentMax = finalMax = array[0]
     for num in array[1:]:
         currentMax = max(num, currentMax + num)
         finalMax = max(finalMax, currentMax)
