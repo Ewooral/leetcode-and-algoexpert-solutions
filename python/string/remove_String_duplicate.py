@@ -56,22 +56,24 @@ print(has_duplicates([2, 4, "2", 5]))
 print(has_duplicates([2, 4, 5, 1, 3, 4, 9]))
 print(has_duplicates([]))
 
+
 def freqElem(nums: List[int]) -> dict:
     frequency = 0
     counted = {}
+    nums.sort()
+    print(nums.count(6))
     for num in nums:
         if num in counted:
             frequency += 1
         else:
-            frequency = 0
-            counted[num] = frequency + 1
+            frequency = 1
+        counted[num] = frequency
         print(num, frequency)
     return counted
 
-print(freqElem([1, 3, 2, 3, 3, 5, 1, 1, 5, 1]))
+
+print(freqElem([1, 3, 2, 1, 1, 3, 3, 5, 1, 1, 5, 1]))
 
 '''
-Frequency[1: 4, 3: 3, 2: 2, 5: 2] 
-
-{1: True, 3: True, 2: True, 5: True}
+Frequency{1: 6, 2: 1, 3: 3, 5: 2} 
 '''

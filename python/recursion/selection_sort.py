@@ -14,3 +14,18 @@ def select_sort_rec(a):
 
 
 print(select_sort_rec([3, 0, 9, 1, 5, 4]))
+
+
+def select_sort_recAA(a):
+    print("selection_sort ", "(", a, ")")
+    if len(a) <= 1:
+        return a
+    else:
+        b = list(a)
+        mini = min(b)
+        b.remove(mini)
+
+    return [mini] + select_sort_rec(b)
+
+
+print(select_sort_recAA([3, 2, 6, 0, 1, 10]))

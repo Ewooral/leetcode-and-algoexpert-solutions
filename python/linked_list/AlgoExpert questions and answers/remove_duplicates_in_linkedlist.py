@@ -15,7 +15,6 @@ class LinkedList:
         print()
 
 
-
 def remove_duplicates(linkedList):
     currentNode = linkedList
     while currentNode is not None:

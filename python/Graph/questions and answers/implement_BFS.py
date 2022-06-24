@@ -4,7 +4,7 @@ class Node:
         self.name = name
 
     def addChild(self, name):
-        self.children.append(Graph(name))
+        self.children.append(Node(name))
 
     # O(v + e) T, O(v) S
     def breadthFirstSearch(self, array):
@@ -15,3 +15,11 @@ class Node:
             for child in current.children:
                 queue.append(child)
         return array
+
+
+node = Node(0)
+node.addChild(1)
+node.addChild(2)
+node.addChild(3)
+
+print(node.breadthFirstSearch([]))

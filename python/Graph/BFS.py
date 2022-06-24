@@ -1,25 +1,32 @@
-class Graph:
-    def __init__(self, graphDic = None):
-        if graphDic is None:
-            graphDic = {}
-        self.graphDic = graphDic
+from dataclasses import dataclass
+from collections import defaultdict
 
-    def addGraph(self, vertex, edge):
-        self.graphDic[vertex].append(edge)
-        
-     # O(v + e) T, O(v) S
-    def BFS(self, vertex):
+
+@dataclass
+class Graph:
+    graph: dict = None
+    if graph is None:
+        graph = defaultdict
+    else:
+        graph = None
+
+    def addVertex(self, vertex, edge):
+        self.graph[vertex].append(edge)
+
+    # O(v + e) T, O(v) S
+    def BFS(self, vertex, value):
         visited = [vertex]
         queue = [vertex]
         while len(queue) > 0:
-            deVertex = queue.pop(0) # prints the first element
+            deVertex = queue.pop(0)  # prints the first element
             print(deVertex)
-            for adjacentVertex in self.graphDic[deVertex]:
+            if deVertex == value:
+                adjacent_neighbors = self.graph[deVertex]
+                return adjacent_neighbors
+            for adjacentVertex in self.graph[deVertex]:
                 if adjacentVertex not in visited:
-                    visited.append(adjacentVertex)  
-                    queue.append(adjacentVertex) 
-
-
+                    visited.append(adjacentVertex)
+                    queue.append(adjacentVertex)
 
 
 customDic = {
@@ -28,7 +35,7 @@ customDic = {
     "c": ["a", "e"],
     "d": ["b", "e", "f"],
     "e": ["d", "c"],
-    "f": ["d", "e"], 
+    "f": ["d", "e"],
 }
 anotherDic = {
     "a": ["b", "c", "d"],
@@ -42,17 +49,24 @@ anotherDic = {
     "i": [],
     "j": [],
     "k": []
-    
+
 }
 graph = Graph(customDic)
-print(graph.graphDic)
+print(graph.graph)
 print("...insert...")
-# let's add edge f to the graph 
-graph.addGraph("e", "f")
-graph.addGraph("e", "b")
-print(graph.graphDic)
+
+# let's add edge f to the graph
+graph.addVertex("e", "f")
+graph.addVertex("e", "b")
+print(graph.graph)
 print("...traverse(BFS)...")
-graph.BFS("a")
+print("Adjacent neighbors: ", graph.BFS("a", "f"))
 print()
 graph2 = Graph(anotherDic)
-graph2.BFS("f")
+# graph2.BFS("f")
+
+# update the Graph
+graph.graph.update({"Bloomberg": ["Elijah", 29, "$230,000/yr"]})
+print(graph.graph)
+graph.addVertex("Bloomberg", "Tema")
+print(graph.graph)

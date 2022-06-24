@@ -13,7 +13,8 @@
 
 2. Convert the string to a list
 
-    - When looping, if you encounter a whitespace " ", append from the start of the string to the current string (words[startOfword:index])
+    - When looping, if you encounter a whitespace " ", append from the start of the string to the current 
+      string (words[startOfword:index])
     - update **startOfword** from 0 to where our index currently points
 
             if words[index] == " ":
@@ -135,37 +136,68 @@ in both the document and characters variables/identifiers
         return len(stack) == 0. or True if len(stack) < 1 else False
 
 
+# Create a Graph Class
+1. Check if the graph is None. If yes, create it else, initialize it
 
+         from collections import defaultdict
+         from dataclasses import dataclass
+         
+         @dataclass
+         class Graph:
+            graph: dict = None
+            if graph is None: 
+               graph = defaultdict
+            else:
+               graph = None
+
+            def addVertex(self, vertex, edge):
+                  self.graph[vertex].append(edge)
 
 # Breadth First Search Algorithm.........................
 
-1. keep a **QUEUE** data structure containing list of vertices and adjacent edges thru which you want to search for a particular item.
+1. Initialize an empty **queue** and enqueue the starting **vertex** in it
+   and mark the vertex as **visited**
+        
+            def Search(vertex):
+               queue = [vertex]
+               visited = [vertex]
 
-2. dequeue a vertex off the queue and check if it matches with what you're looking for
+2. while the queue is not empty, dequeue the first vertex from the queue
 
-3. if yes, mark the vertex or edge as checked and then return True
+            dequeue = queue.pop(0)
+            print(dequeue)
 
-4. if no, check if vertex has neighbors or adjacent vertices and enqueue them in the queue
-
-5. dequeue the next item off the queue and repeat the process again until the queue is empty while marking each item as checked!
-
-6. return False if nothing is found
+4. For each neighbor of the dequeued item, if the neighbor is unvisited
+             
+            for neighbor in graph[dequeue]:
+                if neighbor not in visited:
+                    visited.append(neighbor)
+                    queue.append(neighbor) 
 
 
 
 # Depth First Search Algorithm.............................
 
-1. keep a **STACK** data structure containing list of vertices and adjacent edges thru which you want to search for a particular item.
+1. Initialize an empty **stack** and enqueue the starting **vertex** in it
+   and mark the vertex as **visited**
+        
+            def Search(vertex):
+               stack = [vertex]
+               visited = [vertex]
 
-2. dequeue a vertex off the queue and check if it matches with what you're looking for
+2. while the stack is not empty, pop the first vertex from the stack
 
-3. if yes, mark the vertex or edge as checked and then return True
+            popStack = stack.pop()
+            print(dequeue)
 
-4. if no, check if vertex has neighbors or adjacent vertices and enqueue them in the queue
+4. For each neighbor of the dequeued item, if the neighbor is unvisited
+             
+            for neighbor in graph[dequeue]:
+                if neighbor not in visited:
+                    visited.append(neighbor)
+                    queue.append(neighbor) 
 
-5. dequeue the next item off the queue and repeat the process again until the queue is empty while marking each item as checked!
 
-6. return False if nothing is found
 
 
 # Single cycle check
@@ -203,8 +235,18 @@ def getNextIndex(currentIndex, array):
         
 ```
       
-# Frequency of an element
+# Frequency of an element and get rid of duplicates in a list
+1. set initial **frequency** to **0**
+2. keep track of all counted items in a hash table called **counted**
+3. sort the list in ascending order.
 
+       frequency = 0
+       counted = {}
+
+4. for each **num** in the list, if the **num** is in the **hash table**, increment
+   frequency by 1
+5. if not, set frequency to 1 
+6. add the num to the hash table
    
 # Dijkstra's Algorithm
 
@@ -292,3 +334,27 @@ E.g currentMaxSum = 3 picked -> 3+5 = 8 or 5, 8 picked -> 8 + -(9) = -1 or -9, -
     finalMax = 19
     
 
+
+# Find path between two Nodes in a Graph
+1. the function takes four parameters, **path, start(of the path), end, and a graph**
+2. if the path is None, create it. 
+
+       if path is None:
+          path = []
+       path = path + [start]
+3. return path if start is the same as end, thus if path has only one item
+   
+       if start == end:
+          return path
+4. return None if a path cannot be found
+
+       if graph.get(key) is None:
+          return None
+5. For a node in graph if a node is not in path, create a new_path and assign 
+   the result of a recursive call of the function to it
+
+       for node in self.graph[start]:
+           if node not in path:
+              new_path = find_path(path, start, end, graph)
+              if new_path:
+                  return new_path 
