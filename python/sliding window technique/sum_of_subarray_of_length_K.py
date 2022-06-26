@@ -22,3 +22,4 @@ def sum_of_subarray(arr: List[int], k: int) -> List[int]:
 
 
 print(sum_of_subarray([1, 2, 3, 4, 5, 6], 3))
+print(sum_of_subarray([1, 3, -1, -3, 5, 3, 6, 7], 3))

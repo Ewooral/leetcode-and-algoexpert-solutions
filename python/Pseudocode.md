@@ -309,6 +309,7 @@ while len(Queue) >= 1 and nums[Queue[-1]] < nums[r]:
 
 
 # Kadane's Algorithm
+This finds the maximum sum of all possible subarrays
 Time = O(N), space = O(1)
         
 1. set **currentMax** and **FinalMax** to first item in the array
@@ -358,3 +359,88 @@ E.g currentMaxSum = 3 picked -> 3+5 = 8 or 5, 8 picked -> 8 + -(9) = -1 or -9, -
               new_path = find_path(path, start, end, graph)
               if new_path:
                   return new_path 
+
+
+
+
+
+# Move instances of K elements to the end of the Array
+
+      input = [2, 1, 2, 2, 2, 3, 4, 2], valueToMove = 2
+      output = [1, 3, 4, 2, 2, 2, 2, 2]
+
+1. initialize a left, right pointer, variable valueToMove
+2. while left is less than right:
+3. reduce the right pointer by 1 while left is less than right and right value is equal to valueToMove
+4. move out of the second while loop and check If left value is equal to valueToMove, swap left and right values
+5. while left is still less than right increment left pointer by one and return the array
+
+
+```py
+# O(N)T, O(1)S
+def moveInstances(arr, k):
+    # valueToMove = k
+    left = 0
+    right = len(arr) - 1
+    while left < right:
+       while left < right and arr[right] == k:
+         right -= 1
+       if arr[left] == k: # swap and right value
+          arr[left], arr[right] = arr[right], arr[left]
+       left += 1
+    return arr
+print(moveInstances([2, 1, 2, 2, 2, 3, 4, 2], 2))
+```
+
+
+
+
+
+# Zigzag Traversal 
+E.g. [
+    [1, 3, 4, 10],
+    [2, 5, 9, 11],
+    [6, 8, 12,15],
+    [7, 13, 14,16]
+]
+Output = [1, 2, 3, 4, ... , 15, 16]
+
+1. Keep track of the directions, row, column, movingDown: bool, height and width
+                 
+         height = last row in our array
+         width  = last col in our array
+         row == height means we are at last row
+         col == width means we are at last col
+
+         row = col = 0,  movingDown = True, height = len(arr) - 1, width = len(arr[0]) - 1, newArray = [] 
+
+2. we want to keep traversing our 2d array so far as we are not out of bounds
+         
+        while not outOfBounds(row, col, height, width):
+            put current value in newArray
+            if movingDown
+               if At first_Column or last_Row 
+                   movingDown = False
+                   if last_Row(row == height)
+                      increase col by 1
+                   else   
+                      increase row by 1
+               else
+                  reduce col by 1
+                  increase row by 1
+            else
+               if at_First_Row or last_Column
+                  movingDown = True
+                  if last_Column(col == width) 
+                     increase row by 1
+                 else
+                     increase col by 1
+               else
+                  increase col by 1  
+                  reduce row by 1
+        return newArray
+
+3. create the outOfBounds function
+      
+       outOfBounds(row, col, height, row)
+            return row < 0 or col < 0 or row > height or col > width
