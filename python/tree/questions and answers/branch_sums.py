@@ -2,7 +2,7 @@ from binarytree import Node
 import queue
 
 
-def insertAtLeft(rootNode, nodeValue):
+# def insertAtLeft(rootNode, nodeValue):
     if rootNode is None:
         rootNode = nodeValue
     else:
