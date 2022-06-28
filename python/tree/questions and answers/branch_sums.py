@@ -12,7 +12,7 @@ def insertAtLeft(rootNode, nodeValue):
             root = q.get()
             if root.left is not None:
                 q.put(root.left)
-            # else:
+            else:
                 root.left = nodeValue
                 return "...Inserted!..."
 
