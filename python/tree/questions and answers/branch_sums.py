@@ -29,7 +29,7 @@ def insertAtRight(rootNode, nodeValue):
                 q.put(root.right)
             else:
                 root.right = nodeValue
-                # return "...Inserted!..."
+                return "...Inserted!..."
 
 root = Node(1)
 
