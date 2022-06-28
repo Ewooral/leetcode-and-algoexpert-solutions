@@ -3,7 +3,7 @@ import queue
 
 
 def insertAtLeft(rootNode, nodeValue):
-    if rootNode is None:
+    # if rootNode is None:
         rootNode = nodeValue
     else:
         q = queue.Queue()
