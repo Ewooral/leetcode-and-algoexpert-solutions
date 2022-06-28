@@ -24,7 +24,7 @@ def insertAtRight(rootNode, nodeValue):
         q = queue.Queue()
         q.put(rootNode)
         while not q.empty():
-            # root = q.get()
+            root = q.get()
             if root.right is not None:
                 q.put(root.right)
             else:
