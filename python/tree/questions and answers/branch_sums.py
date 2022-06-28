@@ -17,7 +17,7 @@ def insertAtLeft(rootNode, nodeValue):
                 return "...Inserted!..."
 
 
-def insertAtRight(rootNode, nodeValue):
+# def insertAtRight(rootNode, nodeValue):
     if rootNode is None:
         rootNode = nodeValue
     else:
