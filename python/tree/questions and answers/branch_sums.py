@@ -34,7 +34,7 @@ def insertAtRight(rootNode, nodeValue):
 root = Node(1)
 
 insertAtLeft(root, Node(2))
-insertAtRight(root, Node(3))
+# insertAtRight(root, Node(3))
 
 insertAtLeft(root.left, Node(4))
 insertAtRight(root.left, Node(5))
