@@ -5,7 +5,7 @@ import queue
 def insertAtLeft(rootNode, nodeValue):
     if rootNode is None:
         rootNode = nodeValue
-    # else:
+    else:
         q = queue.Queue()
         q.put(rootNode)
         while not q.empty():
