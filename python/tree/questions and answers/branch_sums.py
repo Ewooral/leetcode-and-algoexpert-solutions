@@ -20,7 +20,7 @@ def insertAtLeft(rootNode, nodeValue):
 def insertAtRight(rootNode, nodeValue):
     if rootNode is None:
         rootNode = nodeValue
-    else:
+    # else:
         q = queue.Queue()
         q.put(rootNode)
         while not q.empty():
