@@ -40,7 +40,7 @@ insertAtLeft(root.left, Node(4))
 insertAtRight(root.left, Node(5))
 
 insertAtLeft(root.right, Node(6))
-insertAtRight(root.right, Node(7))
+# insertAtRight(root.right, Node(7))
 
 insertAtLeft(root.left.left, Node(8))
 insertAtRight(root.left.left, Node(9))
