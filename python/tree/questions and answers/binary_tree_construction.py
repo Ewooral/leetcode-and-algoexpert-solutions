@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-
+from collections import deque as que
 from binarytree import Node
 import queue
 
@@ -161,6 +161,35 @@ def getTreeInfo(tree):
     sumOfAllDepths = sumOfDepths + leftTreeInfo.sum_of_all_depths + rightTreeInfo.sum_of_all_depths
     return TreeInfo(numNodesInTree, sumOfDepths, sumOfAllDepths)
 
+
+def zigzag_level_order(root):
+    if root is None:
+        return []
+    else:
+        result = []
+        zigzag = False
+        q = que()
+        q.append(root)
+        while q:
+            level = []
+            for _ in range(len(q)):
+                if zigzag:
+                    node = q.pop()
+                    level.append(node)
+                    if node.right:
+                        q.appendleft(node.right)
+                    if node.left:
+                        q.appendleft(node.left)
+                else:
+                    node = q.popleft()
+                    level.append(node.value)
+                    if node.left:
+                        q.append(node.left)
+                    if node.right:
+                        q.append(node.right)
+            result.append(level)
+            zigzag = not zigzag
+        return result
 
 @dataclass
 class TreeInfo:
