@@ -26,7 +26,7 @@ def insertAtRight(rootNode, nodeValue):
         while not q.empty():
             root = q.get()
             if root.right is not None:
-                q.put(root.right)
+                # q.put(root.right)
             else:
                 root.right = nodeValue
                 return "...Inserted!..."
