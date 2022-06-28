@@ -51,7 +51,7 @@ print(root)
 
 
 def brancjh_sums(root):
-    # sums = []
+    sums = []
     calculate_branch_sums(root, 0, sums)
     return sums
 
