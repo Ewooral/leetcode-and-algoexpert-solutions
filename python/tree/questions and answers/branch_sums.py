@@ -14,7 +14,7 @@ def insertAtLeft(rootNode, nodeValue):
                 q.put(root.left)
             else:
                 root.left = nodeValue
-                return "...Inserted!..."
+                # return "...Inserted!..."
 
 
 def insertAtRight(rootNode, nodeValue):
