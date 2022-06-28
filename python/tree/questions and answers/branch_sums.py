@@ -47,7 +47,7 @@ insertAtRight(root.left.left, Node(9))
 
 insertAtRight(root.left.right, Node(10))
 
-# print(root)
+print(root)
 
 
 def branch_sums(root):
