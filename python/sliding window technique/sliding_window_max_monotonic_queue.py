@@ -19,7 +19,7 @@ def max_sliding_window(nums: List[int], k: int) -> List:
         # pop smaller values from q
         while len(Queue) >= 1 and nums[Queue[-1]] < nums[r]:
             # nums[Queue[-1] points to the left value in nums and nums[r] points to the right value in nums
-            print(af = nums[Queue[-1]])
+            # print(af = nums[Queue[-1]])
             Queue.pop(0)
         Queue.append(r)
         # remove left value from window

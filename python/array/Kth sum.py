@@ -1,3 +1,8 @@
+"""
+Given an array of integers, find combination of integers that will
+amount to a target K
+"""
+
 from itertools import combinations
 from functools import reduce
 from operator import add
@@ -18,6 +23,6 @@ def Kth_sum(lst, dev, target):
 if __name__ == '__main__':
     lst = [9, 4, 2, 13, 14, 22, 11, 7, 12, 8, 81, 9, 6]
     dev = 0
-    target = 8
+    target = 50
     Kth_sum(lst, dev, target)
 

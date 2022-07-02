@@ -50,7 +50,7 @@ insertAtRight(root.left.right, Node(10))
 print(root)
 
 
-def brancjh_sums(root):
+def branch_sums(root):
     sums = []
     calculate_branch_sums(root, 0, sums)
     return sums

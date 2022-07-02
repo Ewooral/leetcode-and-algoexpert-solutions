@@ -261,22 +261,33 @@ E.g. nums = [1, 3, -1, -3, 5, 3, 6, 7], k=3
 [3, 6, 7] = 7
 output: = [3, 3, 5, 5, 6, 7]
 
-1. Our function will have two params, **nums** and **k** where nums represent
+1. Our `function` will have two params, **nums** and **k** where nums represent
    our list and k represents our window size.
-2. we will have an **output** variable to keep track of our max values
+2. we will have an `output` variable to keep track of our max values
 3. we will use a queue data structure to keep track of values in our window
 4. Our sliding window will have both **left** and **right** pointers 
-   where **l = 0,** and **r = 0**   
+   where `l = 0, and r = 0`   
 5. while our right pointer index is not more than the length of our list, while our 
    queue is not empty, and the left pointer value in our window is greater than the right,
    pop the first value off the queue. repeat the process till the condition is False.
 6. Append the right pointer index into the queue
 ```py
-nums:list
-k: int
-output = [],Queue = [], l = r = 0
-while len(Queue) >= 1 and nums[Queue[-1]] < nums[r]:
-   Queue.pop(0)
+def max():
+   nums:list
+   k: int
+   output = [],Queue = [], l = r = 0
+   while len(Queue) >= 1 and nums[Queue[-1]] < nums[r]:
+      while len(Queue) >= 1 and nums[Queue[-1]] < nums[r]:
+         Queue.pop(0)
+      Queue.append(r)
+      # remove left value from window
+      if l > Queue[0]:
+        Queue.pop(0)
+      if (r + 1) >= k:
+        output.append(nums[Queue[0]])
+        l += 1
+      r += 1
+   return output 
 ```
 
 
@@ -308,8 +319,8 @@ while len(Queue) >= 1 and nums[Queue[-1]] < nums[r]:
 
 
 
-# Kadane's Algorithm
-This finds the maximum sum of all possible subarrays
+# Kadane's Algorithm (Largest Sum Contiguous Subarray)
+This finds the maximum sum of all possible subarrays 
 Time = O(N), space = O(1)
         
 1. set **currentMax** and **FinalMax** to first item in the array
@@ -444,3 +455,20 @@ Output = [1, 2, 3, 4, ... , 15, 16]
       
        outOfBounds(row, col, height, row)
             return row < 0 or col < 0 or row > height or col > width
+
+
+
+# QUICK SORT
+1. Given an Array of integers, [8, 5, 2, 9, 5, 6, 3]
+we're gonna chose the first element  as our pivot, p = 8
+2. we're gonna initialize two pointers l, and r 
+where l points to 5, and r points to 3.
+3. while r >= l, continue to loop
+4. while looping, if the l > p and r < p:
+5. we'll swap the l and r, if Yes
+6. if l is not > or = p, we'll increase l by 1
+7. if r is not < p, we'll decrease r by 1
+8. while l and r overlap, we'll swap p with final position of r
+9. We'll repeat the iteration again
+10. leftSubarrayIsSmaller = (length of the left subarray)r - 1 - s < e - r + 1(length of the right subarray)
+11. O(n log n)T and O(log n )S

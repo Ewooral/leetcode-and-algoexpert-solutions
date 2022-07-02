@@ -46,6 +46,7 @@ def preOrderTraversal(rootNode):
 preOrderTraversal(newBT)
 print("...............InOrder...................")
 
+
 # # ........> O(n)T, S
 def inOrderTraversal(rootNode):
     if not rootNode:  # ........> O(1)
@@ -54,9 +55,32 @@ def inOrderTraversal(rootNode):
     print(rootNode.data)  # ........> O(1)
     inOrderTraversal(rootNode.rightChild)  # ........> O(n/2)
 
+
+# O(N)T | O(1)S
+def inOrder_Iterative(rootNode, callback):
+    prevNode = None
+    curNode = rootNode
+    while curNode is not None:
+        if prevNode is None or prevNode == curNode.parent:
+            if curNode.left is not None:
+                nextNode = curNode.left
+            else:
+                callback(curNode)
+                nextNode = curNode.right if curNode.right is not None else curNode.parent
+        elif prevNode == curNode.left:
+            callback(curNode)
+            nextNode = curNode.right if curNode.right is not None else curNode.parent
+        else:
+            nextNode = curNode.parent
+        prevNode = curNode
+        curNode = nextNode
+
+
 inOrderTraversal(newBT)
+# inOrder_Iterative(newBT, print(newBT))
 print("...............postOrder...................")
- 
+
+
 # # ........> O(n)T, S
 def postOrderTraversal(rootNode): 
     if not rootNode:  # ........> O(1)
@@ -93,7 +117,7 @@ def searchBT(rootNode, nodeValue): # O(n)T and S
         customQueue = queue.Queue()
         customQueue.enqueue(rootNode)
         while not(customQueue.isEmpty()):
-            root = customQueue.dequeue();
+            root = customQueue.dequeue()
             if root.value.data == nodeValue:
                 return "Found!"
             if root.value.leftChild is not None:
@@ -182,6 +206,7 @@ deleteDeepestNode(newBT, getDeepestNode(newBT))
 levelOrderTraversal(newBT)
 
 print("..............delete any node....................")
+
 
 def deleteAnyNode(rootNode, node):
     if rootNode is None:
