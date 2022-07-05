@@ -28,7 +28,7 @@ def smallest_subarray_sum(arr, s):
 def main():
     Input = [2, 1, 5, 2, 3, 2]
     S = 7
-    print(smallest_subarray_sum(Input, S))
+    print("The length of the smallest contiguous subarray is: ", smallest_subarray_sum(Input, S))
 
 
 if __name__ == '__main__':
