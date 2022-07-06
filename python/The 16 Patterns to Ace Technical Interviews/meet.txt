@@ -1,0 +1,12 @@
+Suppose that there is a
+pile of
+sixteen 16 coins
+on a table,
+one of which is a
+counterfeit weighing
+slightly less than the others.
+You also have a
+two-pan balance which
+allows you to
+weigh one set of coins
+against another. Using

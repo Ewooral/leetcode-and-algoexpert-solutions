@@ -15,6 +15,7 @@ class Graph:
     def topogologicalSortUtil(self, v, visited, stack):
         visited.append(v)
 
+        # Check if starting vertex has adjacent
         for i in self.graph[v]:
             if i not in visited:
                 self.topogologicalSortUtil(i, visited, stack)
