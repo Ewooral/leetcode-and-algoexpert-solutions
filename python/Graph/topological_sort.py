@@ -34,7 +34,7 @@ class Graph:
         print(stack)
 
 
-customGraph = Graph(8)
+customGraph = Graph(3)
 customGraph.addEdge("A", "C")
 customGraph.addEdge("C", "E")
 customGraph.addEdge("E", "H")

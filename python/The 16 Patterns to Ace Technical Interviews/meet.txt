@@ -1,12 +1,3 @@
-Suppose that there is a
-pile of
-sixteen 16 coins
-on a table,
-one of which is a
-counterfeit weighing
-slightly less than the others.
-You also have a
-two-pan balance which
-allows you to
-weigh one set of coins
-against another. Using
+10.1.2.1 - car [01/Mar/2022:13:05:05 +0900] "GET /python HTTP/1.0" 200 2222
+10.1.1.9 - car [01/Mar/2022:13:05:10 +0900] "GET /python HTTP/1.0" 200 2222
+
