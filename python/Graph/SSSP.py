@@ -21,22 +21,6 @@ class Graph:
                 queue.append(new_path)
 
 
-def find_path(graph, start, end, path=None):
-    # print("find_path", "(", path, ")")
-    if path is None:
-        path = []
-    path += [start]
-    if start == end:
-        return path
-    for node in graph[start]:
-        if node not in path:
-            new_path = find_path(graph, node, end, path)
-            if len(new_path) > 0:
-                return new_path
-        # return "Cycle has been detected!"
-    return None
-
-
 customDict = {"a": ["b", "c"],
               "b": ["d", "g"],
               "c": ["d", "e"],
@@ -58,5 +42,3 @@ graph1 = Graph(ano)
 
 print(graph1.BFS("a", "f"))
 print(graph1.BFS("a", "e"))
-# print(find_path(graph.graphDic, "a", "e"))
-# print(find_path(graph.graphDic, "a", "f"))
