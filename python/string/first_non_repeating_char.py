@@ -10,7 +10,7 @@ def first_non_repeating_char(string):
     return -1
 
 
-print(first_non_repeating_char("abcdfa"))
+print(first_non_repeating_char("abcdfd"))
 
 
 # O(N)T, O(1)S
@@ -25,4 +25,4 @@ def FirstNonRepeatingChar(Str):
     return -1
 
 
-print(first_non_repeating_char("abcdfa"))
+print(first_non_repeating_char("abcdf"))
