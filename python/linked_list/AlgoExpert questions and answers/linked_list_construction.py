@@ -123,6 +123,16 @@ class DoublyLinkedList:
         node.prev = None
         node.next = None 
 
+# O(n) time | O(1) space
+def reverseLinkedList(head):
+    p1, p2 = None, head
+    while p2 is not None:
+        p3 = p2.next
+        p2.next = p1
+        p1 = p2
+        p2 = p3
+    return p1
+
 
 def main():
     node = Node(value= 20)
@@ -142,6 +152,7 @@ def main():
 
     linkedList.print_list()
     print(linkedList.length())
+    print(reverseLinkedList(node))
 
 
 if __name__ == "__main__":
