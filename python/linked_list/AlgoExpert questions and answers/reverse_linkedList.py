@@ -21,7 +21,7 @@ class Node:
         print()
 
 
-def reverse(head):
+# def reverse(head):
     previous, current, next = None, head, None
     while current is not None:
         next = current.next  # temporarily store the next node
