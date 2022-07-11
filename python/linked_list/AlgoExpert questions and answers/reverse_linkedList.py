@@ -22,7 +22,7 @@ class Node:
 
 
 def reverse(head):
-    # previous, current, next = None, head, None
+    previous, current, next = None, head, None
     while current is not None:
         next = current.next  # temporarily store the next node
         current.next = previous  # reverse the current node
