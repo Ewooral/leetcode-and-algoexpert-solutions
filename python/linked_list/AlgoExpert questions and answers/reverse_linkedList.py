@@ -39,7 +39,7 @@ def main():
     head.next.next.next.next = Node(10)
     tail = head.next.next.next.next
 
-    # print("Nodes of original LinkedList are: ", end='')
+    print("Nodes of original LinkedList are: ", end='')
     head.print_list()
 
     result = reverse(head)
