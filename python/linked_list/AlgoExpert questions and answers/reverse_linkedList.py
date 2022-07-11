@@ -31,7 +31,7 @@ def reverse(head):
     return previous
 
 
-# def main():
+def main():
 #     head = Node(2)
     head.next = Node(4)
     head.next.next = Node(6)
