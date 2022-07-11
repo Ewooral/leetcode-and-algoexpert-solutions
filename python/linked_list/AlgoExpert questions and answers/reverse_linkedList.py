@@ -35,7 +35,7 @@ def main():
     head = Node(2)
     head.next = Node(4)
     head.next.next = Node(6)
-    # head.next.next.next = Node(8)
+    head.next.next.next = Node(8)
     head.next.next.next.next = Node(10)
     tail = head.next.next.next.next
 
