@@ -37,7 +37,7 @@ def main():
     head.next.next = Node(6)
     head.next.next.next = Node(8)
     head.next.next.next.next = Node(10)
-    tail = head.next.next.next.next
+    # tail = head.next.next.next.next
 
     print("Nodes of original LinkedList are: ", end='')
     head.print_list()
