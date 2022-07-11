@@ -8,7 +8,7 @@ Given the head of a Singly LinkedList, reverse the LinkedList.
 from __future__ import print_function
 
 
-# class Node:
+class Node:
     def __init__(self, value, next=None):
         self.value = value
         self.next = next
