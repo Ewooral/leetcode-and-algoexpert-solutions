@@ -5,7 +5,7 @@ Given the head of a Singly LinkedList, reverse the LinkedList.
 """
 
 # mycode
-from __future__ import print_function
+# from __future__ import print_function
 
 
 class Node:
