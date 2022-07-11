@@ -10,7 +10,7 @@ from __future__ import print_function
 
 class Node:
     def __init__(self, value, next=None):
-        # self.value = value
+        self.value = value
         self.next = next
 
     def print_list(self):
