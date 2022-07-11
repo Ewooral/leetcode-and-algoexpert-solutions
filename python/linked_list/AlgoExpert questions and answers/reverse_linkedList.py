@@ -18,7 +18,7 @@ class Node:
         while temp is not None:
             print(temp.value, end=" ")
             temp = temp.next
-        print()
+        # print()
 
 
 def reverse(head):
