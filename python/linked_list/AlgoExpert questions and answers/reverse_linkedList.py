@@ -47,7 +47,7 @@ def main():
     result.print_list()
 
 
-# main()
+main()
 
 '''
 Time complexity 
