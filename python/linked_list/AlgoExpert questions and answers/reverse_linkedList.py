@@ -14,7 +14,7 @@ class Node:
         self.next = next
 
     def print_list(self):
-        temp = self
+        # temp = self
         while temp is not None:
             print(temp.value, end=" ")
             temp = temp.next
