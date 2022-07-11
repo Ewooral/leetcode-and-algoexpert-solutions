@@ -42,7 +42,7 @@ def main():
     print("Nodes of original LinkedList are: ", end='')
     head.print_list()
 
-    # result = reverse(head)
+    result = reverse(head)
     print("Nodes of reversed LinkedList are: ", end='')
     result.print_list()
 
