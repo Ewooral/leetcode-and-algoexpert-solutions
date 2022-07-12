@@ -3,6 +3,7 @@
 
 from collections import defaultdict
 
+
 class Graph:
     def __init__(self):
         self.nodes = set()
@@ -16,8 +17,9 @@ class Graph:
         self.edges[fromNode].append(toNode)
         self.distances[(fromNode, toNode)] = distance
 
+
 def dijkstra(graph, initial):
-    visited = {initial : 0}
+    visited = {initial: 0}
     path = defaultdict(list)
 
     nodes = set(graph.nodes)
@@ -64,7 +66,6 @@ customGraph.addEdge("E", "G", 9)
 customGraph.addEdge("F", "G", 7)
 
 print(dijkstra(customGraph, "A"))
-
 
 # See change the distance from d to e to 1 and from b to e to 6.
 # then to get to e from a ,

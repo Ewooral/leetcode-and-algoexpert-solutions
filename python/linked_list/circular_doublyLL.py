@@ -152,10 +152,12 @@ circularDLL.insertCDLL(0, 0)
 circularDLL.insertCDLL(1, 1)
 circularDLL.insertCDLL(2, 2)
 
-print("...reverse traversal...")
-circularDLL.reverseTraversalCDLL()
 print("...traverse...")
 circularDLL.traversalCDLL()
+
+print("...reverse traversal...")
+circularDLL.reverseTraversalCDLL()
+
 print([node.value for node in circularDLL])
 circularDLL.deleteCDLL()
 print([node.value for node in circularDLL])

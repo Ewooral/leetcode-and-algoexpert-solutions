@@ -2,12 +2,21 @@
   1. create Head and Tail and assign null references to it
   2. Complexity: O(1) T, O(1) S -> if only one node is created  else, O(N)S
 """
+
+
 # create a singly linked list
 
 class Node:
-    def __init__(self, value = None):
+    def __init__(self, value=None):
         self.value = value
         self.next = None
+
+    def print_list(self):
+        temp = self
+        while temp is not None:
+            print(temp.value, end=" ")
+            temp = temp.next
+        print()
 
 
 class SLinkedList:
@@ -16,16 +25,17 @@ class SLinkedList:
         self.tail = None
 
         # the below code makes our linked list printable
+
     def __iter__(self):
         node = self.head;
         while node:
             yield node;
             node = node.next
 
-# insert in linked list  -> O(N) T and O(1) S
+    # insert in linked list  -> O(N) T and O(1) S
     def insertSLL(self, value, location):
         newNode = Node(value)
-        if self.head is None: # if the list doesn't exit, create it
+        if self.head is None:  # if the list doesn't exit, create it
             self.head = newNode
             self.tail = newNode
         else:
@@ -48,7 +58,7 @@ class SLinkedList:
                 newNode.next = nextNode
                 currentNode.next = newNode
 
-# Traverse a singly linked list  -> O(N) T, O(1) S
+    # Traverse a singly linked list  -> O(N) T, O(1) S
     def traverseSLL(self):
         if self.head is None:
             return
@@ -57,8 +67,7 @@ class SLinkedList:
             print(node.value)
             node = node.next
 
-
-# Seaarch for a node in a given singly linked list -> O(N) T, O(1) S
+    # Seaarch for a node in a given singly linked list -> O(N) T, O(1) S
 
     def searchSLL(self, nodeValue):
         if self.head is None:
@@ -70,9 +79,8 @@ class SLinkedList:
                     return node.value
                 node = node.next
             return "node value not found"
-   
-   
-# count the number of values in the list
+
+    # count the number of values in the list
     def length(self):
         count = 0;
         # node = self.head
@@ -84,9 +92,7 @@ class SLinkedList:
                 count += 1;
         return count
 
-
-# delete a node from a singly linked list -> O(N) T, O(1) S
-
+    # delete a node from a singly linked list -> O(N) T, O(1) S
     def deleteNode(self, location):
         if self.head is None:
             print("List doesn't exit")
@@ -113,26 +119,38 @@ class SLinkedList:
             else:
                 tempNode = self.head
                 index = 0
-                while index < location - 1: # this loops till it gets to the node which is previous to the node to be deleted. 
+                while index < location - 1:  # this loops till it gets to the node which is previous to the node to be deleted.
                     tempNode = tempNode.next
                     index += 1
-                tempNode.next = tempNode.next.next 
+                tempNode.next = tempNode.next.next
 
-# delete entire singly linked list -> O(1) T, O(1) S
+            # delete entire singly linked list -> O(1) T, O(1) S
+
     def deleteEntireSLL(self):
         if self.head is None:
             print("The Singly linked list does not exit")
         else:
-            self.head = None;
-            self.tail = None;
+            self.head = None
+            self.tail = None
 
-singlyLinkedList = SLinkedList();
 
-#insert at the end
+# O(n) time | O(1) space
+def reverse(head):
+    previous, current, next = None, head, None
+    while current is not None:
+        next = current.next  # temporarily store the next node
+        current.next = previous  # reverse the current node
+        previous = current  # before we move to the next node, point previous to the current node
+        current = next  # move on the next node
+    print(previous)
+
+
+singlyLinkedList = SLinkedList()
+
+# insert at the end
 singlyLinkedList.insertSLL(1, 1)
 
-
-#insert at the beginning 
+# insert at the beginning
 singlyLinkedList.insertSLL(-78, 0)
 singlyLinkedList.insertSLL(2, 8)
 
@@ -145,14 +163,19 @@ singlyLinkedList.insertSLL(False, 4)
 print("Print List...................................")
 # print the linked list
 print([node.value for node in singlyLinkedList])
-
 print("Traverse ....................................")
 # traverse a singly linked list -> O(N) T, O(1) S
 singlyLinkedList.traverseSLL()
 
+print("Reverse Linked List")
+lists = [node.value for node in singlyLinkedList]
+lists.reverse()
+
+print(lists)
+
 print("Search.......................................")
 # search a node in a singly linked list -> O(N) T, O(1) S
-print(singlyLinkedList.searchSLL(9));
+print(singlyLinkedList.searchSLL(9))
 
 print("Delete.......................................")
 # delete a node
@@ -166,4 +189,3 @@ print(singlyLinkedList.length())
 # singlyLinkedList.deleteEntireSLL();
 
 # print([node.value for node in singlyLinkedList])
-

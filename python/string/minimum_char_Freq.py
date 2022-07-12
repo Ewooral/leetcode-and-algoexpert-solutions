@@ -3,7 +3,7 @@
 def min_char_word(words):
   maxCharFreq = {}
   for word in words:
-    charFreq1 = countCharFreq(word)
+    charFreq1 = freq(word)
     updateMaxFreq(charFreq1, maxCharFreq)
   return makeArrayFromCharFreq(maxCharFreq)
 
@@ -15,6 +15,13 @@ def countCharFreq(string):
       charFreqs[char] = 0
     charFreqs[char] += 1
   return charFreqs
+
+
+def freq(li):
+  dic = {}
+  for n in li:
+    dic[n] = dic.get(n, 0) + 1
+  return dic
 
 
 def updateMaxFreq(freqs, maxFreqs):
