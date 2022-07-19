@@ -36,6 +36,7 @@ def circularArrayLoop(nums):
 
 def main():
     custom_list = [2, 3, 1, -4, -4, 2] 
+    custom_list1 = [2, 3, 1, -4, 2, 2]
     cl = [1, 2, 1, -3]
     ku = [2, -1, 1, 2, 2]
     nums = [2, 2, -1]
@@ -47,7 +48,7 @@ def main():
     print()
     print(circularArrayLoop(ku))
     print(circularArrayLoop(nums))
-    print(circularArrayLoop(custom_list))
+    print(circularArrayLoop(custom_list1))
 
 
 

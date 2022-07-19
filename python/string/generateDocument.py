@@ -1,30 +1,4 @@
 print(".....APPROACH I......")
-# APPROACH I
-
-# O(d * (c + d)) Time and O(1) space
-def generate_document(characters, document):
-    for character in document:
-        documentFrequecy = countCharacterFrequency(character, document)
-        charactersFrequecy = countCharacterFrequency(character, characters)
-        # print(documentFrequecy, charactersFrequecy)
-        if documentFrequecy > charactersFrequecy:
-            return False
-    
-    return True
-
-def countCharacterFrequency(character, target):
-    frequency = 0
-    for char in target:
-        if char == character:
-            frequency += 1
-    return frequency
-
-
-print(generate_document("alkdka;kj fkls akjdfie jaa;goina;sdfasilk", "in is life"))
-print(generate_document("goaehalsng", "elangaa"))
-
-
-print("..................")
 """
 
 To generate a document out of a string,
@@ -42,9 +16,9 @@ c = a character in both strings
 
 
 """
+
+
 # O(m * (n + m)) Time | O(1) S
-
-
 def genDoc(char: str, doc: str) -> bool:
     for c in doc:
         fC: int = FC(c, char)
@@ -67,9 +41,9 @@ def FC(char, target) -> int:
 print(genDoc("goaehalsng", "elangaa"))
 print(genDoc("alkdka;kj fkls akjdfie jaa;goina;sdfasilk", "in is life"))
 
-
-
 print(".......APPROACH II.........")
+
+
 # APPROACH II
 # O(c * (n + m)) time | O(c) space
 def genDoc(char: str, doc: str):
@@ -99,10 +73,9 @@ def FC(char, target):
 print(genDoc("goaehalsng", "elangaa"))
 print(genDoc("alkdka;kj fkls akjdfie jaa;goina;sdfasilk", "in is life"))
 
-
-
-
 print("........APPROACH III........")
+
+
 # APPROACH III
 # O(n + m) time | O(c) space
 
@@ -110,15 +83,16 @@ def genDoc(chars, docs):
     c_Counts = {}
 
     for c in chars:
-        if c not in c_Counts:
-            c_Counts[c] = 0
+        # if c not in c_Counts:
+        #     c_Counts[c] = 0
+        # c_Counts[c] += 1  OR
 
-        c_Counts[c] += 1
+        c_Counts[c] = c_Counts.get(c, 0) + 1
 
-    for c in docs:
-        if c not in c_Counts or c_Counts[c] == 0:
+    for doc in docs:
+        if doc not in c_Counts or c_Counts[doc] == 0:
             return False
-        c_Counts[c] -= 1
+        c_Counts[doc] -= 1
     return True
 
 

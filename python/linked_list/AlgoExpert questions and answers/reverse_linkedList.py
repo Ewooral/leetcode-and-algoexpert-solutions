@@ -21,6 +21,7 @@ class Node:
         print()
 
 
+# 2, 4, 6, 8, 10
 def reverse(head):
     previous, current, next = None, head, None
     while current is not None:
@@ -42,9 +43,9 @@ def main():
     print("Nodes of original LinkedList are: ", end='')
     head.print_list()
 
-    result = reverse(head)
+    # result = reverse(head)
     print("Nodes of reversed LinkedList are: ", end='')
-    result.print_list()
+    reverse(head).print_list()
 
 
 main()

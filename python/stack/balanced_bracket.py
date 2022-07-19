@@ -1,5 +1,8 @@
 from collections import deque
-print(".....APPROACH II")
+
+print(".....APPROACH I")
+
+
 def balancedBrackets(string):
     openingBrackets = "([{"
     closingBrackets = ")]}"
@@ -12,19 +15,21 @@ def balancedBrackets(string):
             if len(stack) == 0:
                 return False
             if stack[-1] == matchingBrackets[char]:
-                  stack.pop()
+                stack.pop()
             else:
                 return False
-             
+
     return len(stack) == 0
+
 
 print(balancedBrackets("(abc)"))
 print(balancedBrackets("(abc"))
 print(balancedBrackets(""))
 print(balancedBrackets("{(abc}"))
 
-
 print(".....APPROACH II")
+
+
 # Approach II
 def isBalanced(someString):
     if len(someString) < 1:
@@ -42,10 +47,8 @@ def isBalanced(someString):
         return False
     return True
 
+
 print(isBalanced("(abc)"))
 print(isBalanced("{(abc"))
 print(isBalanced(""))
 print(isBalanced("{(abc}"))
-
-
-
