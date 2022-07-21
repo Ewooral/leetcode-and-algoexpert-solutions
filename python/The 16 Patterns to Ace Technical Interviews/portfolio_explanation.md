@@ -1,3 +1,10 @@
+# What is bloomber about?
+Bloomberg is the global leader in business and financial data, news and insight. 
+Using the power of technology, we connect the world's
+decision makers to accurate information on the 
+financial markets – and help them make faster, smarter decisions.
+
+
 #     IDAD STUDIO
 
 ###   Metatrader Platform 
@@ -63,6 +70,7 @@
     2. Fix the broken client datafeed script in the repository by making the required adjustments to it.
     3. Generate a patch file of the changes you made
     4. Bonus task: Add unit tests in the test script in the repository.
+
 
     
 

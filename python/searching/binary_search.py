@@ -1,6 +1,6 @@
 def binarySearch(array, item):
     # In binary search the array must always be sorted!
-    array.sort();
+    # array.sort();
     low = 0;
     high = len(array) - 1;
     while low <= high:
@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
 
 def recursiveBinarySearch(low, high, array, item):
-    array.sort();
+    # array.sort();
     if low <= high:
 
         mid = (low + high) // 2  # index of the mid item
