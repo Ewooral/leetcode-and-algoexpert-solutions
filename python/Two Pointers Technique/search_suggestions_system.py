@@ -16,6 +16,8 @@ Output: [
 ["mouse", "mousepad"]
 ]
 """
+
+
 # With two pointers, we always sort the list
 
 
