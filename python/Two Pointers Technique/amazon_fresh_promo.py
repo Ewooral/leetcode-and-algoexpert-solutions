@@ -11,8 +11,7 @@ def freshPromotion(codeList: List, shoppingCart: List):
     while clIdx < len(codeList) and scIdx + len(codeList[clIdx]) <= len(shoppingCart):
         match: bool = True
         for itemIdx in range(len(codeList[clIdx])):
-            if not codeList[clIdx][itemIdx] == "anything" and not shoppingCart[itemIdx + scIdx] == codeList[clIdx][
-                itemIdx]:
+            if not codeList[clIdx][itemIdx] == "anything" and not shoppingCart[itemIdx + scIdx] == codeList[clIdx][itemIdx]:
                 match = False
                 break
         if match:
