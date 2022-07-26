@@ -13,7 +13,9 @@ E.g.
 weights = [1, 3, 6]
 k = 3
 
-Output  1 - 1 = 0 < k
+Output  = 5 (five contiguous items can be shipped at once)
+
+        1 - 1 = 0 < k
         3 - 1 = 2 < k
         3 - 3 = 0 < k
         6 - 3 = 3 == k
