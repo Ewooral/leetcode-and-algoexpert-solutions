@@ -26,6 +26,28 @@ Output  = 5 (five contiguous items can be shipped at once)
 """
 
 
+# Input: s = “abcabcbb” Output: 3
+def longest_substring_without_repeating_chars(arr):
+    hSet = set()
+    start = end = charLen = finalCharLen = 0
+    while start < len(arr) > end:
+        # if end >= len(arr):
+        #     break
+        ch = arr[end]
+        if ch not in hSet:
+            hSet.add(ch)
+            charLen += 1
+            end += 1
+        else:
+            curIdx = end
+            finalCharLen = max(finalCharLen, charLen)
+            start = curIdx
+            end = start
+            charLen = 0
+            hSet.clear()
+    return max(finalCharLen, charLen)
+
+
 # O(n) T, O(1) S
 def countPossibleSegments1(w, k):
     balanced_weights = start = end = 0
@@ -47,11 +69,13 @@ def countPossibleSegments1(w, k):
 
 
 def main():
+    s = "ab"
     weightsI = [1, 3, 6]
     weightsII = [1, 5, 9]
     weightsIII = [1, 10, 2]
     k = 3
     k1 = 9
+    print(longest_substring_without_repeating_chars(s))
     print(countPossibleSegments1(weightsI, k))
     print(countPossibleSegments1(weightsII, k))
     print(countPossibleSegments1(weightsIII, k1))

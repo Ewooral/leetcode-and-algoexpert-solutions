@@ -1,3 +1,696 @@
-10.1.2.1 - car [01/Mar/2022:13:05:05 +0900] "GET /python HTTP/1.0" 200 2222
-10.1.1.9 - car [01/Mar/2022:13:05:10 +0900] "GET /python HTTP/1.0" 200 2222
+LEETCODE 75 QUESTIONS
+QUE 39. COMBINATION SUM
+Given an array of distinct integers candidates and a target integer target, return a list of
+all unique combinations of candidates where the chosen numbers sum to target. You may return
+the combinations in any order.
+
+The same number may be chosen from candidates an unlimited number of times.
+Two combinations are unique if the frequency of at least one of the chosen numbers is different.
+
+It is guaranteed that the number of unique combinations that sum up to target is
+less than 150 combinations for the given input.
+
+Example 1:
+
+Input: candidates = [2,3,6,7], target = 7
+Output: [[2,2,3],[7]]
+Explanation:
+2 and 3 are candidates, and 2 + 2 + 3 = 7. Note that 2 can be used multiple times.
+7 is a candidate, and 7 = 7.
+These are the only two combinations.
+
+Example 2:
+
+Input: candidates = [2,3,5], target = 8
+Output: [[2,2,2,2],[2,3,3],[3,5]]
+
+Example 3:
+
+Input: candidates = [2], target = 1
+Output: []
+
+
+
+Constraints:
+
+    1 <= candidates.length <= 30
+    1 <= candidates[i] <= 200
+    All elements of candidates are distinct.
+    1 <= target <= 500
+
+
+
+
+
+
+
+
+
+
+
+
+3. LONGEST SUBSTRING WITHOUT REPEATING CHARACTERS
+Medium
+
+Given a string s, find the length of the longest substring without repeating characters.
+
+Example 1:
+
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+
+Example 2:
+
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+
+Example 3:
+
+Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+
+
+
+Constraints:
+
+    0 <= s.length <= 5 * 104
+    s consists of English letters, digits, symbols and spaces.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20. Valid Parentheses
+Easy
+
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+    Open brackets must be closed by the same type of brackets.
+    Open brackets must be closed in the correct order.
+
+
+
+Example 1:
+
+Input: s = "()"
+Output: true
+
+Example 2:
+
+Input: s = "()[]{}"
+Output: true
+
+Example 3:
+
+Input: s = "(]"
+Output: false
+
+
+
+Constraints:
+
+    1 <= s.length <= 104
+    s consists of parentheses only '()[]{}'.
+
+
+
+
+
+
+
+
+
+
+
+
+
+5. Longest Palindromic Substring
+Medium
+
+Given a string s, return the longest palindromic substring in s.
+
+Example 1:
+
+Input: s = "babad"
+Output: "bab"
+Explanation: "aba" is also a valid answer.
+
+Example 2:
+
+Input: s = "cbbd"
+Output: "bb"
+
+
+
+Constraints:
+
+    1 <= s.length <= 1000
+    s consist of only digits and English letters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PATTERNS
+SLIDING WINDOW
+
+
+904. Fruit Into Baskets
+Medium
+
+You are visiting a farm that has a single row of fruit trees arranged from left to right.
+The trees are represented by an integer array fruits where fruits[i] is the type of fruit the ith tree produces.
+
+You want to collect as much fruit as possible. However, the owner has some strict rules that you must follow:
+
+    You only have two baskets, and each basket can only hold a single type of fruit. There is no limit on the amount of fruit each basket can hold.
+    Starting from any tree of your choice, you must pick exactly one fruit from every tree (including the start tree) while moving to the right. The picked fruits must fit in one of your baskets.
+    Once you reach a tree with fruit that cannot fit in your baskets, you must stop.
+
+Given the integer array fruits, return the maximum number of fruits you can pick.
+
+
+
+Example 1:
+
+Input: fruits = [1,2,1]
+Output: 3
+Explanation: We can pick from all 3 trees.
+
+Example 2:
+
+Input: fruits = [0,1,2,2]
+Output: 3
+Explanation: We can pick from trees [1,2,2].
+If we had started at the first tree, we would only pick from trees [0,1].
+
+Example 3:
+
+Input: fruits = [1,2,3,2,2]
+Output: 4
+Explanation: We can pick from trees [2,3,2,2].
+If we had started at the first tree, we would only pick from trees [1,2].
+
+
+
+Constraints:
+
+    1 <= fruits.length <= 105
+    0 <= fruits[i] < fruits.length
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+995. Minimum Number of K Consecutive Bit Flips
+Hard
+
+You are given a binary array nums and an integer k.
+
+A k-bit flip is choosing a subarray of length k from nums and simultaneously changing every 0 in the subarray to 1, and every 1 in the subarray to 0.
+
+Return the minimum number of k-bit flips required so that there is no 0 in the array. If it is not possible, return -1.
+
+A subarray is a contiguous part of an array.
+
+
+
+Example 1:
+
+Input: nums = [0,1,0], k = 1
+Output: 2
+Explanation: Flip nums[0], then flip nums[2].
+
+Example 2:
+
+Input: nums = [1,1,0], k = 2
+Output: -1
+Explanation: No matter how we flip subarrays of size 2, we cannot make the array become [1,1,1].
+
+Example 3:
+
+Input: nums = [0,0,0,1,0,1,1,0], k = 3
+Output: 3
+Explanation:
+Flip nums[0],nums[1],nums[2]: nums becomes [1,1,1,1,0,1,1,0]
+Flip nums[4],nums[5],nums[6]: nums becomes [1,1,1,1,1,0,0,0]
+Flip nums[5],nums[6],nums[7]: nums becomes [1,1,1,1,1,1,1,1]
+
+
+
+Constraints:
+
+    1 <= nums.length <= 105
+    1 <= k <= nums.length
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+828. Count Unique Characters of All Substrings of a Given String
+Hard
+
+Let's define a function countUniqueChars(s) that returns the number of unique characters on s.
+
+    For example, calling countUniqueChars(s) if s = "LEETCODE" then "L", "T", "C", "O", "D" are the unique characters since they appear only once in s, therefore countUniqueChars(s) = 5.
+
+Given a string s, return the sum of countUniqueChars(t) where t is a substring of s. The test cases are generated such that the answer fits in a 32-bit integer.
+
+Notice that some substrings can be repeated so in this case you have to count the repeated ones too.
+
+
+
+Example 1:
+
+Input: s = "ABC"
+Output: 10
+Explanation: All possible substrings are: "A","B","C","AB","BC" and "ABC".
+Every substring is composed with only unique letters.
+Sum of lengths of all substring is 1 + 1 + 1 + 2 + 2 + 3 = 10
+
+Example 2:
+
+Input: s = "ABA"
+Output: 8
+Explanation: The same as example 1, except countUniqueChars("ABA") = 1.
+
+Example 3:
+
+Input: s = "LEETCODE"
+Output: 92
+
+
+
+Constraints:
+
+    1 <= s.length <= 105
+    s consists of uppercase English letters only.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+567. Permutation in String
+Medium
+
+Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
+
+In other words, return true if one of s1's permutations is the substring of s2.
+
+
+
+Example 1:
+
+Input: s1 = "ab", s2 = "eidbaooo"
+Output: true
+Explanation: s2 contains one permutation of s1 ("ba").
+
+Example 2:
+
+Input: s1 = "ab", s2 = "eidboaoo"
+Output: false
+
+
+
+Constraints:
+
+    1 <= s1.length, s2.length <= 104
+    s1 and s2 consist of lowercase English letters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+424. Longest Repeating Character Replacement
+Medium
+
+You are given a string s and an integer k. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most k times.
+
+Return the length of the longest substring containing the same letter you can get after performing the above operations.
+
+
+
+Example 1:
+
+Input: s = "ABAB", k = 2
+Output: 4
+Explanation: Replace the two 'A's with two 'B's or vice versa.
+
+Example 2:
+
+Input: s = "AABABBA", k = 1
+Output: 4
+Explanation: Replace the one 'A' in the middle with 'B' and form "AABBBBA".
+The substring "BBBB" has the longest repeating letters, which is 4.
+
+
+
+Constraints:
+
+    1 <= s.length <= 105
+    s consists of only uppercase English letters.
+    0 <= k <= s.length
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+239. Sliding Window Maximum
+Hard
+
+You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
+
+Return the max sliding window.
+
+
+
+Example 1:
+
+Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
+Output: [3,3,5,5,6,7]
+Explanation:
+Window position                Max
+---------------               -----
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
+
+Example 2:
+
+Input: nums = [1], k = 1
+Output: [1]
+
+
+
+Constraints:
+
+    1 <= nums.length <= 105
+    -104 <= nums[i] <= 104
+    1 <= k <= nums.length
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Find the longest substring with k unique characters in a given string
+
+    Difficulty Level : Hard
+    Last Updated : 12 Dec, 2021
+
+Given a string you need to print longest possible substring that has exactly M unique characters.
+If there are more than one substring of longest possible length, then print any one of them.
+
+Examples:
+
+"aabbcc", k = 1
+Max substring can be any one from {"aa" , "bb" , "cc"}.
+
+"aabbcc", k = 2
+Max substring can be any one from {"aabb" , "bbcc"}.
+
+"aabbcc", k = 3
+There are substrings with exactly 3 unique characters
+{"aabbcc" , "abbcc" , "aabbc" , "abbc" }
+Max is "aabbcc" with length 6.
+
+"aaabbb", k = 3
+There are only two unique characters, thus show error message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+209. Minimum Size Subarray Sum
+Medium
+
+Given an array of positive integers nums and a positive integer target, return the minimal length of a contiguous subarray [numsl, numsl+1, ..., numsr-1, numsr] of which the sum is greater than or equal to target. If there is no such subarray, return 0 instead.
+
+
+
+Example 1:
+
+Input: target = 7, nums = [2,3,1,2,4,3]
+Output: 2
+Explanation: The subarray [4,3] has the minimal length under the problem constraint.
+
+Example 2:
+
+Input: target = 4, nums = [1,4,4]
+Output: 1
+
+Example 3:
+
+Input: target = 11, nums = [1,1,1,1,1,1,1,1]
+Output: 0
+
+
+
+Constraints:
+
+    1 <= target <= 109
+    1 <= nums.length <= 105
+    1 <= nums[i] <= 104
+
+
+Follow up: If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log(n)).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+76. Minimum Window Substring
+Hard
+
+Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "".
+
+The testcases will be generated such that the answer is unique.
+
+A substring is a contiguous sequence of characters within the string.
+
+
+
+Example 1:
+
+Input: s = "ADOBECODEBANC", t = "ABC"
+Output: "BANC"
+Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from string t.
+
+Example 2:
+
+Input: s = "a", t = "a"
+Output: "a"
+Explanation: The entire string s is the minimum window.
+
+Example 3:
+
+Input: s = "a", t = "aa"
+Output: ""
+Explanation: Both 'a's from t must be included in the window.
+Since the largest window of s only has one 'a', return empty string.
+
+
+
+Constraints:
+
+    m == s.length
+    n == t.length
+    1 <= m, n <= 105
+    s and t consist of uppercase and lowercase English letters.
+
+
+Follow up: Could you find an algorithm that runs in O(m + n) time?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30. Substring with Concatenation of All Words
+Hard
+
+You are given a string s and an array of strings words of the same length. Return all starting indices of substring(s) in s that is a concatenation of each word in words exactly once, in any order, and without any intervening characters.
+
+You can return the answer in any order.
+
+
+Example 1:
+
+Input: s = "barfoothefoobarman", words = ["foo","bar"]
+Output: [0,9]
+Explanation: Substrings starting at index 0 and 9 are "barfoo" and "foobar" respectively.
+The output order does not matter, returning [9,0] is fine too.
+
+Example 2:
+
+Input: s = "wordgoodgoodgoodbestword", words = ["word","good","best","word"]
+Output: []
+
+Example 3:
+
+Input: s = "barfoofoobarthefoobarman", words = ["bar","foo","the"]
+Output: [6,9,12]
+
+
+
+Constraints:
+
+    1 <= s.length <= 104
+    1 <= words.length <= 5000
+    1 <= words[i].length <= 30
+    s and words[i] consist of lowercase English letters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. Longest Substring Without Repeating Characters (solved)
+
+
+
 
