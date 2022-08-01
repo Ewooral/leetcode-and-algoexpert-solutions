@@ -102,9 +102,7 @@ When k == 2, we will call twoSum, terminating the recursion.
 """
 
 
-
 def fourSum(nums, target):
-
     def kSum(nums, target, k):
         res = []
 
@@ -150,12 +148,10 @@ def fourSum(nums, target):
         return res
 
     nums.sort()
-    return kSum(nums, target, 4)
+    return kSum(nums, target, 3)
 
 
-# print(fourSum([3, 2, 0, -1, 4, 2, -2, 1, 9, -4], 4))
-
-
+print("first Approach: ", fourSum([3, 2, 0, -1, 4, 2, -2, 1, 9, -4], 3))
 
 """
 Approach 2: Hash Set
@@ -176,9 +172,7 @@ Implementation
 """
 
 
-
-def fourSum(nums, target):
-
+def four_sum(nums, target):
     def kSum(nums, target, k):
         res = []
 
@@ -222,4 +216,4 @@ def fourSum(nums, target):
     return kSum(nums, target, 2)
 
 
-print(fourSum([3, 2, 0, -1, 4, 2, -2, 1, 9, -4], 2))
+print("Second Approach: ", four_sum([3, 2, 0, -1, 4, 2, -2, 1, 9, -4], 2))

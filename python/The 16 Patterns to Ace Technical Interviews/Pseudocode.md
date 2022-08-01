@@ -472,3 +472,55 @@ where l points to 5, and r points to 3.
 9. We'll repeat the iteration again
 10. leftSubarrayIsSmaller = (length of the left subarray)r - 1 - s < e - r + 1(length of the right subarray)
 11. O(n log n)T and O(log n )S
+
+
+
+
+
+# SUBSTRING WITH CONCATENATION OF ALL WORDS
+
+You are given a string `s` and an array of strings `words` of 
+the same length. Return all starting indices of substring(s) 
+in `s` that is a concatenation of each `word` in words exactly once, 
+in any order, and without any intervening characters. 
+You can return the answer in any order.
+
+`Example 1:`
+
+Input: s = “barfoothefoobarman”, 
+words = [“foo”,“bar”]
+Output: [0,9]
+`
+Example 2:
+`
+Input: s = “wordgoodgoodgoodbestword”,
+words = [“word”,“good”,“best”,“word”] 
+Output: []
+`
+Example 3:
+`
+Input: s = “barfoofoobarthefoobarman”, 
+words = [“bar”,“foo”,“the”] 
+Output: [6,9,12]
+
+* ALGORITHM
+1. create an empty list for the output
+       `char_Idx = []`
+2. concatenate the list of words and find its length
+      `lenOfWords = len("".join(words))`
+3. loop thru `words` and find subarray of anagram of words in string `s`
+      `for i in range((len(s)-lenOfWords)+1)`
+   * During looping, determine whether we can find 
+     words="barfoothe" represented differently in string, `s` in order to
+     find anagrams of words eg. "barfoothe", "foobarthe", "thebarfoo",
+     "foothebar"
+       `possible_anagrams = s[i:i+lenOfWords]`
+   * keep track of the length of a word in our list of 
+     words = [“bar”,“foo”,“the”] 
+        `n= len(words[0])`
+
+
+
+
+
+

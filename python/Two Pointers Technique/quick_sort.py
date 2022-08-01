@@ -20,10 +20,15 @@ def partition(array, low, high):
             (array[i], array[j]) = (array[j], array[i])
 
     # swap the pivot element with the greater element specified by i
-    (array[i + 1], array[high]) = (array[high], array[i + 1])
+    swap_pivot(i, high, array)
+    # (array[i + 1], array[high]) = (array[high], array[i + 1])
 
     # return the position from where partition is done
     return i + 1
+
+
+def swap_pivot(i, high, array):
+    (array[i + 1], array[high]) = (array[high], array[i + 1])
 
 
 # function to perform quicksort
