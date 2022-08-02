@@ -32,3 +32,4 @@ My = (Ry + Py) / 2 => Ry = 2My - Py
 And thats how you find the coordinates for R.
 
 """
+

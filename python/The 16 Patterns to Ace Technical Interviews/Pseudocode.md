@@ -508,7 +508,7 @@ Output: [6,9,12]
        `char_Idx = []`
 2. concatenate the list of words and find its length
       `lenOfWords = len("".join(words))`
-3. loop thru `words` and find subarray of anagram of words in string `s`
+3. loop thru `words` and find n ways to arrange `words` in string `s`
       `for i in range((len(s)-lenOfWords)+1)`
    * During looping, determine whether we can find 
      words="barfoothe" represented differently in string, `s` in order to

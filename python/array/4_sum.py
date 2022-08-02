@@ -160,13 +160,16 @@ Intuition
 
 Since elements must sum up to the exact target value, we can also use the Two Sum: One-pass Hash Table approach.
 
-In 3Sum: Hash Set, we solved the problem without sorting the array. To do that, we needed to sort values within triplets, and track them in a hash set. Doing the same for k values could be impractical.
+In 3Sum: Hash Set, we solved the problem without sorting the array. To do that, we needed to sort values within triplets, 
+and track them in a hash set. Doing the same for k values could be impractical.
 
-So, for this approach, we will also sort the array and skip duplicates the same way as in the Two Pointers approach above. Thus, the code will only differ in the twoSum implementation.
+So, for this approach, we will also sort the array and skip duplicates the same way as in the Two Pointers approach above.
+ Thus, the code will only differ in the twoSum implementation.
 
 Algorithm
 
-twoSum implementation here is almost the same as in Two Sum: One-pass Hash Table. The only difference is the check to avoid duplicates. Since the array is sorted, we can just compare the found pair with the last one in the result res.
+twoSum implementation here is almost the same as in Two Sum: One-pass Hash Table. The only difference is the check
+ to avoid duplicates. Since the array is sorted, we can just compare the found pair with the last one in the result res.
 
 Implementation
 """
