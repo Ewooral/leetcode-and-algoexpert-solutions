@@ -316,7 +316,7 @@ def fresh_promotion(code_list, shopping_cart):
     for code in code_list:
         found = False
         while cart_index < len(shopping_cart):
-            if shopping_cart[cart_index] != code[0] and shopping_cart[cart_index]!= 'anything':
+            if shopping_cart[cart_index] != code[0] and shopping_cart[cart_index] != 'anything':
                 cart_index += 1
                 continue
             cart_index += 1
@@ -337,43 +337,70 @@ def fresh_promotion(code_list, shopping_cart):
     return matched == len(code_list)
 
 
-if __name__ == '__main__':
-    assert fresh_promotion([['apple', 'apple'], ['banana', 'anything', 'banana']],
-                          ['orange', 'apple', 'apple', 'banana', 'orange', 'banana']) \
-        == True
-    assert fresh_promotion([['apple', 'apple'], ['banana', 'anything', 'banana']],
-                          ['apple', 'orange', 'apple', 'apple', 'banana', 'orange', 'banana']) \
-        == True
-    assert fresh_promotion([['orange', 'apple'], ['banana', 'anything', 'banana']],
-                          ['orange', 'apple', 'apple', 'banana', 'orange', 'banana']) \
-        == True
-    assert fresh_promotion([['orange', 'apple', 'apple'], ['banana', 'anything', 'banana']],
-                          ['orange', 'apple', 'apple', 'banana', 'orange', 'banana']) \
-
-            
-print( fresh_promotion([['apple', 'apple'], ['banana', 'anything', 'banana']],
-                             ['orange', 'apple', 'apple', 'banana', 'orange', 'banana'])
-      == True)
-
-
-
 # ANOTHER SOLUTION
 def is_winner(secret, order):
     if not secret:
         return True
     i = k = 0
+
+    # i keeps track of a list in secret list
+    # k keeps track of an item in the order list
+    # group keeps track of a list in secret
+    # j keeps track of an item in the group list
+
     while i < len(secret):
         group = secret[i]
         j = 0
         while j < len(group):
+            current_secret_item = group[j]
             if k == len(order):
                 return False
-            if group[j] == 'anything' or group[j] == order[k]:
+            current_order_item = order[k]
+            if current_secret_item == 'anything' or current_secret_item == current_order_item:
                 k += 1
                 j += 1
             else:
                 # pushing k back to (assumed start position of group ) + 1
-                k -= j - 1
+                # k -= j - 1
+                k += 1
                 j = 0
         i += 1
     return True
+
+
+import re
+
+
+def freshPromotionI(shoppingCart, codeList) -> int:
+    s = ' '.join(shoppingCart)
+    reg = ''
+    for code in codeList:
+        c = ' '.join(code)
+        c = ' ' + c
+        c = c.replace('anything', '\w+')
+        reg += c + '[\w\s]*'
+    r = re.compile(reg)
+    res = r.findall(s)
+    return min(1, len(res))
+
+
+if __name__ == '__main__':
+    codeList = [["apple", "apple"], ["banana", "anything", "banana"]]
+    shoppingCart = ["banana", "orange", "banana", "apple", "apple"]
+
+    codeList1 = [["apple", "apple"], ["banana", "anything", "banana"]]
+    shoppingCart1 = ["pineapple", "orange", "apple", "apple", "pineapple",
+                     "orange", "banana", "blueberries", "banana", "apple"]
+
+    secret = [["apple", "apple"], ["apple", "apple", "banana"]]
+    lists = ["apple", "apple", "apple", "banana"]
+
+    print("Second Approach")
+    print(is_winner(codeList, shoppingCart))
+    print(is_winner(codeList1, shoppingCart1))
+    print(is_winner(secret, lists))
+
+    print("Third Approach")
+    print(freshPromotionI(shoppingCart, codeList))
+    print(freshPromotionI(shoppingCart1, codeList1))
+    print(freshPromotionI(lists, secret))

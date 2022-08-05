@@ -1,7 +1,9 @@
 ''' 
 You are given an array of strings products and a string searchWord.
 
-Design a system that suggests at most three product names from products after each character of searchWord is typed. Suggested products should have common prefix with searchWord. If there are more than three products with a common prefix return the three lexicographically minimums products.
+Design a system that suggests at most three product names from products after each character of searchWord is typed.
+Suggested products should have common prefix with searchWord. If there are more than
+three products with a common prefix return the three lexicographically minimums products.
 
 Return a list of lists of the suggested products after each character of searchWord is typed.
 
@@ -40,17 +42,26 @@ products[i] consists of lowercase English letters.
 1 <= searchWord.length <= 1000
 searchWord consists of lowercase English letters.
 '''
+
+
 class Solution(object):
     def suggested_products(self, products, search_word):
-        products.sort()
+        products.sort()  # n(log n)
         res = []
-        for i in range(len(search_word)): 
-            products = [p for p in products if p[:i+1] == search_word[:i+1]]
-            res.append(products[:min(3, len(products))])
-    
+        for i in range(len(search_word)):  # O(c)
+            # products = [p for p in products if p[:i+1] == search_word[:i+1]]
+            prod = []   # O(p)
+            for p in products:  # O(w)
+                s = p[:i + 1]
+                y = search_word[:i + 1]
+                if p[:i + 1] == search_word[:i + 1]:
+                    prod.append(p)
+            res.append(prod[:min(3, len(prod))])
+
         return res
+
 
 # TEST
 sol = Solution()
-print(sol.suggested_products(["mobile","mouse","moneypot","monitor","mousepad"], "mouse"))
+print(sol.suggested_products(["mobile", "mouse", "moneypot", "monitor", "mousepad"], "mouse"))
 print(sol.suggested_products(["havana"], "havana"))
