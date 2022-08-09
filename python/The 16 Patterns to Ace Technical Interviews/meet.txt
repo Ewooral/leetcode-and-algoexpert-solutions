@@ -724,3 +724,881 @@ Constraints:
     -100 <= Node.val <= 100
     The list is guaranteed to be sorted in ascending order.
 
+
+
+
+
+
+
+
+
+Given a non-empty string like "Code" return a string like "CCoCodCode".
+
+
+string_splosion('Code') → 'CCoCodCode'
+string_splosion('abc') → 'aababc'
+string_splosion('ab') → 'aab'
+
+
+
+
+def string_splosion(str):
+  res = []
+  for i in range(len(str)):
+    ch = str[:i + 1]
+    res.append(ch)
+  return "".join(res)
+
+OR
+
+def string_splosion(str):
+  result = ""
+  # On each iteration, add the substring of the chars 0..i
+  for i in range(len(str)):
+    result = result + str[:i+1]
+  return result
+
+
+
+
+
+
+
+
+Find Intersection
+Have the function FindIntersection(strArr) read the
+array of strings stored in strArr which will c
+ontain 2 elements: the first element will represent a list
+of comma-separated numbers sorted in ascending order, the second
+ element will represent a second list of comma-separated
+numbers (also sorted). Your goal is to return a comma-separated
+string containing the numbers that occur in elements of strArr in
+sorted order. If there is no intersection, return the string false.
+Examples
+Input: ["1, 3, 4, 7, 13", "1, 2, 4, 13, 15"]
+Output: 1,4,13
+Input: ["1, 3, 9, 10, 17, 18", "1, 4, 9, 10"]
+Output: 1,9,10
+
+
+def FindIntersection(strArr):
+
+    setOne = set(strArr[0].split(", "))
+    setTwo = set(strArr[1].split(", "))
+
+    result = sorted(list(setOne.intersection(setTwo)), key=lambda str: int(str))
+
+    return ','.join(result) if len(result) > 0 else False
+
+# keep this function call here
+print(FindIntersection(input()))
+
+
+
+
+Given a string, return the count of the number of times that a substring length 2 appears in the string
+ and also as the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count the end substring).
+
+
+last2('hixxhi') → 1
+last2('xaxxaxaxx') → 1
+last2('axxxaaxx') → 2
+
+
+
+Solution:
+def last2(str):
+  # Screen out too-short string case.
+  if len(str) < 2:
+    return 0
+
+  # last 2 chars, can be written as str[-2:]
+  last2 = str[len(str)-2:]
+  count = 0
+
+  # Check each substring length 2 starting at i
+  for i in range(len(str)-2):
+    sub = str[i:i+2]
+    if sub == last2:
+      count = count + 1
+
+  return count
+
+
+
+
+
+
+
+
+
+Given an array of ints, return the number of 9's in the array.
+
+Solution:
+def array_count9(nums):
+  count = 0
+  # Standard loop to look at each value
+  for num in nums:
+    if num == 9:
+      count = count + 1
+
+  return count
+
+
+
+
+
+
+
+
+Given an array of ints, return True if one of the first 4 elements in the array is a 9. The array length may be less than 4.
+
+
+array_front9([1, 2, 9, 3, 4]) → True
+array_front9([1, 2, 3, 4, 9]) → False
+array_front9([1, 2, 3, 4, 5]) → False
+
+
+Solution:
+def array_front9(nums):
+  # First figure the end for the loop
+  end = len(nums)
+  if end > 4:
+    end = 4
+
+  for i in range(end):  # loop over index [0, 1, 2, 3]
+    if nums[i] == 9:
+      return True
+  return False
+
+
+
+
+
+
+
+
+Given an array of ints, return True if the sequence of numbers 1, 2, 3 appears in the array somewhere.
+
+
+array123([1, 1, 2, 3, 1]) → True
+array123([1, 1, 2, 4, 1]) → False
+array123([1, 1, 2, 1, 2, 3]) → True
+
+
+Solution:
+def array123(nums):
+  # Note: iterate with length-2, so can use i+1 and i+2 in the loop
+  for i in range(len(nums)-2):
+    if nums[i]==1 and nums[i+1]==2 and nums[i+2]==3:
+      return True
+  return False
+
+
+
+
+
+Given 2 strings, a and b, return the number of the positions where they
+contain the same length 2 substring. So "xxcaazz" and "xxbaaz" yields 3,
+since the "xx", "aa", and "az" substrings appear in the same place in both strings.
+
+
+string_match('xxcaazz', 'xxbaaz') → 3
+string_match('abc', 'abc') → 2
+string_match('abc', 'axc') → 0
+
+
+Solution:
+def string_match(a, b):
+  # Figure which string is shorter.
+  shorter = min(len(a), len(b))
+  count = 0
+
+  # Loop i over every substring starting spot.
+  # Use length-1 here, so can use char str[i+1] in the loop
+  for i in range(shorter-1):
+    a_sub = a[i:i+2]
+    b_sub = b[i:i+2]
+    if a_sub == b_sub:
+      count = count + 1
+
+  return count
+
+
+
+
+
+
+
+
+
+
+Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+
+
+string_bits('Hello') → 'Hlo'
+string_bits('Hi') → 'H'
+string_bits('Heeololeo') → 'Hello'
+
+
+Solution:
+def string_bits(str):
+  result = ""
+  # Many ways to do this. This uses the standard loop of i on every char,
+  # and inside the loop skips the odd index values.
+  for i in range(len(str)):
+    if i % 2 == 0:
+      result = result + str[i]
+  return result
+
+
+
+
+
+
+
+
+
+Given a string and a non-negative int n, we'll say that the front of the string is the first 3 chars, or whatever is there if the string is less than length 3. Return n copies of the front;
+
+
+front_times('Chocolate', 2) → 'ChoCho'
+front_times('Chocolate', 3) → 'ChoChoCho'
+front_times('Abc', 3) → 'AbcAbcAbc'
+
+
+
+Solution:
+def front_times(str, n):
+  front_len = 3
+  if front_len > len(str):
+    front_len = len(str)
+  front = str[:front_len]
+
+  result = ""
+  for i in range(n):
+    result = result + front
+  return result
+
+
+
+
+
+
+
+The parameter weekday is True if it is a weekday, and the parameter vacation is True if we are on vacation. We sleep in if it is not a weekday or we're on vacation. Return True if we sleep in.
+
+
+sleep_in(False, False) → True
+sleep_in(True, False) → False
+sleep_in(False, True) → True
+
+
+Solution:
+def sleep_in(weekday, vacation):
+  if not weekday or vacation:
+    return True
+  else:
+    return False
+  # This can be shortened to: return(not weekday or vacation)
+
+
+
+Arrays - DS
+EasyProblem Solving (Basic)Max Score: 10Success Rate: 94.19%
+
+
+Solved
+2D Array - DS
+EasyProblem Solving (Basic)Max Score: 15Success Rate: 93.18%
+
+
+Solved
+Left Rotation
+EasyProblem Solving (Basic)Max Score: 20Success Rate: 90.39%
+
+
+Solve Challenge
+Sparse Arrays
+MediumProblem Solving (Basic)Max Score: 25Success Rate: 97.35%
+
+
+Solve Challenge
+Array Manipulation
+HardProblem Solving (Intermediate)Max Score: 60Success Rate: 59.11%
+
+
+Solve Challenge
+Print the Elements of a Linked List
+EasyProblem Solving (Basic)Max Score: 5Success Rate: 97.30%
+
+
+Solve Challenge
+Insert a Node at the Tail of a Linked List
+EasyProblem Solving (Intermediate)Max Score: 5Success Rate: 95.22%
+
+
+Solve Challenge
+Insert a node at the head of a linked list
+EasyProblem Solving (Basic)Max Score: 5Success Rate: 98.48%
+
+
+Solve Challenge
+Insert a node at a specific position in a linked list
+EasyProblem Solving (Intermediate)Max Score: 5Success Rate: 97.12%
+
+
+Solve Challenge
+Delete a Node
+EasyProblem Solving (Basic)Max Score: 5Success Rate: 95.59%
+
+
+Solve Challenge
+Print in Reverse
+EasyProblem Solving (Basic)Max Score: 5Success Rate: 98.16%
+
+
+Solve Challenge
+Reverse a linked list
+EasyProblem Solving (Intermediate)Max Score: 5Success Rate: 98.07%
+
+
+Solve Challenge
+Compare two linked lists
+EasyProblem Solving (Basic)Max Score: 5Success Rate: 98.58%
+
+
+Solve Challenge
+Merge two sorted linked lists
+EasyProblem Solving (Intermediate)Max Score: 5Success Rate: 93.89%
+
+
+Solve Challenge
+Get Node Value
+EasyProblem Solving (Basic)Max Score: 5Success Rate: 98.44%
+
+
+Solve Challenge
+Delete duplicate-value nodes from a sorted linked list
+EasyProblem Solving (Intermediate)Max Score: 5Success Rate: 97.58%
+
+
+Solve Challenge
+Cycle Detection
+MediumProblem Solving (Intermediate)Max Score: 5Success Rate: 92.81%
+
+
+Solve Challenge
+Find Merge Point of Two Lists
+EasyProblem Solving (Basic)Max Score: 5Success Rate: 92.57%
+
+
+Solve Challenge
+Inserting a Node Into a Sorted Doubly Linked List
+EasyProblem Solving (Intermediate)Max Score: 5Success Rate: 92.76%
+
+
+Solve Challenge
+Reverse a doubly linked list
+EasyProblem Solving (Intermediate)Max Score: 5Success Rate: 97.26%
+
+
+Solve Challenge
+Tree: Preorder Traversal
+EasyProblem Solving (Intermediate)Max Score: 10Success Rate: 98.57%
+
+
+Solve Challenge
+Tree: Postorder Traversal
+EasyProblem Solving (Intermediate)Max Score: 10Success Rate: 99.50%
+
+
+Solve Challenge
+Tree: Inorder Traversal
+EasyProblem Solving (Advanced)Max Score: 10Success Rate: 99.58%
+
+
+Solve Challenge
+Tree: Height of a Binary Tree
+EasyProblem Solving (Advanced)Max Score: 10Success Rate: 96.77%
+
+
+Solve Challenge
+Tree : Top View
+EasyProblem Solving (Advanced)Max Score: 20Success Rate: 61.20%
+
+
+Solve Challenge
+Tree: Level Order Traversal
+EasyProblem Solving (Advanced)Max Score: 20Success Rate: 96.56%
+
+
+Solve Challenge
+Binary Search Tree : Insertion
+EasyProblem Solving (Advanced)Max Score: 20Success Rate: 95.92%
+
+
+Solve Challenge
+Tree: Huffman Decoding
+MediumProblem Solving (Intermediate)Max Score: 20Success Rate: 97.93%
+
+
+Solve Challenge
+Binary Search Tree : Lowest Common Ancestor
+EasyProblem Solving (Advanced)Max Score: 30Success Rate: 93.20%
+
+
+Solve Challenge
+Swap Nodes [Algo]
+MediumProblem Solving (Advanced)Max Score: 40Success Rate: 88.56%
+
+
+Solve Challenge
+Kitty's Calculations on a Tree
+AdvancedProblem Solving (Advanced)Max Score: 80Success Rate: 53.31%
+
+
+Solve Challenge
+Is This a Binary Search Tree?
+MediumProblem Solving (Advanced)Max Score: 30Success Rate: 75.01%
+
+
+Solve Challenge
+Square-Ten Tree
+HardMax Score: 60Success Rate: 76.84%
+
+
+Solve Challenge
+Balanced Forest
+HardMax Score: 60Success Rate: 65.50%
+
+
+Solve Challenge
+Jenny's Subtrees
+HardMax Score: 70Success Rate: 77.45%
+
+
+Solve Challenge
+Tree Coordinates
+ExpertMax Score: 100Success Rate: 63.30%
+
+
+Solve Challenge
+Array Pairs
+AdvancedMax Score: 100Success Rate: 8.25%
+
+
+Solve Challenge
+Self Balancing Tree
+MediumMax Score: 50Success Rate: 81.51%
+
+
+Solve Challenge
+Array and simple queries
+HardMax Score: 80Success Rate: 38.69%
+
+
+Solve Challenge
+Median Updates
+HardProblem Solving (Intermediate)Max Score: 70Success Rate: 53.09%
+
+
+Solve Challenge
+Merging Communities
+HardProblem Solving (Advanced)Max Score: 50Success Rate: 76.57%
+
+
+Solve Challenge
+QHEAP1
+EasyProblem Solving (Intermediate)Max Score: 25Success Rate: 68.24%
+
+
+Solve Challenge
+Maximum Element
+EasyProblem Solving (Intermediate)Max Score: 20Success Rate: 71.90%
+
+
+Solve Challenge
+Queue using Two Stacks
+MediumProblem Solving (Intermediate)Max Score: 30Success Rate: 89.63%
+
+
+Solve Challenge
+Components in a graph
+MediumProblem Solving (Advanced)Max Score: 50Success Rate: 87.86%
+
+
+Solve Challenge
+Balanced Brackets
+MediumProblem Solving (Intermediate)Max Score: 25Success Rate: 86.87%
+
+
+Solve Challenge
+Castle on the Grid
+MediumProblem Solving (Advanced)Max Score: 30Success Rate: 72.38%
+
+
+Solve Challenge
+Jesse and Cookies
+EasyProblem Solving (Intermediate)Max Score: 25Success Rate: 67.90%
+
+
+Solve Challenge
+Kundu and Tree
+HardMax Score: 80Success Rate: 83.93%
+
+
+Solve Challenge
+Find the Running Median
+HardProblem Solving (Advanced)Max Score: 50Success Rate: 73.84%
+
+
+Solve Challenge
+Down to Zero II
+MediumProblem Solving (Intermediate)Max Score: 40Success Rate: 47.10%
+
+
+Solve Challenge
+Equal Stacks
+EasyProblem Solving (Intermediate)Max Score: 25Success Rate: 79.92%
+
+
+Solve Challenge
+Minimum Average Waiting Time
+HardMax Score: 80Success Rate: 61.40%
+
+
+Solve Challenge
+Truck Tour
+HardProblem Solving (Intermediate)Max Score: 50Success Rate: 84.35%
+
+
+Solve Challenge
+Game of Two Stacks
+MediumProblem Solving (Intermediate)Max Score: 30Success Rate: 44.40%
+
+
+Solve Challenge
+Largest Rectangle
+MediumProblem Solving (Intermediate)Max Score: 50Success Rate: 70.72%
+
+
+Solve Challenge
+Queries with Fixed Length
+HardProblem Solving (Intermediate)Max Score: 50Success Rate: 66.44%
+
+
+Solve Challenge
+Super Maximum Cost Queries
+HardMax Score: 60Success Rate: 85.62%
+
+
+Solve Challenge
+Simple Text Editor
+MediumProblem Solving (Intermediate)Max Score: 65Success Rate: 80.63%
+
+
+Solve Challenge
+Poisonous Plants
+HardProblem Solving (Advanced)Max Score: 70Success Rate: 42.13%
+
+
+Solve Challenge
+AND xor OR
+HardMax Score: 70Success Rate: 61.18%
+
+
+Solve Challenge
+Waiter
+MediumProblem Solving (Intermediate)Max Score: 75Success Rate: 84.03%
+
+
+Solve Challenge
+Contacts
+MediumProblem Solving (Advanced)Max Score: 40Success Rate: 67.70%
+
+
+Solve Challenge
+No Prefix Set
+HardProblem Solving (Advanced)Max Score: 50Success Rate: 78.12%
+
+
+Solve Challenge
+Data Structures MCQ 1
+Multiple Choice QuestionMax Score: 5Success Rate: 72.45%
+
+
+Solve Challenge
+Data Structures MCQ 2
+Multiple Choice QuestionMax Score: 5Success Rate: 61.06%
+
+
+Solve Challenge
+Data Structures MCQ 3
+Multiple Choice QuestionMax Score: 5Success Rate: 89.52%
+
+
+Solve Challenge
+Kindergarten Adventures
+MediumMax Score: 30Success Rate: 50.60%
+
+
+Solve Challenge
+Cube Summation
+HardProblem Solving (Advanced)Max Score: 50Success Rate: 67.07%
+
+
+Solve Challenge
+Mr. X and His Shots
+MediumMax Score: 50Success Rate: 55.90%
+
+
+Solve Challenge
+Direct Connections
+HardMax Score: 60Success Rate: 48.68%
+
+
+Solve Challenge
+Subsequence Weighting
+AdvancedMax Score: 60Success Rate: 60.91%
+
+
+Solve Challenge
+Jim and the Skyscrapers
+MediumMax Score: 60Success Rate: 60.21%
+
+
+Solve Challenge
+Palindromic Subsets
+HardMax Score: 80Success Rate: 74.74%
+
+
+Solve Challenge
+Counting On a Tree
+ExpertMax Score: 100Success Rate: 69.01%
+
+
+Solve Challenge
+Polynomial Division
+HardMax Score: 60Success Rate: 87.84%
+
+
+Solve Challenge
+Costly Intervals
+HardMax Score: 65Success Rate: 85.71%
+
+
+Solve Challenge
+The Strange Function
+HardMax Score: 70Success Rate: 73.99%
+
+
+Solve Challenge
+Self-Driving Bus
+AdvancedMax Score: 100Success Rate: 75.04%
+
+
+Solve Challenge
+Unique Colors
+AdvancedMax Score: 100Success Rate: 83.75%
+
+
+Solve Challenge
+Fibonacci Numbers Tree
+ExpertMax Score: 100Success Rate: 79.58%
+
+
+Solve Challenge
+Pair Sums
+ExpertMax Score: 80Success Rate: 58.74%
+
+
+Solve Challenge
+Functional Palindromes
+AdvancedMax Score: 80Success Rate: 78.39%
+
+
+Solve Challenge
+Lazy White Falcon
+HardMax Score: 100Success Rate: 76.90%
+
+
+Solve Challenge
+Ticket to Ride
+ExpertMax Score: 100Success Rate: 81.39%
+
+
+Solve Challenge
+Heavy Light White Falcon
+HardMax Score: 100Success Rate: 78.88%
+
+
+Solve Challenge
+Sum of the Maximums
+AdvancedMax Score: 90Success Rate: 59.29%
+
+
+Solve Challenge
+Number Game on a Tree
+ExpertMax Score: 80Success Rate: 86.81%
+
+
+Solve Challenge
+Heavy Light 2 White Falcon
+HardMax Score: 100Success Rate: 77.86%
+
+
+Solve Challenge
+Library Query
+AdvancedMax Score: 80Success Rate: 74.13%
+
+
+Solve Challenge
+Starfleet
+AdvancedMax Score: 100Success Rate: 80.99%
+
+
+Solve Challenge
+Almost Equal - Advanced
+ExpertMax Score: 100Success Rate: 49.67%
+
+
+Solve Challenge
+Almost sorted interval
+ExpertMax Score: 100Success Rate: 32.07%
+
+
+Solve Challenge
+Burger Happiness
+HardMax Score: 100Success Rate: 86.33%
+
+
+Solve Challenge
+Roy and alpha-beta trees
+HardMax Score: 120Success Rate: 88.62%
+
+
+Solve Challenge
+Coloring Tree
+HardMax Score: 120Success Rate: 72.99%
+
+
+Solve Challenge
+Recalling Early Days GP with Trees
+HardMax Score: 120Success Rate: 86.04%
+
+
+Solve Challenge
+Swaps and Sum
+AdvancedMax Score: 120Success Rate: 55.16%
+
+
+Solve Challenge
+Arithmetic Progressions
+AdvancedMax Score: 80Success Rate: 69.08%
+
+
+Solve Challenge
+Coolguy and Two Subsequences
+AdvancedMax Score: 120Success Rate: 73.77%
+
+
+Solve Challenge
+White Falcon And Tree
+HardMax Score: 120Success Rate: 88.73%
+
+
+Solve Challenge
+Subtrees And Paths
+AdvancedMax Score: 120Success Rate: 81.17%
+
+
+Solve Challenge
+Triplets
+AdvancedMax Score: 90Success Rate: 33.96%
+
+
+Solve Challenge
+Beautiful Segments
+ExpertMax Score: 120Success Rate: 69.47%
+
+
+Solve Challenge
+Divisibility
+ExpertMax Score: 120Success Rate: 56.95%
+
+
+Solve Challenge
+BST maintenance
+AdvancedMax Score: 140Success Rate: 60.77%
+
+
+Solve Challenge
+Find Maximum Index Product
+MediumMax Score: 100Success Rate: 56.50%
+
+
+Solve Challenge
+Taxicab Driver's Problem
+AdvancedMax Score: 150Success Rate: 67.10%
+
+
+Solve Challenge
+Jaggu Playing with Balloons
+AdvancedMax Score: 150Success Rate: 75.67%
+
+
+Solve Challenge
+Dynamic Summation
+HardMax Score: 150Success Rate: 76.72%
+
+
+Solve Challenge
+Two Array Problem
+HardMax Score: 150Success Rate: 75.15%
+
+
+Solve Challenge
+Rooted Tree
+HardMax Score: 150Success Rate: 76.45%
+
+
+Solve Challenge
+The crazy helix
+AdvancedMax Score: 150Success Rate: 62.91%
+
+
+Solve Challenge
+Network administration
+HardMax Score: 150Success Rate: 84.08%
+
+
+Solve Challenge
+Easy Addition
+ExpertMax Score: 150Success Rate: 83.48%
+
+
+Solve Challenge
+Find the permutation
+ExpertMax Score: 150Success Rate: 80.35%
+
+
+Solve Challenge
+Company Retreat
+AdvancedMax Score: 100Success Rate: 83.08%
+
+
+Solve Challenge
+Box Operations
+ExpertMax Score: 100Success Rate: 64.02%
+
+
+Solve Challenge
+Max Transform
+ExpertMax Score: 100Success Rate: 75.74%
+
+
+Solve Challenge
+Array and Queries
+HardMax Score: 60Success Rate: 31.97%
+
