@@ -33,6 +33,7 @@ points = [
 * go ahead to increment value by 1
 *  find the max number between initial maxNum and slope values in the hash table
 """
+
 import math
 
 
