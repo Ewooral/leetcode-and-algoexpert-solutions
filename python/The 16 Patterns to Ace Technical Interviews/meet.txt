@@ -691,7 +691,56 @@ Constraints:
     It is guaranteed that the list represents a number that does not have leading zeros.
 
 
+def addTwoNumbers(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        dummyHead = ListNode(0)
+        curr = dummyHead
+        carry = 0
+        while l1 != None or l2 != None or carry != 0:
+            l1Val = l1.val if l1 else 0
+            l2Val = l2.val if l2 else 0
+            columnSum = l1Val + l2Val + carry
+            carry = columnSum // 10
+            newNode = ListNode(columnSum % 10)
+            curr.next = newNode
+            curr = newNode
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
+        return dummyHead.next
 
+
+
+Algorithm
+
+Just like how you would sum two numbers on a piece of paper, we begin by summing the least-significant digits, which is the head of l1l1l1 and l2l2l2. Since each digit is in the range of 0…90 \ldots 90…9, summing two digits may "overflow". For example 5+7=125 + 7 = 125+7=12. In this case, we set the current digit to 222 and bring over the carry=1carry = 1carry=1 to the next iteration. carrycarrycarry must be either 000 or 111 because the largest possible sum of two digits (including the carry) is 9+9+1=199 + 9 + 1 = 199+9+1=19.
+
+The pseudocode is as following:
+
+    Initialize current node to dummy head of the returning list.
+    Initialize carry to 000.
+    Loop through lists l1l1l1 and l2l2l2 until you reach both ends and crarry is 000.
+        Set xxx to node l1l1l1's value. If l1l1l1 has reached the end of l1l1l1, set to 000.
+        Set yyy to node l2l2l2's value. If l2l2l2 has reached the end of l2l2l2, set to 000.
+        Set sum=x+y+carrysum = x + y + carrysum=x+y+carry.
+        Update carry=sum/10carry = sum / 10carry=sum/10.
+        Create a new node with the digit value of (sum mod 10)(sum \bmod 10)(summod10) and set it to current node's next, then advance current node to next.
+        Advance both l1l1l1 and l2l2l2.
+    Return dummy head's next node.
+
+Note that we use a dummy head to simplify the code. Without a dummy head, you would have to write extra conditional statements to initialize the head's value.
+
+Take extra caution of the following cases:
+Test case 	Explanation
+l1=[0,1]l1=[0,1]l1=[0,1]
+l2=[0,1,2]l2=[0,1,2]l2=[0,1,2] 	When one list is longer than the other.
+l1=[]l1=[]l1=[]
+l2=[0,1]l2=[0,1]l2=[0,1] 	When one list is null, which means an empty list.
+l1=[9,9]l1=[9,9]l1=[9,9]
+l2=[1]l2=[1]l2=[1] 	The sum could have an extra carry of one at the end, which is easy to forget.
 
 
 
@@ -723,6 +772,762 @@ Constraints:
     The number of nodes in the list is in the range [0, 300].
     -100 <= Node.val <= 100
     The list is guaranteed to be sorted in ascending order.
+
+
+def deleteDuplicates(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        cur=head
+        while cur and cur.next:
+            if cur.val==cur.next.val:
+                cur.next=cur.next.next
+                continue
+            cur=cur.next
+        return head
+
+
+
+
+
+
+
+
+
+
+
+
+
+Remove Nth Node From End of List
+Medium
+
+Given the head of a linked list, remove the nth node from the end of the list and return its head.
+
+
+
+Example 1:
+
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+
+Example 2:
+
+Input: head = [1], n = 1
+Output: []
+
+Example 3:
+
+Input: head = [1,2], n = 1
+Output: [1]
+
+
+
+Constraints:
+
+    The number of nodes in the list is sz.
+    1 <= sz <= 30
+    0 <= Node.val <= 100
+    1 <= n <= sz
+
+
+def removeNthFromEnd(self, head, n):
+        temp = head
+        c = 0
+        while temp:     #Find the length of the linked list
+            c+=1
+            temp = temp.next
+        a = c-n+1       #Calculate the node to be removed
+        i = 1
+        temp2 = head
+        prev = None
+        while i < a:         #Traverse till the node to be removed
+            i+=1
+            prev = temp2     #Prev pointer to point the previous node of the deletion node
+            temp2 = temp2.next
+        if temp2==head:
+            return head.next
+        prev.next = temp2.next    #Link the previous node to the next of the deletion node
+        return head
+
+
+
+
+
+
+
+141 Linked List Cycle
+Easy
+
+Given head, the head of a linked list, determine if the linked list has a cycle in it.
+
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously
+following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to.
+Note that pos is not passed as a parameter.
+
+Return true if there is a cycle in the linked list. Otherwise, return false.
+
+
+
+Example 1:
+
+Input: head = [3,2,0,-4], pos = 1
+Output: true
+Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+
+Example 2:
+
+Input: head = [1,2], pos = 0
+Output: true
+Explanation: There is a cycle in the linked list, where the tail connects to the 0th node.
+
+Example 3:
+
+Input: head = [1], pos = -1
+Output: false
+Explanation: There is no cycle in the linked list.
+
+
+
+Constraints:
+
+    The number of the nodes in the list is in the range [0, 104].
+    -105 <= Node.val <= 105
+    pos is -1 or a valid index in the linked-list.
+
+
+
+Follow up: Can you solve it using O(1) (i.e. constant) memory?
+
+
+
+
+EXPLANATION
+
+    Floyd’s Cycle-Finding Algorithm // fast slow approach // 2 pointers // "tortoise and the hare algorithm"
+
+    Approach: This is the fastest method and has been described below:
+
+    Traverse linked list using two pointers.
+
+    Move one pointer(slow_p) by one and another pointer(fast_p) by two.
+
+    If these pointers meet at the same node then there is a loop. If pointers do not meet then linked list doesn’t have a loop.
+
+image
+
+Above linked list has a loop as node 5 is connected to node 2 foming a Cycle.
+
+CODE WITH EXPLANATION
+
+    Time Complexity : O(N)
+    Space Complexity : O(1)
+
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+
+		// if head is NULL then return false;
+        if(head == NULL)
+            return false;
+
+		// making two pointers fast and slow and assignning them to head
+        ListNode *fast = head;
+        ListNode *slow = head;
+
+		// till fast and fast-> next not reaches NULL
+		// we will increment fast by 2 step and slow by 1 step
+        while(fast != NULL && fast ->next != NULL)
+        {
+            fast = fast->next->next;
+            slow = slow->next;
+
+
+			// At the point if fast and slow are at same address
+			// this means linked list has a cycle in it.
+            if(fast == slow)
+                return true;
+        }
+
+		// if traversal reaches to NULL this means no cycle.
+        return false;
+    }
+};
+
+
+
+def hasCycle(self, head: Optional[ListNode]) -> bool:
+        # s = slow, f = fast
+        s,f=head,head
+        while f and f.next:
+            s=s.next
+            f=f.next.next
+            if s==f:
+                return True
+        return False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+142. Linked List Cycle II
+Medium
+
+Given the head of a linked list, return the node where the cycle begins. If there is no cycle, return null.
+
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to (0-indexed). It is -1 if there is no cycle. Note that pos is not passed as a parameter.
+
+Do not modify the linked list.
+
+
+
+Example 1:
+
+Input: head = [3,2,0,-4], pos = 1
+Output: tail connects to node index 1
+Explanation: There is a cycle in the linked list, where tail connects to the second node.
+
+Example 2:
+
+Input: head = [1,2], pos = 0
+Output: tail connects to node index 0
+Explanation: There is a cycle in the linked list, where tail connects to the first node.
+
+Example 3:
+
+Input: head = [1], pos = -1
+Output: no cycle
+Explanation: There is no cycle in the linked list.
+
+
+
+Constraints:
+
+    The number of the nodes in the list is in the range [0, 104].
+    -105 <= Node.val <= 105
+    pos is -1 or a valid index in the linked-list.
+
+
+
+Follow up: Can you solve it using O(1) (i.e. constant) memory?
+
+
+def detectCycle(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        s,f=head,head
+        while f and f.next:
+            s=s.next
+            f=f.next.next
+            if s==f:
+                s=head
+                while s!=f:
+                    s=s.next
+                    f=f.next
+                return s
+        return None
+
+
+
+
+
+
+
+
+
+148. Sort List
+Medium
+Given the head of a linked list, return the list after sorting it in ascending order.
+
+
+
+Example 1:
+
+Input: head = [4,2,1,3]
+Output: [1,2,3,4]
+
+Example 2:
+
+Input: head = [-1,5,3,4,0]
+Output: [-1,0,3,4,5]
+
+Example 3:
+
+Input: head = []
+Output: []
+
+
+
+Constraints:
+
+    The number of nodes in the list is in the range [0, 5 * 104].
+    -105 <= Node.val <= 105
+
+
+
+ddef sortList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        if not head:
+            return head
+        new = []
+        curr = head
+        while curr:
+            new.append(curr.val)
+            curr = curr.next
+
+        new.sort()
+
+        curr = head
+        index = 0
+        while curr:
+            curr.val = new[index]
+            curr = curr.next
+            index += 1
+
+        return head
+
+
+
+
+
+
+
+
+
+
+143. Reorder List
+Medium
+
+You are given the head of a singly linked-list. The list can be represented as:
+
+L0 → L1 → … → Ln - 1 → Ln
+
+Reorder the list to be on the following form:
+
+L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
+
+You may not modify the values in the list's nodes. Only nodes themselves may be changed.
+
+
+
+Example 1:
+
+Input: head = [1,2,3,4]
+Output: [1,4,2,3]
+
+Example 2:
+
+Input: head = [1,2,3,4,5]
+Output: [1,5,2,4,3]
+
+
+
+Constraints:
+
+    The number of nodes in the list is in the range [1, 5 * 104].
+    1 <= Node.val <= 1000
+
+
+
+
+
+def reorderList(self, head):
+        """
+        :type head: ListNode
+        :rtype: None Do not return anything, modify head in-place instead.
+        """
+
+        if not head:
+            return
+
+        q = deque()
+        node = head
+        while True:
+            node = node.next
+            if not node:
+                break
+            q.append(node)
+
+        while q:
+            if head:
+                temp = q.pop()
+                head.next = temp
+                head = head.next
+
+            if head and q:
+                temp = q.popleft()
+                head.next = temp
+                head = head.next
+
+        head.next = None
+
+
+
+
+
+
+
+
+
+
+
+
+
+203. Remove Linked List Elements
+Easy
+
+Given the head of a linked list and an integer val, remove all the nodes of the linked list that has Node.val == val, and return the new head.
+
+
+
+Example 1:
+
+Input: head = [1,2,6,3,4,5,6], val = 6
+Output: [1,2,3,4,5]
+
+Example 2:
+
+Input: head = [], val = 1
+Output: []
+
+Example 3:
+
+Input: head = [7,7,7,7], val = 7
+Output: []
+
+
+
+Constraints:
+
+    The number of nodes in the list is in the range [0, 104].
+    1 <= Node.val <= 50
+    0 <= val <= 50
+
+
+
+intuition
+
+To delete a node, we need to assign the next node to the previous node. Let's use curr to denote the current node, and prev to denote the previous node. Then, we have the following 4 cases:
+
+    Node to remove is at the end of the linked list.
+
+Input: head = [6,1,2,6,3,4,5,6], val = 6
+						  /   \
+						prev curr
+
+Simple enough, we just need to assign prev.next = None, since curr.next == None. No further action is needed since this is the last node to check.
+
+    Node to remove is in the middle of the linked list.
+
+Input: head = [6,1,2,6,3,4,5,6], val = 6
+				  /   \
+				prev curr
+
+To remove the node curr, we can assign prev.next = curr.next, which disconnects curr from the linked list completely. In the following iteration, we know that curr = curr.next, while prev should remain pointing at the same node since curr has been removed. So, in summary:
+
+    prev.next = curr.next to remove the node;
+    curr = curr.next to get the next iteration.
+
+    Node to remove is at the start of the linked list.
+
+Input: head = [6,1,2,6,3,4,5,6], val = 6
+			/   \
+	      prev curr
+
+Since prev == None, we don't need to assign prev.next = curr.next. However, removing nodes from the beginning of the linked list changes the head node of the linked list, so we need to assign head = curr.next before proceeding with the next iteration (as per case 2). In summary:
+
+    head = curr.next to change the head node;
+    curr = curr.next to get the next iteration.
+
+    Current node is not to be removed.
+
+Input: head = [6,1,2,6,3,4,5,6], val = 6
+			    /   \
+	          prev curr
+
+Nothing needs to be done, we just need to proceed with the next iteration. This involves:
+
+    curr = curr.next, as discussed in cases 2 and 3;
+    prev = curr, since the curr node is not removed in this case.
+
+Implementation
+
+    Start with curr = head and prev = None.
+    Loop through the linked list and determine which of the 4 cases curr and prev belong to, and perform the action accordingly.
+
+class Solution:
+    def removeElements(self, head, val):
+        """
+        :type head: ListNode
+        :type val: int
+        :rtype: ListNode
+        """
+        prev, curr = None, head
+        while curr:
+            if curr.val == val:  # cases 1-3
+                if prev:  # cases 1-2
+                    prev.next = curr.next
+                else:  # case 3
+                    head = curr.next
+                curr = curr.next  # for all cases
+            else:  # case 4
+                prev, curr = curr, curr.next
+        return head
+
+Final Result
+
+TC: O(n) where n is the number of nodes in the linked list.
+SC: O(1), no additional data structures were used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+234. Palindrome Linked List
+Easy
+
+Given the head of a singly linked list, return true if it is a palindrome.
+
+
+
+Example 1:
+
+Input: head = [1,2,2,1]
+Output: true
+
+Example 2:
+
+Input: head = [1,2]
+Output: false
+
+
+
+Constraints:
+
+    The number of nodes in the list is in the range [1, 105].
+    0 <= Node.val <= 9
+
+
+Follow up: Could you do it in O(n) time and O(1) space?
+
+
+
+
+def isPalindrome(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        slow = head
+        fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        prev = slow
+        slow = slow.next
+        prev.next = None
+        while slow:
+            next_node = slow.next
+            slow.next = prev
+            prev = slow
+            slow = next_node
+        while prev:
+            if head.val != prev.val:
+                return False
+            prev = prev.next
+            head = head.next
+        return True
+
+
+
+
+
+
+
+
+
+
+
+
+876. Middle of the Linked List
+Easy
+
+Given the head of a singly linked list, return the middle node of the linked list.
+
+If there are two middle nodes, return the second middle node.
+
+
+
+Example 1:
+
+Input: head = [1,2,3,4,5]
+Output: [3,4,5]
+Explanation: The middle node of the list is node 3.
+
+Example 2:
+
+Input: head = [1,2,3,4,5,6]
+Output: [4,5,6]
+Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.
+
+
+
+Constraints:
+
+    The number of nodes in the list is in the range [1, 100].
+    1 <= Node.val <= 100
+
+
+Intuition and Algorithm
+
+Put every node into an array A in order. Then the middle node is just A[A.length // 2], since we can retrieve each node by index.
+
+We can initialize the array to be of length 100, as we're told in the problem description that the input contains between 1 and 100 nodes.
+
+
+def middleNode(self, head):
+    """
+    :type head: ListNode
+    :rtype: ListNode
+    """
+    slow = fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    return slow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
