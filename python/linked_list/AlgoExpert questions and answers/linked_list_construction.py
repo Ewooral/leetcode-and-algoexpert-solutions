@@ -146,8 +146,8 @@ def main():
     print("......................")
     # print(linkedList.head)
 
-    linkedList.insertBefore(node, Node(value=320) )
-    linkedList.insertAfter(node, node1 )
+    linkedList.insertBefore(node, Node(value=320))
+    linkedList.insertAfter(node, Node(value=100))
     linkedList.insertAtPosition(4, node3)
 
     linkedList.print_list()

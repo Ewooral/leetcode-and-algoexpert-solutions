@@ -27,9 +27,9 @@ class SLinkedList:
         # the below code makes our linked list printable
 
     def __iter__(self):
-        node = self.head;
+        node = self.head
         while node:
-            yield node;
+            yield node
             node = node.next
 
     # insert in linked list  -> O(N) T and O(1) S
