@@ -1076,7 +1076,7 @@ Constraints:
 
 
 
-ddef sortList(self, head):
+def sortList(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
@@ -1404,9 +1404,11 @@ Constraints:
 
 Intuition and Algorithm
 
-Put every node into an array A in order. Then the middle node is just A[A.length // 2], since we can retrieve each node by index.
+Put every node into an array A in order. Then the middle node is just A[A.length // 2],
+since we can retrieve each node by index.
 
-We can initialize the array to be of length 100, as we're told in the problem description that the input contains between 1 and 100 nodes.
+We can initialize the array to be of length 100, as we're told in the problem description
+that the input contains between 1 and 100 nodes.
 
 
 def middleNode(self, head):
@@ -1419,6 +1421,151 @@ def middleNode(self, head):
         slow = slow.next
         fast = fast.next.next
     return slow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Approach 2: This approach is simpler and uses log n space.
+
+mergeSort():
+
+    If the size of the linked list is 1 then return the head
+    Find mid using The Tortoise and The Hare Approach
+    Store the next of mid in head2 i.e. the right sub-linked list.
+    Now Make the next midpoint null.
+    Recursively call mergeSort() on both left and right sub-linked list and store the new head of the left and right linked list.
+    Call merge() given the arguments new heads of left and right sub-linked lists and store the final head returned after merging.
+    Return the final head of the merged linkedlist.
+
+merge(head1, head2):
+
+    Take a pointer say merged to store the merged list in it and store a dummy node in it.
+    Take a pointer temp and assign merge to it.
+    If the data of head1 is less than the data of head2, then, store head1 in next of temp & move head1 to the next of head1.
+    Else store head2 in next of temp & move head2 to the next of head2.
+    Move temp to the next of temp.
+    Repeat steps 3, 4 & 5 until head1 is not equal to null and head2 is not equal to null.
+    Now add any remaining nodes of the first or the second linked list to the merged linked list.
+    Return the next of merged(that will ignore the dummy and return the head of the final merged linked list)
+
+
+
+
+
+
+
+# Node Class
+class Node:
+
+    def __init__(self,key):
+        self.data=key
+        self.next=None
+
+# Function to merge sort
+def mergeSort(head):
+    if (head.next == None):
+        return head
+
+    mid = findMid(head)
+    head2 = mid.next
+    mid.next = None
+    newHead1 = mergeSort(head)
+    newHead2 = mergeSort(head2)
+    finalHead = merge(newHead1, newHead2)
+    return finalHead
+
+# Function to merge two linked lists
+def merge(head1,head2):
+    merged = Node(-1)
+
+    temp = merged
+    # While head1 is not null and head2
+    # is not null
+    while (head1 != None and head2 != None):
+        if (head1.data < head2.data):
+            temp.next = head1
+            head1 = head1.next
+        else:
+            temp.next = head2
+            head2 = head2.next
+        temp = temp.next
+
+    # While head1 is not null
+    while (head1 != None):
+        temp.next = head1
+        head1 = head1.next
+        temp = temp.next
+
+    # While head2 is not null
+    while (head2 != None):
+        temp.next = head2
+        head2 = head2.next
+        temp = temp.next
+
+    return merged.next
+
+# Find mid using The Tortoise and The Hare approach
+def findMid(head):
+    slow = head
+    fast = head.next
+    while (fast != None and fast.next != None):
+        slow = slow.next
+        fast = fast.next.next
+    return slow
+
+# Function to print list
+def printList(head):
+    while (head != None):
+        print(head.data,end=" ")
+        head=head.next
+
+# Driver Code
+head = Node(7)
+temp = head
+temp.next = Node(10);
+temp = temp.next;
+temp.next = Node(5);
+temp = temp.next;
+temp.next = Node(20);
+temp = temp.next;
+temp.next = Node(3);
+temp = temp.next;
+temp.next = Node(2);
+temp = temp.next;
+
+# Apply merge Sort
+head = mergeSort(head);
+print("\nSorted Linked List is: \n");
+
+printList(head);
+
+# This code is contributed by avanitrachhadiya2155
+
+Output:
+
+Sorted Linked List is:
+2 3 5 7 10 20
+
+Time Complexity: O(n*log n)
+
+Auxiliary Space: O(n)
+
+
 
 
 
