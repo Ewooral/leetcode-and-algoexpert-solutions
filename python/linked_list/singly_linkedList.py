@@ -3,8 +3,9 @@
   2. Complexity: O(1) T, O(1) S -> if only one node is created  else, O(N)S
 """
 
-
 # create a singly linked list
+from random import randint
+
 
 class Node:
     def __init__(self, value=None):
@@ -31,6 +32,10 @@ class SLinkedList:
         while node:
             yield node
             node = node.next
+
+    def __str__(self):
+        values = [str(x.value) for x in self]
+        return '->'.join(values)
 
     # insert in linked list  -> O(N) T and O(1) S
     def insertSLL(self, value, location):
@@ -82,14 +87,14 @@ class SLinkedList:
 
     # count the number of values in the list
     def length(self):
-        count = 0;
+        count = 0
         # node = self.head
         if self.head == None:
-            return;
+            return
         else:
             while self.head is not None:
                 self.head = self.head.next
-                count += 1;
+                count += 1
         return count
 
     # delete a node from a singly linked list -> O(N) T, O(1) S
@@ -133,6 +138,23 @@ class SLinkedList:
             self.head = None
             self.tail = None
 
+    def add(self, value):
+        if self.head is None:
+            newNode = Node(value)
+            self.head = newNode
+            self.tail = newNode
+        else:
+            self.tail.next = Node(value)
+            self.tail = self.tail.next
+        return self.tail
+
+    def generate(self, n, minValue, maxValue):
+        self.head = None
+        self.tail = None
+        for i in range(n):
+            self.add(randint(minValue, maxValue))
+        return self
+
 
 # O(n) time | O(1) space
 def reverse(head):
@@ -147,6 +169,9 @@ def reverse(head):
 
 singlyLinkedList = SLinkedList()
 
+print("Generate LinkedList: ")
+singlyLinkedList.generate(10, 0, 99)
+print(singlyLinkedList)
 # insert at the end
 singlyLinkedList.insertSLL(1, 1)
 
@@ -179,8 +204,12 @@ print(singlyLinkedList.searchSLL(9))
 
 print("Delete.......................................")
 # delete a node
-singlyLinkedList.deleteNode(0)
-singlyLinkedList.deleteNode(1)
+
+print([node.value for node in singlyLinkedList])
+singlyLinkedList.deleteNode(3)
+# singlyLinkedList.deleteNode(1)
+print([node.value for node in singlyLinkedList])
+singlyLinkedList.insertSLL(29011993, 2)
 print([node.value for node in singlyLinkedList])
 
 print("Length of List.......................................")
