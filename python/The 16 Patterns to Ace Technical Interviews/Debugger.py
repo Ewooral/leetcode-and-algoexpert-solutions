@@ -1,37 +1,22 @@
-from collections import Counter
+def selection_sort(arr):
+    for i in range(len(arr)):
+        minIdx = i
+        for j in range(i+1, len(arr)):
+            if arr[minIdx] > arr[i]:
+                minIdx = j
+        swap(i, minIdx, arr)
+
+    return arr
 
 
-def maxFrequency1(arr, n):
-    arr.sort()
-    lastItem = arr.pop()
-    i, j = 0, len(arr) - 1
-    newArr = [lastItem]
-    while j > i - 1 or len(arr) > 0:
-        limit = n
-        k = 0
-        elemNearLast = arr[j]
-        while k < limit :
-            elemNearLast += 1
-            if elemNearLast == lastItem:
-                newArr.append(elemNearLast)
-                arr.pop(j)
-                j -= 1
-                if len(arr) > 0:
-                    elemNearLast = arr[j]
-            k += 1
-    freq = Counter(newArr)
-    for k, v in enumerate(freq.values()):
-        return v
+def swap(i, j, arr):
+    arr[i], arr[j] = arr[j], arr[i]
+
 
 def main():
-    # print(maxFrequency1([1, 2, 4], 5))
-    print(maxFrequency1([1, 4, 8, 13], 5))
-    # print(maxFrequency1([3, 9, 6], 2))
-    # print(maxFrequency1([3, -19, 7, 6], 22))
-    print(maxFrequency1([9940,9995,9944,9937,9941,9952,9907,9952,9987,9964,9940,
-                         9914,9941,9933,9912,9934,9980,9907,9980,9944,9910,9997], 7925))
-    print(maxFrequency1([9990, 9995, 9984, 9987], 7925))
+    # arr = [-5, -2, 1, 3]
+    # arr1 = [8, -2, 1, 3]
+    arr2 = [8, 7, 2, 1, 0, 9, 6]
+    print(selection_sort(arr2))
 
-
-if __name__ == '__main__':
-    main()
+main()
