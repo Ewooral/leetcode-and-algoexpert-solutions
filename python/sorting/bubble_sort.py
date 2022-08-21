@@ -10,7 +10,7 @@ def swap(i, j, array):
     array[i], array[j] = array[j], array[i]
 
 
-Bubble_sort([9, 2, 3, 8, 1, 4])
+Bubble_sort([9, 2, 3, 8, 10, 1, 4])
 
 
 # Worse Case:  O(n^2)T, O(1) T

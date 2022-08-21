@@ -72,7 +72,7 @@ def select_sort_recA(a):
         mini = min(b)
         b.remove(mini)
 
-    return [mini] + select_sort_rec(b)
+    return [mini] + select_sort_recA(b)
 
 
 print(select_sort_recA([3, 2, 6, 0, 1, 10]))
