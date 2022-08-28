@@ -1,0 +1,5 @@
+'''
+[10:30] <john> Hello there!
+Wed 05/31 @ server01 <martha> hello! there!
+[10:31] <john> how are you?
+'''

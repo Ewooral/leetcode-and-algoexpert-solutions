@@ -147,7 +147,7 @@ Instance methods : accept self parameter and relate to a specific instance of th
 
 Static methods : use @staticmethod decorator, are not related to a specific instance, and are self-contained (don’t modify class or instance attributes)
 
-Class methods : accept cls parameter and can modify the class itself
+Class methods : accept self parameter and can modify the class itself
 
 We’re going to illustrate the difference around a fictional CoffeeShop class.
 
@@ -166,8 +166,8 @@ class CoffeeShop:
     def check_weather():
         print('Its sunny')    # class method
     @classmethod
-    def change_specialty(cls, specialty):
-        cls.specialty = specialty
+    def change_specialty(self, specialty):
+        self.specialty = specialty
         print(f'Specialty changed to {specialty}')
 
 CoffeeShop class has an attribute, specialty, set to 'espresso' by default. Each instance of CoffeeShop is initialized with an attribute coffee_price . It also has 3 methods, an instance method, a static method and a class method.
