@@ -11,7 +11,7 @@
 #     in iteration 2 if we find thozse rows and columns make then zero
 #     for i in range(m):
 #         for j in range(n):
-            if i in rows_to_zero:
+#             if i in rows_to_zero:
                 matrix[i][j] = 0
             if j in cols_to_zero:
                 matrix[i][j] = 0
