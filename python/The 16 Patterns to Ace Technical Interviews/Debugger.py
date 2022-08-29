@@ -18,7 +18,7 @@ def setZeroes(matrix):
     return matrix
 
 
-# def main():
+def main():
 #     f = [[1, 1, 1],
 #          [1, 0, 1],
 #          [1, 1, 1]]
