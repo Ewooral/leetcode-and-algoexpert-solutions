@@ -1,5 +1,5 @@
 def setZeroes(matrix):
-#     rows_to_zero = set()  # set to keep track rows to make zeros
+    rows_to_zero = set()  # set to keep track rows to make zeros
 #     cols_to_zero = set()  # set to keep track columns to make zeros
 #     m = len(matrix)  # height
 #     n = len(matrix[0])  # weight
