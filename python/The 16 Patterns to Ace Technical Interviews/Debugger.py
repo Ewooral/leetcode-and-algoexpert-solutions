@@ -9,7 +9,7 @@ def setZeroes(matrix):
                 rows_to_zero.add(i)
                 cols_to_zero.add(j)
 #     in iteration 2 if we find thozse rows and columns make then zero
-#     for i in range(m):
+    for i in range(m):
 #         for j in range(n):
 #             if i in rows_to_zero:
 #                 matrix[i][j] = 0
