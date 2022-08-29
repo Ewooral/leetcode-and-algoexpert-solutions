@@ -26,7 +26,7 @@ def main():
              [6, 6, 0, 7],
              [1, 1, 1, 2]]
 
-    # print(setZeroes(f))
+    print(setZeroes(f))
 
 
 main()
