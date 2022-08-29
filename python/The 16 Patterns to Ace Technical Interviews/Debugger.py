@@ -1,4 +1,4 @@
-# def setZeroes(matrix):
+def setZeroes(matrix):
 #     rows_to_zero = set()  # set to keep track rows to make zeros
 #     cols_to_zero = set()  # set to keep track columns to make zeros
 #     m = len(matrix)  # height
@@ -26,7 +26,7 @@
 #              [6, 6, 0, 7],
 #              [1, 1, 1, 2]]
 
-    print(setZeroes(f))
+    # print(setZeroes(f))
 
 
 main()
