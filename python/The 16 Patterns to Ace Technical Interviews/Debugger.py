@@ -14,7 +14,7 @@ def setZeroes(matrix):
             if i in rows_to_zero:
                 matrix[i][j] = 0
             if j in cols_to_zero:
-#                 matrix[i][j] = 0
+                matrix[i][j] = 0
 #     return matrix
 
 
