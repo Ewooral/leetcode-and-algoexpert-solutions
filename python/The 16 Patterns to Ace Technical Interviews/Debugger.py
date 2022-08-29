@@ -2,7 +2,7 @@ def setZeroes(matrix):
     rows_to_zero = set()  # set to keep track rows to make zeros
     cols_to_zero = set()  # set to keep track columns to make zeros
     m = len(matrix)  # height
-#     n = len(matrix[0])  # weight
+    n = len(matrix[0])  # weight
 #     for i in range(m):
 #         for j in range(n):
 #             if matrix[i][j] == 0:  # found a zero keep adding row and column to sets
