@@ -15,7 +15,7 @@
 #                 matrix[i][j] = 0
 #             if j in cols_to_zero:
 #                 matrix[i][j] = 0
-    return matrix
+#     return matrix
 
 
 def main():
