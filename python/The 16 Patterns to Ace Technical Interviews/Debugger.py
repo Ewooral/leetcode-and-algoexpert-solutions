@@ -1,34 +1,23 @@
-def setZeroes(matrix):
-    rows_to_zero = set()  # set to keep track rows to make zeros
-    cols_to_zero = set()  # set to keep track columns to make zeros
-    m = len(matrix)  # height
-    n = len(matrix[0])  # weight
-    for i in range(m):
-        for j in range(n):
-            if matrix[i][j] == 0:  # found a zero keep adding row and column to sets
-                rows_to_zero.add(i)
-                cols_to_zero.add(j)
-#     in iteration 2 if we find thozse rows and columns make then zero
-    for i in range(m):
-        for j in range(n):
-            if i in rows_to_zero:
-                matrix[i][j] = 0
-            if j in cols_to_zero:
-                matrix[i][j] = 0
-    return matrix
+points = [2.3, 3.5, 4.4, 7.8]
+boundary = [0, 5, 10]
+p = [81, 15, 4, 12, 1]
+b = [16, 20, 90]
 
+def pbB(p, b):
+    i = j = 0
+    res, lengthP, lengthB = [], len(p), len(b)
+    while j < lengthB:
+        count = 0
+        while i < lengthP and b[j] < p[i] < b[j + 1]:
+            count += 1
+            i += 1
+        while i < lengthP and p[i] < b[j]:
+            count += 1
+            i += 1
+        if not count == 0:
+            res.append(count)
+        j += 1
 
-def main():
-    f = [[1, 1, 1],
-         [1, 0, 1],
-         [1, 1, 1]]
-    input = [[0, 1, 1, 2],
-             [6, 6, 0, 7],
-             [1, 1, 1, 2]]
+    return res
 
-    print(setZeroes(f))
-
-
-main()
-
-
+pbB(p, b)
