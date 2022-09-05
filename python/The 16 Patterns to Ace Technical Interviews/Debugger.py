@@ -1,13 +1,26 @@
-import _heapq as heap
-from typing import List
+import heapq as heap
 
-def findkthLargest(nums:List[int], k:int):
-    minHeap = []
-    for num in nums:
-        heap.heappush(minHeap, num)
-        if len(minHeap) > k:
-            heap.heappop(minHeap)
-    return min(minHeap)
 
-print(findkthLargest([3, 2, 1, 5, 6, 4], 2))
-print(findkthLargest([3, 2, 3, 1, 2, 4, 5, 5, 6], 4))
+def find_Kth_smallest_number(nums, k):
+  # TODO: Write your code here
+  result = []
+  for num in nums:
+      heap.heappush(result,num)
+  return result[k-1]
+
+
+
+def main():
+
+  # print("Kth smallest number is: " +
+        # str(find_Kth_smallest_number([1, 5, 12, 2, 11, 5], 3)))
+
+  # since there are two 5s in the input array, our 3rd and 4th smallest numbers should be a '5'
+  # print("Kth smallest number is: " +
+  #       str(find_Kth_smallest_number([1, 5, 12, 2, 11, 5], 4)))
+
+  print("Kth smallest number is: " +
+        str(find_Kth_smallest_number([5, 12, 11, -1, 12], 3)))
+
+
+main()
