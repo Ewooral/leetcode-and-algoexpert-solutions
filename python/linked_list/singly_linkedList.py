@@ -55,13 +55,13 @@ class SLinkedList:
             else:
                 # insert at/in the middle
                 index = 0
-                prevNode = self.head
+                temp_node = self.head
                 while index < location - 1:
-                    currentNode = prevNode.next
+                    temp_node = temp_node.next
                     index += 1
-                nextNode = currentNode.next
-                newNode.next = nextNode
-                currentNode.next = newNode
+                next_node = temp_node.next
+                temp_node.next = newNode
+                newNode.next = next_node
 
     # Traverse a singly linked list  -> O(N) T, O(1) S
     def traverseSLL(self):
@@ -88,8 +88,7 @@ class SLinkedList:
     # count the number of values in the list
     def length(self):
         count = 0
-        # node = self.head
-        if self.head == None:
+        if self.head is None:
             return
         else:
             while self.head is not None:
@@ -155,6 +154,32 @@ class SLinkedList:
             self.add(randint(minValue, maxValue))
         return self
 
+    def detect_loop(self):
+        node = self.head
+        hash_t = {}
+        while node is not None:
+            if node.value in hash_t:
+                return "Loop has been detected!"
+            hash_t[node.value] = True
+            node = node.next
+        return hash_t
+
+    def find_duplicate(self):
+        node = self.head
+        left_p, Len = 0, self.length()
+        while left_p < Len:
+            next_node = node.next
+            right_p = left_p + 1
+            while right_p < Len:
+                if node.value == next_node.value:
+                    return "Duplicates detected!"
+                next_node = next_node.next
+                right_p += 1
+            node = node.next
+            left_p += 1
+        return "No duplicates detected"
+
+
 
 # O(n) time | O(1) space
 def reverse(head):
@@ -170,20 +195,20 @@ def reverse(head):
 singlyLinkedList = SLinkedList()
 
 print("Generate LinkedList: ")
-singlyLinkedList.generate(10, 0, 99)
+singlyLinkedList.generate(1, 2, 7)
 print(singlyLinkedList)
 # insert at the end
 singlyLinkedList.insertSLL(1, 1)
 
 # insert at the beginning
 singlyLinkedList.insertSLL(-78, 0)
-singlyLinkedList.insertSLL(2, 8)
+# singlyLinkedList.insertSLL(2, 8)
 
 # insert in the middle -> O(N) T, O(1) S
 
-singlyLinkedList.insertSLL(9, 3)
-singlyLinkedList.insertSLL(29011993, 3)
-singlyLinkedList.insertSLL(False, 4)
+singlyLinkedList.insertSLL(1, 3)
+# singlyLinkedList.insertSLL(29011993, 3)
+# singlyLinkedList.insertSLL(1, 4)
 
 print("Print List...................................")
 # print the linked list
@@ -191,6 +216,14 @@ print([node.value for node in singlyLinkedList])
 print("Traverse ....................................")
 # traverse a singly linked list -> O(N) T, O(1) S
 singlyLinkedList.traverseSLL()
+
+print("Detect Loop......................")
+# find loop
+print(singlyLinkedList.detect_loop())
+
+print("Find Duplicates......................")
+# find loop
+print(singlyLinkedList.find_duplicate())
 
 print("Reverse Linked List")
 lists = [node.value for node in singlyLinkedList]
