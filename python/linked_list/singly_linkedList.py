@@ -179,17 +179,18 @@ class SLinkedList:
             left_p += 1
         return "No duplicates detected"
 
+    # O(n) time | O(1) space
+    def reverse(self):
+        previous, current, next = None, self.head, None
+        while current is not None:
+            next = current.next  # temporarily store the next node
+            current.next = previous  # reverse the current node
+            previous = current  # before we move to the next node, point previous to the current node
+            current = next  # move on the next node
+        print(previous)
 
 
-# O(n) time | O(1) space
-def reverse(head):
-    previous, current, next = None, head, None
-    while current is not None:
-        next = current.next  # temporarily store the next node
-        current.next = previous  # reverse the current node
-        previous = current  # before we move to the next node, point previous to the current node
-        current = next  # move on the next node
-    print(previous)
+
 
 
 singlyLinkedList = SLinkedList()
@@ -198,7 +199,7 @@ print("Generate LinkedList: ")
 singlyLinkedList.generate(1, 2, 7)
 print(singlyLinkedList)
 # insert at the end
-singlyLinkedList.insertSLL(1, 1)
+singlyLinkedList.insertSLL(9, 1)
 
 # insert at the beginning
 singlyLinkedList.insertSLL(-78, 0)
@@ -207,8 +208,8 @@ singlyLinkedList.insertSLL(-78, 0)
 # insert in the middle -> O(N) T, O(1) S
 
 singlyLinkedList.insertSLL(1, 3)
-# singlyLinkedList.insertSLL(29011993, 3)
-# singlyLinkedList.insertSLL(1, 4)
+singlyLinkedList.insertSLL(29011993, 3)
+singlyLinkedList.insertSLL(1, 4)
 
 print("Print List...................................")
 # print the linked list
@@ -226,10 +227,11 @@ print("Find Duplicates......................")
 print(singlyLinkedList.find_duplicate())
 
 print("Reverse Linked List")
-lists = [node.value for node in singlyLinkedList]
-lists.reverse()
+# lists = [node.value for node in singlyLinkedList]
+# lists.reverse()
+singlyLinkedList.reverse()
 
-print(lists)
+
 
 print("Search.......................................")
 # search a node in a singly linked list -> O(N) T, O(1) S

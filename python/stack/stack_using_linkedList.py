@@ -4,10 +4,12 @@
  
 """
 
+
 class Node:
-    def __init__(self, value = None) -> None:
+    def __init__(self, value=None) -> None:
         self.value = value
         self.next = next;
+
 
 class LinkedList:
     def __init__(self):
@@ -19,29 +21,28 @@ class LinkedList:
             yield node
             node = node.next
 
+
 class Stack:
     def __init__(self):
         self.LinkedList = LinkedList();
-    
-    def __str__(self):
-        
-        values = [str(x.value) for x in self.LinkedList]
-        return ' '.join(values)   
 
-    # O(1) T, O(1) S
+    def __str__(self):
+        values = [str(x.value) for x in self.LinkedList]
+        return ' '.join(values)
+
+        # O(1) T, O(1) S
+
     def isEmpty(self):
         if self.LinkedList.head is None:
             return True;
         else:
             return False;
 
-     # O(1) T, O(1) S
+    # O(1) T, O(1) S
     def push(self, value):
         node = Node(value)
         node.next = self.LinkedList.head
         self.LinkedList.head = node
-            
-        
 
     # O(1) T, O(1) S
     def pop(self):
@@ -54,7 +55,7 @@ class Stack:
 
     # O(1) T, O(1) S
     def peek(self):
-        if self.isEmpty(): 
+        if self.isEmpty():
             return "There is no element in the stack"
         else:
             nodeValue = self.LinkedList.head.value
@@ -63,6 +64,7 @@ class Stack:
     # O(1) T, O(1) S
     def delete(self):
         self.LinkedList.head = None
+
 
 customStack = Stack()
 customStack.push(1)
