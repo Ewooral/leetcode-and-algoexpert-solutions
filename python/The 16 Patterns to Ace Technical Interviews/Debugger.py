@@ -1,85 +1,60 @@
-from random import randint
-
+# Queue Data structure
+# Queue class
+# Linked list class
+# Node class 
 
 class Node:
-    def __init__(self, value=None):
-        self.value = value
+    def __int__(self, data):
+        self.data = data
         self.next = None
 
+    def __str__(self):
+        return str(self.data)
 
-class SLinkedList:
+
+class SinglyLL:
     def __init__(self):
         self.head = None
         self.tail = None
 
-        # the below code makes our linked list printable
-
     def __iter__(self):
         node = self.head
-        while node:
+        while node is not None:
             yield node
             node = node.next
 
+
+class Stack:
+    def __init__(self):
+        self.sll = SinglyLL()
+
     def __str__(self):
-        values = [str(x.value) for x in self]
-        return '->'.join(values)
+        values = [str(x) for x in self.sll]
+        return "->".join(values)
 
-    def add(self, value):
-        if self.head is None:
-            newNode = Node(value)
-            self.head = newNode
-            self.tail = newNode
+    def push(self, value):
+        node = Node(value)
+        if self.sll.head is None:
+            self.sll.head = node
+            self.sll.tail = node
         else:
-            self.tail.next = Node(value)
-            self.tail = self.tail.next
-        return self.tail
+            node.next = self.sll.head
+            self.sll.head = node
 
-    def generate(self, n, minValue, maxValue):
-        self.head = None
-        self.tail = None
-        for i in range(n):
-            self.add(randint(minValue, maxValue))
-        return self
-
-    def length(self):
-        count = 0
-        if self.head is None:
-            return
+    def is_empty(self):
+        if self.sll.head is None:
+            return True
         else:
-            while self.head is not None:
-                self.head = self.head.next
-                count += 1
-        return count
+            return False
 
-    def detect_loop(self):
-        node = self.head
-        hash_t = {}
-        while node is not None:
-            if node.value in hash_t:
-                return "Loop has been detected!"
-            hash_t[node.value] = True
-            node = node.next
-        return hash_t
-
-    def find_duplicate(self):
-        node = self.head
-        left_p, Len = 0, self.length()
-        while left_p < Len:
-            next_node = node.next
-            right_p = left_p + 1
-            while right_p < Len:
-                if node.value == next_node.value:
-                    return "Duplicates detected!"
-                next_node = next_node.next
-                right_p += 1
-            node = node.next
-            left_p += 1
-        return "No duplicates detected"
-
-
-def main():
-    ...
-
-
-if __name__ == '__main__':
-    main()
+    def pop(self):
+        if self.is_empty():
+            return "SLL is empty"
+        else:
+            temp_node = self.sll.head
+            if self.sll.head == self.sll.tail:
+                self.sll.head = None
+                self.sll.tail = None
+            else:
+                self.sll.head = self.sll.head.next
+                return temp_node
