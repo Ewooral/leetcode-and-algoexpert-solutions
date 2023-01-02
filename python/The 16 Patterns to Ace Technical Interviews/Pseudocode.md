@@ -401,6 +401,15 @@ def moveInstances(arr, k):
        left += 1
     return arr
 print(moveInstances([2, 1, 2, 2, 2, 3, 4, 2], 2))
+
+OR
+
+def move_to_left(arr, k):
+    for item in arr:
+        if item == k:
+            arr.remove(item);
+            arr.append(item);
+    return arr
 ```
 
 
