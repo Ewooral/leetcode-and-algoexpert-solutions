@@ -1,7 +1,7 @@
 # Insertion sort
     Our first algorithm, insertion sort, solves the sorting problem introduced in Chapter 1:
     Input: A sequence of n numbers (a1; a2;:::;an).
-    Output: A permutation (reordering) ha0
+    Output: A permutation (reordering) has
     1; a0
     2;:::;a0
     ni of the input sequence such
