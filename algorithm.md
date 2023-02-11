@@ -25,12 +25,16 @@
     This sorting algorithm works the way people sort a hand of playing cards
 ### INSERTION-SORT.A/
     ```python
-    1 for j D 2 to A:length
-    2 key D AŒj 
-    3 // Insert AŒj  into the sorted sequence AŒ1 : : j  1.
-    4 i D j  1
-    5 while i>0 and AŒi > key
-    6 AŒi C 1 D AŒi
-    7 i D i  1
-    8 AŒi C 1 D key
+        def insertion_sort(arr):
+            for i in range(1, len(arr)):
+                j = i
+                while j > 0 and arr[j] < arr[j-1]:
+                    swap(j, j-1, arr)
+                    j -= 1
+            return arr
+
+
+       def swap(i, j, arr):
+            arr[i], arr[j] = arr[j], arr[i]
+
     ```
