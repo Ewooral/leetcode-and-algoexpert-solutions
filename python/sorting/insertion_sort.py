@@ -21,3 +21,4 @@ def insertion_sort(arr):
         while j > 0 and arr[j] < arr[j-1]:
             arr[i], arr[j] = arr[j], arr[i]
             j -= 1
+    return arr
