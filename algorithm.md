@@ -33,7 +33,7 @@
                     j -= 1
             return arr
 
-
+        // swap two numbers
        def swap(i, j, arr):
             arr[i], arr[j] = arr[j], arr[i]
 
